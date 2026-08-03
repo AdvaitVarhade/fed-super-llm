@@ -1,0 +1,19 @@
+# Data & Binary artifacts
+data/ml-1m/*.dat
+*.npz
+paper.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+env/
+venv/
+ENV/
+.venv
+
+# IDE / OS
+.DS_Store
+.vscode/
+.idea/
