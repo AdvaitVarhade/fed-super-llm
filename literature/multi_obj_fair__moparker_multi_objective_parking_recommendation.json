@@ -1,0 +1,8 @@
+{
+  "title": "MoParkeR : Multi-objective Parking Recommendation",
+  "authors": "Mohammad Saiedur Rahaman, Wei Shao, Flora D. Salim, Ayad Turky, Andy Song, Jeffrey Chan, Junliang Jiang, Doug Bradbrook",
+  "year": "2021",
+  "abstract": "Existing parking recommendation solutions mainly focus on finding and suggesting parking spaces based on the unoccupied options only. However, there are other factors associated with parking spaces that can influence someone's choice of parking such as fare, parking rule, walking distance to destination, travel time, likelihood to be unoccupied at a given time. More importantly, these factors may change over time and conflict with each other which makes the recommendations produced by current parking recommender systems ineffective. In this paper, we propose a novel problem called multi-objective parking recommendation. We present a solution by designing a multi-objective parking recommendation engine called MoParkeR that considers various conflicting factors together. Specifically, we utilise a non-dominated sorting technique to calculate a set of Pareto-optimal solutions, consisting of recommended trade-off parking spots. We conduct extensive experiments using two real-world datasets to show the applicability of our multi-objective recommendation methodology.",
+  "url": "http://arxiv.org/abs/2106.07384v1",
+  "venue": "arXiv"
+}

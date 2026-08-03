@@ -1,0 +1,8 @@
+{
+  "title": "Multi-sided Exposure Bias in Recommendation",
+  "authors": "Himan Abdollahpouri, Masoud Mansoury",
+  "year": "2020",
+  "abstract": "Academic research in recommender systems has been greatly focusing on the accuracy-related measures of recommendations. Even when non-accuracy measures such as popularity bias, diversity, and novelty are studied, it is often solely from the users' perspective. However, many real-world recommenders are often multi-stakeholder environments in which the needs and interests of several stakeholders should be addressed in the recommendation process. In this paper, we focus on the popularity bias problem which is a well-known property of many recommendation algorithms where few popular items are over-recommended while the majority of other items do not get proportional attention and address its impact on different stakeholders. Using several recommendation algorithms and two publicly available datasets in music and movie domains, we empirically show the inherent popularity bias of the algorithms and how this bias impacts different stakeholders such as users and suppliers of the items. We also propose metrics to measure the exposure bias of recommendation algorithms from the perspective of different stakeholders.",
+  "url": "http://arxiv.org/abs/2006.15772v2",
+  "venue": "arXiv"
+}

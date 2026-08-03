@@ -1,0 +1,8 @@
+{
+  "title": "Centering Policy and Practice: Research Gaps around Usable Differential Privacy",
+  "authors": "Rachel Cummings, Jayshree Sarathy",
+  "year": "2024",
+  "abstract": "As a mathematically rigorous framework that has amassed a rich theoretical literature, differential privacy is considered by many experts to be the gold standard for privacy-preserving data analysis. Others argue that while differential privacy is a clean formulation in theory, it poses significant challenges in practice. Both perspectives are, in our view, valid and important. To bridge the gaps between differential privacy's promises and its real-world usability, researchers and practitioners must work together to advance policy and practice of this technology. In this paper, we outline pressing open questions towards building usable differential privacy and offer recommendations for the field, such as developing risk frameworks to align with user needs, tailoring communications for different stakeholders, modeling the impact of privacy-loss parameters, investing in effective user interfaces, and facilitating algorithmic and procedural audits of differential privacy systems.",
+  "url": "http://arxiv.org/abs/2406.12103v1",
+  "venue": "arXiv"
+}

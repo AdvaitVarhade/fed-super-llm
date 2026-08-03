@@ -1,0 +1,8 @@
+{
+  "title": "Cognitive Biases in Large Language Models for News Recommendation",
+  "authors": "Yougang Lyu, Xiaoyu Zhang, Zhaochun Ren, Maarten de Rijke",
+  "year": "2024",
+  "abstract": "Despite large language models (LLMs) increasingly becoming important components of news recommender systems, employing LLMs in such systems introduces new risks, such as the influence of cognitive biases in LLMs. Cognitive biases refer to systematic patterns of deviation from norms or rationality in the judgment process, which can result in inaccurate outputs from LLMs, thus threatening the reliability of news recommender systems. Specifically, LLM-based news recommender systems affected by cognitive biases could lead to the propagation of misinformation, reinforcement of stereotypes, and the formation of echo chambers. In this paper, we explore the potential impact of multiple cognitive biases on LLM-based news recommender systems, including anchoring bias, framing bias, status quo bias and group attribution bias. Furthermore, to facilitate future research at improving the reliability of LLM-based news recommender systems, we discuss strategies to mitigate these biases through data augmentation, prompt engineering and learning algorithms aspects.",
+  "url": "http://arxiv.org/abs/2410.02897v1",
+  "venue": "arXiv"
+}

@@ -1,0 +1,110 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+• WBPR [52]: A pairwise ranking approach that incorpo-
+rates item-dependent weighting.
+These models serve as representative baselines covering
+probabilistic, neural, clustering-based, and ranking-oriented
+recommendation strategies.
+2) POPULARITY-DEBIASING BENCHMARKS
+We compare SUPER against established post-processing
+popularity-debiasing methods that operate independently of
+the backbone recommender:
+• FA*IR [35]: A fairness-aware re-ranking method that
+enforces balanced exposure between head and tail items.
+• Discrepancy Minimization (DM) [34]: An
+exposure-balancing approach that aligns item recom-
+mendation frequencies with a target distribution.
+• xQuad [20]: A diversification-based re-ranking strategy
+that balances relevance and popularity categories.
+• Aug and Mul [47]: Weight-based re-ranking methods
+that penalize popular items using additive or multiplica-
+tive adjustments.
+• VaR[4], [32]: A value-aware ranking approach favoring
+long-tail items through inverse popularity weighting.
+• CausE [53]: A causal embedding method that disentan-
+gles preference from exposure bias.
+• DICE [54]: A disentanglement-based model separating
+user interest from conformity effects.
+• MACR[55]: A counterfactual post-processing approach
+correcting popularity-induced distortions.
+• PDRO [36]: A distributionally robust optimization
+framework designed to stabilize recommendation qual-
+ity under popularity-skewed interaction distributions.
+• PPAC [37]: A personalized calibration approach that
+dynamically adjusts recommendation exposure accord-
+ing to user-specific popularity sensitivity.
+• CausalEPP [38]: A causal debiasing method that
+penalizes exposure-driven interactions to better separate
+preference from popularity effects.
+All baseline methods are evaluated under a unified
+experimental protocol with consistent parameter tuning
+based on their original publications. This ensures a fair
+and transparent comparison across different modeling and
+debiasing paradigms.
+V. EXPERIMENTAL RESULTS
+This section presents a comprehensive empirical evaluation
+of the proposed SUPER framework in the context of
+popularity bias mitigation. Our experimental design reflects
+the current state of the literature by incorporating a broad
+spectrum of debiasing strategies, ranging from classical
+re-ranking and exposure-balancing methods to recent user-
+aware, optimization-based, and causality-driven approaches.
+Specifically, we compare SUPER against a diverse
+set of competing strategies covering multiple method-
+ological paradigms, including re-ranking-based approaches
+(AUG, MUL, VaR, DM, Fair, xQuad), causality- and
+representation-driven methods (CausE, DICE, MACR), and
+recent user-aware optimization frameworks such as PDRO,
+PPAC, and CausalEPP.
+All debiasing methods are evaluated on top of five
+widely adopted backbone recommenders, HPF, NeuMF,
+SKMeans, VaeCF, and WBPR, across three benchmark
+datasets: ML (MovieLens-1M), DoubanBooks, and Yelp. The
+diversity of both recommenders and datasets enables a robust
+examination of performance under varying sparsity levels,
+interaction densities, and domain characteristics.
+All experiments are repeated with five random seeds
+to reduce sensitivity to stochastic effects, and we report
+seed-averaged mean performance for all methods. To assess
+whether SUPER’s improvements are consistently observed
+across random initializations, we conduct paired Wilcoxon
+signed-rank tests over matched seeds. Each test therefore
+evaluates consistency rather than large-sample statistical
+power, yielding five paired observations per comparison.
+For completeness, Wilcoxon tests are computed for all
+debiasing method pairs within each dataset–recommender–
+metric setting. To maintain clarity and avoid visual overload,
+we report only comparisons between SUPER and the
+second-best debiasing method, defined deterministically as
+the strongest non-SUPER baseline according to seed-averaged
+mean performance for the corresponding metric (higher-is-
+better for nDCG, APLT, Entropy, LTC, Novelty, and GKPI;
+lower-is-better for Rmse-PC and MRMC). This reporting
+strategy provides a conservative and focused assessment by
+benchmarking against the strongest competing alternative
+rather than weaker baselines. Statistical significance is
+annotated directly in the figures using star notation, where
+(*), (**), and (***) denote p < 0.05, p < 0.01, and
+p < 0.001, respectively, and is shown only when SUPER
+achieves the best debiasing performance for that setting.
+Collectively, this experimental design prioritizes breadth
+of comparison, statistical robustness, and methodological
+fairness, thereby providing a reliable foundation for assessing
+whether user-centric, rank-aware popularity calibration can
+deliver consistent gains across diverse recommendation
+environments. Importantly, this design allows us to evaluate
+whether calibration-oriented exposure control can remain
+effective even when compared against strong, recently
+proposed debiasing frameworks.
+Since popularity alignment is widely recognized as an
+important factor in recommendation quality, we begin
+by analyzing calibration performance before turning to
+beyond-accuracy and ranking metrics.
+A. CALIBRATION RESULTS: Rmse-PC AND MRMC
+Assessing how closely each debiasing approach tailors its
+recommendations to users’ interaction-derived popularity
+tendency lies at the heart of this study. To evaluate this
+alignment, we consider two key metrics: Rmse-PC (Root
+Mean Square Error in Popularity Calibration) and MRMC
+(Mean Rank Miscalibration). While Rmse-PC measures how
+accurately the overall fraction of popular versus tail items
+VOLUME 14, 2026 37593

@@ -1,0 +1,84 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+TABLE 3. Average wall-clock time (in seconds) to generate Top-10 recommendation lists for all usersin each dataset, including ranking and
+post-processing, averaged over backbone recommenders and random seeds.
+additional overhead introduced by SUPER remains marginal,
+despite its user-specific popularity calibration and iterative
+blueprint-based merging mechanism. This efficiency stems
+from the fact that SUPER avoids costly global optimization
+procedures and does not require additional model training
+during inference.
+Overall, these results demonstrate that SUPER achieves
+a favorable balance between calibration quality, beyond-
+accuracy improvements, and computational efficiency, mak-
+ing it well suited for large-scale recommendation pipelines
+where both effectiveness and runtime constraints are critical.
+While the runtime analysis confirms that SUPER remains
+computationally lightweight under offline evaluation set-
+tings, the following section discusses remaining limitations
+related to dynamic popularity shifts, cold-start conditions,
+and large-scale deployment considerations.
+F. POPULARITY-THRESHOLD SENSITIVITY
+We analyzed the sensitivity of SUPER to the head–tail
+popularity threshold by evaluating multiple head thresholds
+(10%, 20%, 30%, 40%, and 50%) across all datasets and
+backbone recommenders. The results reveal clear trends
+across metrics. Lower thresholds may slightly improve
+calibration (RMSE-PC and MRMC) by adopting a stricter
+notion of popularity, whereas larger thresholds generally
+weaken calibration and reduce the overall balance among
+objectives. When jointly considering accuracy, calibration,
+and beyond-accuracy metrics through GKPI, the 20%
+threshold consistently provides the most robust trade-off,
+achieving the highest average GKPI across datasets and
+serving as the best-performing choice in the majority of
+configurations. While a small number of dataset–backbone
+combinations favor alternative thresholds, these deviations
+are limited and do not undermine the overall stability of the
+20% setting. Accordingly, we adopt 20% as a stable default
+for comparability, while noting that the threshold can be
+selected in a fully data-driven manner by maximizing GKPI
+on a validation split.
+G. COMPONENT-WISE ABLATION OF SUPER
+To better understand the contribution of each component
+in SUPER, we conducted an ablation study with two
+variants. The full SUPER model combines Pareto-based
+head–tail partitioning, a user-specific popularity-inclination
+ratio Popu, and the blueprint-based merge. In Variant A,
+we removed personalization by replacing Popu with a fixed
+50/50 head–tail split for all users, while keeping both the
+Pareto partition and the blueprint unchanged. In Variant B,
+we retained the Pareto partition and the user-specific Popu,
+but replaced the blueprint with a random merge that only
+preserves the overall head–tail ratio in expectation.
+Across all datasets and baseline recommenders, Variant A
+consistently exhibits higher Rmse-PC than SUPER, with
+the average calibration error increasing from approximately
+0.035 to 0.065, and a slight decrease in the average GKPI,
+indicating that the user-specific Popu is the main driver of
+SUPER’s calibration gains. In contrast, Variant B yields
+almost identical Rmse-PC to SUPER but slightly lower GKPI
+on average, suggesting that the blueprint-based merge mainly
+contributes to improving the holistic trade-off captured
+by GKPI rather than to calibration alone. Since all three
+configurations share the same Pareto-based partitioning, its
+effect is primarily reflected in the improvements of SUPER
+(and its variants) over the non-debiased baselines reported in
+the main experiments. These trends were consistent across all
+datasets and backbone recommenders; for brevity, we do not
+report the full ablation table.
+Overall, these ablation results empirically validate the
+design of SUPER by showing that both user-specific popu-
+larity inclination and blueprint-based merging are necessary
+to achieve strong calibration and a balanced holistic perfor-
+mance.
+H. USER SEGMENTS AND DATASET CHARACTERISTICS
+To further understand the behavior of SUPER under different
+conditions, we analyze its performance across user segments
+and dataset characteristics, including popularity-oriented
+versus tail-oriented users, sparse versus dense datasets, and
+cold-start regimes.
+1) POPULARITY-ORIENTED VERSUS TAIL-ORIENTED USERS
+Regarding user popularity orientation, SUPER exhibits
+adaptive behavior across the preference spectrum. Users with
+a strong inclination toward popular (head) items benefit from
+37600 VOLUME 14, 2026

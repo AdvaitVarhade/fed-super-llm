@@ -1,0 +1,8 @@
+{
+  "title": "Large Language Models are Not Stable Recommender Systems",
+  "authors": "Tianhui Ma, Yuan Cheng, Hengshu Zhu, Hui Xiong",
+  "year": "2023",
+  "abstract": "With the significant successes of large language models (LLMs) in many natural language processing tasks, there is growing interest among researchers in exploring LLMs for novel recommender systems. However, we have observed that directly using LLMs as a recommender system is usually unstable due to its inherent position bias. To this end, we introduce exploratory research and find consistent patterns of positional bias in LLMs that influence the performance of recommendation across a range of scenarios. Then, we propose a Bayesian probabilistic framework, STELLA (Stable LLM for Recommendation), which involves a two-stage pipeline. During the first probing stage, we identify patterns in a transition matrix using a probing detection dataset. And in the second recommendation stage, a Bayesian strategy is employed to adjust the biased output of LLMs with an entropy indicator. Therefore, our framework can capitalize on existing pattern information to calibrate instability of LLMs, and enhance recommendation performance. Finally, extensive experiments clearly validate the effectiveness of our framework.",
+  "url": "http://arxiv.org/abs/2312.15746v1",
+  "venue": "arXiv"
+}

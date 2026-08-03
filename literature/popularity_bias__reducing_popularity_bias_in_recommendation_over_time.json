@@ -1,0 +1,8 @@
+{
+  "title": "Reducing Popularity Bias in Recommendation Over Time",
+  "authors": "Himan Abdollahpouri, Robin Burke",
+  "year": "2019",
+  "abstract": "Many recommendation algorithms suffer from popularity bias: a small number of popular items being recommended too frequently, while other items get insufficient exposure. Research in this area so far has concentrated on a one-shot representation of this bias, and on algorithms to improve the diversity of individual recommendation lists. In this work, we take a time-sensitive view of popularity bias, in which the algorithm assesses its long-tail coverage at regular intervals, and compensates in the present moment for omissions in the past. In particular, we present a temporal version of the well-known xQuAD diversification algorithm adapted for long-tail recommendation. Experimental results on two public datasets show that our method is more effective in terms of the long-tail coverage and accuracy tradeoff compared to some other existing approaches.",
+  "url": "http://arxiv.org/abs/1906.11711v1",
+  "venue": "arXiv"
+}

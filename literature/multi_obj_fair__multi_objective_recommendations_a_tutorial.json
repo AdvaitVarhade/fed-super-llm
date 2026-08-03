@@ -1,0 +1,8 @@
+{
+  "title": "Multi-Objective Recommendations: A Tutorial",
+  "authors": "Yong Zheng,  David,  Wang",
+  "year": "2021",
+  "abstract": "Recommender systems (RecSys) have been well developed to assist user decision making. Traditional RecSys usually optimize a single objective (e.g., rating prediction errors or ranking quality) in the model. There is an emerging demand in multi-objective optimization recently in RecSys, especially in the area of multi-stakeholder and multi-task recommender systems. This article provides an overview of multi-objective recommendations, followed by the discussions with case studies. The document is considered as a supplementary material for our tutorial on multi-objective recommendations at ACM SIGKDD 2021.",
+  "url": "http://arxiv.org/abs/2108.06367v2",
+  "venue": "arXiv"
+}

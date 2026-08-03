@@ -1,0 +1,486 @@
+{
+  "popularity_bias": [
+    {
+      "title": "The Unfairness of Popularity Bias in Recommendation",
+      "authors": "Himan Abdollahpouri, Masoud Mansoury, Robin Burke, Bamshad Mobasher",
+      "year": "2019",
+      "abstract": "Recommender systems are known to suffer from the popularity bias problem: popular (i.e. frequently rated) items get a lot of exposure while less popular ones are under-represented in the recommendations. Research in this area has been mainly focusing on finding ways to tackle this issue by increasing the number of recommended long-tail items or otherwise the overall catalog coverage. In this paper, however, we look at this problem from the users' perspective: we want to see how popularity bias causes the recommendations to deviate from what the user expects to get from the recommender system. We define three different groups of users according to their interest in popular items (Niche, Diverse and Blockbuster-focused) and show the impact of popularity bias on the users in each group. Our experimental results on a movie dataset show that in many recommendation algorithms the recommendations the users get are extremely concentrated on popular items even if a user is interested in long-tail and non-popular items showing an extreme bias disparity.",
+      "url": "http://arxiv.org/abs/1907.13286v3",
+      "venue": "arXiv"
+    },
+    {
+      "title": "A Survey on Popularity Bias in Recommender Systems",
+      "authors": "Anastasiia Klimashevskaia, Dietmar Jannach, Mehdi Elahi, Christoph Trattner",
+      "year": "2023",
+      "abstract": "Recommender systems help people find relevant content in a personalized way. One main promise of such systems is that they are able to increase the visibility of items in the long tail, i.e., the lesser-known items in a catalogue. Existing research, however, suggests that in many situations todays recommendation algorithms instead exhibit a popularity bias, meaning that they often focus on rather popular items in their recommendations. Such a bias may not only lead to the limited value of the recommendations for consumers and providers in the short run, but it may also cause undesired reinforcement effects over time. In this paper, we discuss the potential reasons for popularity bias and review existing approaches to detect, quantify and mitigate popularity bias in recommender systems. Our survey, therefore, includes both an overview of the computational metrics used in the literature as well as a review of the main technical approaches to reduce the bias. Furthermore, we critically discuss todays literature, where we observe that the research is almost entirely based on computational experiments and on certain assumptions regarding the practical effects of including long-tail items in the recommendations.",
+      "url": "http://arxiv.org/abs/2308.01118v3",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Multi-sided Exposure Bias in Recommendation",
+      "authors": "Himan Abdollahpouri, Masoud Mansoury",
+      "year": "2020",
+      "abstract": "Academic research in recommender systems has been greatly focusing on the accuracy-related measures of recommendations. Even when non-accuracy measures such as popularity bias, diversity, and novelty are studied, it is often solely from the users' perspective. However, many real-world recommenders are often multi-stakeholder environments in which the needs and interests of several stakeholders should be addressed in the recommendation process. In this paper, we focus on the popularity bias problem which is a well-known property of many recommendation algorithms where few popular items are over-recommended while the majority of other items do not get proportional attention and address its impact on different stakeholders. Using several recommendation algorithms and two publicly available datasets in music and movie domains, we empirically show the inherent popularity bias of the algorithms and how this bias impacts different stakeholders such as users and suppliers of the items. We also propose metrics to measure the exposure bias of recommendation algorithms from the perspective of different stakeholders.",
+      "url": "http://arxiv.org/abs/2006.15772v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "The Unfairness of Popularity Bias in Book Recommendation",
+      "authors": "Mohammadmehdi Naghiaei, Hossein A. Rahmani, Mahdi Dehghan",
+      "year": "2022",
+      "abstract": "Recent studies have shown that recommendation systems commonly suffer from popularity bias. Popularity bias refers to the problem that popular items (i.e., frequently rated items) are recommended frequently while less popular items are recommended rarely or not at all. Researchers adopted two approaches to examining popularity bias: (i) from the users' perspective, by analyzing how far a recommendation system deviates from user's expectations in receiving popular items, and (ii) by analyzing the amount of exposure that long-tail items receive, measured by overall catalog coverage and novelty. In this paper, we examine the first point of view in the book domain, although the findings may be applied to other domains as well. To this end, we analyze the well-known Book-Crossing dataset and define three user groups based on their tendency towards popular items (i.e., Niche, Diverse, Bestseller-focused). Further, we evaluate the performance of nine state-of-the-art recommendation algorithms and two baselines (i.e., Random, MostPop) from both the accuracy (e.g., NDCG, Precision, Recall) and popularity bias perspectives. Our results indicate that most state-of-the-art recommendation algorithms suffer from popularity bias in the book domain, and fail to meet users' expectations with Niche and Diverse tastes despite having a larger profile size. Conversely, Bestseller-focused users are more likely to receive high-quality recommendations, both in terms of fairness and personalization. ",
+      "url": "http://arxiv.org/abs/2202.13446v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Popularity Bias in Recommendation: A Multi-stakeholder Perspective",
+      "authors": "Himan Abdollahpouri",
+      "year": "2020",
+      "abstract": "Traditionally, especially in academic research in recommender systems, the focus has been solely on the satisfaction of the end-user. While user satisfaction has, indeed, been associated with the success of the business, it is not the only factor. In many recommendation domains, there are other stakeholders whose needs should be taken into account in the recommendation generation and evaluation. In this dissertation, I describe the notion of multi-stakeholder recommendation. In particular, I study one of the most important challenges in recommendation research, popularity bias, from a multi-stakeholder perspective since, as I show later in this dissertation, it impacts different stakeholders in a recommender system. Popularity bias is a well-known phenomenon in recommender systems where popular items are recommended even more frequently than their popularity would warrant, amplifying long-tail effects already present in many recommendation domains. Prior research has examined various approaches for mitigating popularity bias and enhancing the recommendation of long-tail items overall. The effectiveness of these approaches, however, has not been assessed in multi-stakeholder environments. In this dissertation, I study the impact of popularity bias in recommender systems from a multi-stakeholder perspective. In addition, I propose several algorithms each approaching the popularity bias mitigation from a different angle and compare their performances using several metrics with s",
+      "url": "http://arxiv.org/abs/2008.08551v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Causal Intervention for Leveraging Popularity Bias in Recommendation",
+      "authors": "Yang Zhang, Fuli Feng, Xiangnan He, Tianxin Wei, Chonggang Song, Guohui Ling, Yongdong Zhang",
+      "year": "2021",
+      "abstract": "Recommender system usually faces popularity bias issues: from the data perspective, items exhibit uneven (long-tail) distribution on the interaction frequency; from the method perspective, collaborative filtering methods are prone to amplify the bias by over-recommending popular items. It is undoubtedly critical to consider popularity bias in recommender systems, and existing work mainly eliminates the bias effect. However, we argue that not all biases in the data are bad -- some items demonstrate higher popularity because of their better intrinsic quality. Blindly pursuing unbiased learning may remove the beneficial patterns in the data, degrading the recommendation accuracy and user satisfaction. This work studies an unexplored problem in recommendation -- how to leverage popularity bias to improve the recommendation accuracy. The key lies in two aspects: how to remove the bad impact of popularity bias during training, and how to inject the desired popularity bias in the inference stage that generates top-K recommendations. This questions the causal mechanism of the recommendation generation process. Along this line, we find that item popularity plays the role of confounder between the exposed items and the observed interactions, causing the bad effect of bias amplification. To achieve our goal, we propose a new training and inference paradigm for recommendation named Popularity-bias Deconfounding and Adjusting (PDA). It removes the confounding popularity bias in model trai",
+      "url": "http://arxiv.org/abs/2105.06067v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "The Impact of Popularity Bias on Fairness and Calibration in Recommendation",
+      "authors": "Himan Abdollahpouri, Masoud Mansoury, Robin Burke, Bamshad Mobasher",
+      "year": "2019",
+      "abstract": "Recently there has been a growing interest in fairness-aware recommender systems, including fairness in providing consistent performance across different users or groups of users. A recommender system could be considered unfair if the recommendations do not fairly represent the tastes of a certain group of users while other groups receive recommendations that are consistent with their preferences. In this paper, we use a metric called miscalibration for measuring how a recommendation algorithm is responsive to users' true preferences and we consider how various algorithms may result in different degrees of miscalibration. A well-known type of bias in recommendation is popularity bias where few popular items are over-represented in recommendations, while the majority of other items do not get significant exposure. We conjecture that popularity bias is one important factor leading to miscalibration in recommendation. Our experimental results using two real-world datasets show that there is a strong correlation between how different user groups are affected by algorithmic popularity bias and their level of interest in popular items. Moreover, we show algorithms with greater popularity bias amplification tend to have greater miscalibration.",
+      "url": "http://arxiv.org/abs/1910.05755v3",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Modeling and Counteracting Exposure Bias in Recommender Systems",
+      "authors": "Sami Khenissi, Olfa Nasraoui",
+      "year": "2020",
+      "abstract": "What we discover and see online, and consequently our opinions and decisions, are becoming increasingly affected by automated machine learned predictions. Similarly, the predictive accuracy of learning machines heavily depends on the feedback data that we provide them. This mutual influence can lead to closed-loop interactions that may cause unknown biases which can be exacerbated after several iterations of machine learning predictions and user feedback. Machine-caused biases risk leading to undesirable social effects ranging from polarization to unfairness and filter bubbles. In this paper, we study the bias inherent in widely used recommendation strategies such as matrix factorization. Then we model the exposure that is borne from the interaction between the user and the recommender system and propose new debiasing strategies for these systems. Finally, we try to mitigate the recommendation system bias by engineering solutions for several state of the art recommender system models. Our results show that recommender systems are biased and depend on the prior exposure of the user. We also show that the studied bias iteratively decreases diversity in the output recommendations. Our debiasing method demonstrates the need for alternative recommendation strategies that take into account the exposure process in order to reduce bias. Our research findings show the importance of understanding the nature of and dealing with bias in machine learning models such as recommender systems",
+      "url": "http://arxiv.org/abs/2001.04832v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "A Study on Accuracy, Miscalibration, and Popularity Bias in Recommendations",
+      "authors": "Dominik Kowald, Gregor Mayr, Markus Schedl, Elisabeth Lex",
+      "year": "2023",
+      "abstract": "Recent research has suggested different metrics to measure the inconsistency of recommendation performance, including the accuracy difference between user groups, miscalibration, and popularity lift. However, a study that relates miscalibration and popularity lift to recommendation accuracy across different user groups is still missing. Additionally, it is unclear if particular genres contribute to the emergence of inconsistency in recommendation performance across user groups. In this paper, we present an analysis of these three aspects of five well-known recommendation algorithms for user groups that differ in their preference for popular content. Additionally, we study how different genres affect the inconsistency of recommendation performance, and how this is aligned with the popularity of the genres. Using data from LastFm, MovieLens, and MyAnimeList, we present two key findings. First, we find that users with little interest in popular content receive the worst recommendation accuracy, and that this is aligned with miscalibration and popularity lift. Second, our experiments show that particular genres contribute to a different extent to the inconsistency of recommendation performance, especially in terms of miscalibration in the case of the MyAnimeList dataset.",
+      "url": "http://arxiv.org/abs/2303.00400v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Popularity Degradation Bias in Local Music Recommendation",
+      "authors": "April Trainor, Douglas Turnbull",
+      "year": "2023",
+      "abstract": "In this paper, we study the effect of popularity degradation bias in the context of local music recommendations. Specifically, we examine how accurate two top-performing recommendation algorithms, Weight Relevance Matrix Factorization (WRMF) and Multinomial Variational Autoencoder (Mult-VAE), are at recommending artists as a function of artist popularity. We find that both algorithms improve recommendation performance for more popular artists and, as such, exhibit popularity degradation bias. While both algorithms produce a similar level of performance for more popular artists, Mult-VAE shows better relative performance for less popular artists. This suggests that this algorithm should be preferred for local (long-tail) music artist recommendation.",
+      "url": "http://arxiv.org/abs/2309.11671v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "The Connection Between Popularity Bias, Calibration, and Fairness in Recommendation",
+      "authors": "Himan Abdollahpouri, Masoud Mansoury, Robin Burke, Bamshad Mobasher",
+      "year": "2020",
+      "abstract": "Recently there has been a growing interest in fairness-aware recommender systems including fairness in providing consistent performance across different users or groups of users. A recommender system could be considered unfair if the recommendations do not fairly represent the tastes of a certain group of users while other groups receive recommendations that are consistent with their preferences. In this paper, we use a metric called miscalibration for measuring how a recommendation algorithm is responsive to users' true preferences and we consider how various algorithms may result in different degrees of miscalibration for different users. In particular, we conjecture that popularity bias which is a well-known phenomenon in recommendation is one important factor leading to miscalibration in recommendation. Our experimental results using two real-world datasets show that there is a connection between how different user groups are affected by algorithmic popularity bias and their level of interest in popular items. Moreover, we show that the more a group is affected by the algorithmic popularity bias, the more their recommendations are miscalibrated.",
+      "url": "http://arxiv.org/abs/2008.09273v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Reducing Popularity Bias in Recommendation Over Time",
+      "authors": "Himan Abdollahpouri, Robin Burke",
+      "year": "2019",
+      "abstract": "Many recommendation algorithms suffer from popularity bias: a small number of popular items being recommended too frequently, while other items get insufficient exposure. Research in this area so far has concentrated on a one-shot representation of this bias, and on algorithms to improve the diversity of individual recommendation lists. In this work, we take a time-sensitive view of popularity bias, in which the algorithm assesses its long-tail coverage at regular intervals, and compensates in the present moment for omissions in the past. In particular, we present a temporal version of the well-known xQuAD diversification algorithm adapted for long-tail recommendation. Experimental results on two public datasets show that our method is more effective in terms of the long-tail coverage and accuracy tradeoff compared to some other existing approaches.",
+      "url": "http://arxiv.org/abs/1906.11711v1",
+      "venue": "arXiv"
+    }
+  ],
+  "super_popularity_exposure": [
+    {
+      "title": "BSRAW: Improving Blind RAW Image Super-Resolution",
+      "authors": "Marcos V. Conde, Florin Vasluianu, Radu Timofte",
+      "year": "2023",
+      "abstract": "In smartphones and compact cameras, the Image Signal Processor (ISP) transforms the RAW sensor image into a human-readable sRGB image. Most popular super-resolution methods depart from a sRGB image and upscale it further, improving its quality. However, modeling the degradations in the sRGB domain is complicated because of the non-linear ISP transformations. Despite this known issue, only a few methods work directly with RAW images and tackle real-world sensor degradations. We tackle blind image super-resolution in the RAW domain. We design a realistic degradation pipeline tailored specifically for training models with raw sensor data. Our approach considers sensor noise, defocus, exposure, and other common issues. Our BSRAW models trained with our pipeline can upscale real-scene RAW images and improve their quality. As part of this effort, we also present a new DSLM dataset and benchmark for this task.",
+      "url": "http://arxiv.org/abs/2312.15487v1",
+      "venue": "arXiv"
+    }
+  ],
+  "federated_rec": [
+    {
+      "title": "Federated Continual Recommendation",
+      "authors": "Jaehyung Lim, Wonbin Kweon, Woojoo Kim, Junyoung Kim, Seongjin Choi, Dongha Kim, Hwanjo Yu",
+      "year": "2025",
+      "abstract": "The increasing emphasis on privacy in recommendation systems has led to the adoption of Federated Learning (FL) as a privacy-preserving solution, enabling collaborative training without sharing user data. While Federated Recommendation (FedRec) effectively protects privacy, existing methods struggle with non-stationary data streams, failing to maintain consistent recommendation quality over time. On the other hand, Continual Learning Recommendation (CLRec) methods address evolving user preferences but typically assume centralized data access, making them incompatible with FL constraints. To bridge this gap, we introduce Federated Continual Recommendation (FCRec), a novel task that integrates FedRec and CLRec, requiring models to learn from streaming data while preserving privacy. As a solution, we propose F3CRec, a framework designed to balance knowledge retention and adaptation under the strict constraints of FCRec. F3CRec introduces two key components: Adaptive Replay Memory on the client side, which selectively retains past preferences based on user-specific shifts, and Item-wise Temporal Mean on the server side, which integrates new knowledge while preserving prior information. Extensive experiments demonstrate that F3CRec outperforms existing approaches in maintaining recommendation quality over time in a federated environment.",
+      "url": "http://arxiv.org/abs/2508.04792v3",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Federated Conversational Recommender System",
+      "authors": "Allen Lin, Jianling Wang, Ziwei Zhu, James Caverlee",
+      "year": "2025",
+      "abstract": "Conversational Recommender Systems (CRSs) have become increasingly popular as a powerful tool for providing personalized recommendation experiences. By directly engaging with users in a conversational manner to learn their current and fine-grained preferences, a CRS can quickly derive recommendations that are relevant and justifiable. However, existing conversational recommendation systems (CRSs) typically rely on a centralized training and deployment process, which involves collecting and storing explicitly-communicated user preferences in a centralized repository. These fine-grained user preferences are completely human-interpretable and can easily be used to infer sensitive information (e.g., financial status, political stands, and health information) about the user, if leaked or breached. To address the user privacy concerns in CRS, we first define a set of privacy protection guidelines for preserving user privacy under the conversational recommendation setting. Based on these guidelines, we propose a novel federated conversational recommendation framework that effectively reduces the risk of exposing user privacy by (i) de-centralizing both the historical interests estimation stage and the interactive preference elicitation stage and (ii) strictly bounding privacy leakage by enforcing user-level differential privacy with meticulously selected privacy budgets. Through extensive experiments, we show that the proposed framework not only satisfies these user privacy protecti",
+      "url": "http://arxiv.org/abs/2503.00999v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "A Survey on Federated Recommendation Systems",
+      "authors": "Zehua Sun, Yonghui Xu, Yong Liu, Wei He, Lanju Kong, Fangzhao Wu, Yali Jiang, Lizhen Cui",
+      "year": "2022",
+      "abstract": "Federated learning has recently been applied to recommendation systems to protect user privacy. In federated learning settings, recommendation systems can train recommendation models only collecting the intermediate parameters instead of the real user data, which greatly enhances the user privacy. Beside, federated recommendation systems enable to collaborate with other data platforms to improve recommended model performance while meeting the regulation and privacy constraints. However, federated recommendation systems faces many new challenges such as privacy, security, heterogeneity and communication costs. While significant research has been conducted in these areas, gaps in the surveying literature still exist. In this survey, we-(1) summarize some common privacy mechanisms used in federated recommendation systems and discuss the advantages and limitations of each mechanism; (2) review some robust aggregation strategies and several novel attacks against security; (3) summarize some approaches to address heterogeneity and communication costs problems; (4)introduce some open source platforms that can be used to build federated recommendation systems; (5) present some prospective research directions in the future. This survey can guide researchers and practitioners understand the research progress in these areas.",
+      "url": "http://arxiv.org/abs/2301.00767v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Federated Unlearning for On-Device Recommendation",
+      "authors": "Wei Yuan, Hongzhi Yin, Fangzhao Wu, Shijie Zhang, Tieke He, Hao Wang",
+      "year": "2022",
+      "abstract": "The increasing data privacy concerns in recommendation systems have made federated recommendations (FedRecs) attract more and more attention. Existing FedRecs mainly focus on how to effectively and securely learn personal interests and preferences from their on-device interaction data. Still, none of them considers how to efficiently erase a user's contribution to the federated training process. We argue that such a dual setting is necessary. First, from the privacy protection perspective, ``the right to be forgotten'' requires that users have the right to withdraw their data contributions. Without the reversible ability, FedRecs risk breaking data protection regulations. On the other hand, enabling a FedRec to forget specific users can improve its robustness and resistance to malicious clients' attacks. To support user unlearning in FedRecs, we propose an efficient unlearning method FRU (Federated Recommendation Unlearning), inspired by the log-based rollback mechanism of transactions in database management systems. It removes a user's contribution by rolling back and calibrating the historical parameter updates and then uses these updates to speed up federated recommender reconstruction. However, storing all historical parameter updates on resource-constrained personal devices is challenging and even infeasible. In light of this challenge, we propose a small-sized negative sampling method to reduce the number of item embedding updates and an importance-based update selectio",
+      "url": "http://arxiv.org/abs/2210.10958v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Federated Recommendation with Additive Personalization",
+      "authors": "Zhiwei Li, Guodong Long, Tianyi Zhou",
+      "year": "2023",
+      "abstract": "Building recommendation systems via federated learning (FL) is a new emerging challenge for advancing next-generation Internet service and privacy protection. Existing approaches train shared item embedding by FL while keeping the user embedding private on client side. However, item embedding identical for all clients cannot capture users' individual differences on perceiving the same item and thus leads to poor personalization. Moreover, dense item embedding in FL results in expensive communication cost and latency. To address these challenges, we propose Federated Recommendation with Additive Personalization (FedRAP), which learns a global view of items via FL and a personalized view locally on each user. FedRAP enforces sparsity of the global view to save FL's communication cost and encourages difference between the two views through regularization. We propose an effective curriculum to learn the local and global views progressively with increasing regularization weights. To produce recommendations for an user, FedRAP adds the two views together to obtain a personalized item embedding. FedRAP achieves the best performance in FL setting on multiple benchmarks. It outperforms recent federated recommendation methods and several ablation study baselines.",
+      "url": "http://arxiv.org/abs/2301.09109v4",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Dual Personalization on Federated Recommendation",
+      "authors": "Chunxu Zhang, Guodong Long, Tianyi Zhou, Peng Yan, Zijian Zhang, Chengqi Zhang, Bo Yang",
+      "year": "2023",
+      "abstract": "Federated recommendation is a new Internet service architecture that aims to provide privacy-preserving recommendation services in federated settings. Existing solutions are used to combine distributed recommendation algorithms and privacy-preserving mechanisms. Thus it inherently takes the form of heavyweight models at the server and hinders the deployment of on-device intelligent models to end-users. This paper proposes a novel Personalized Federated Recommendation (PFedRec) framework to learn many user-specific lightweight models to be deployed on smart devices rather than a heavyweight model on a server. Moreover, we propose a new dual personalization mechanism to effectively learn fine-grained personalization on both users and items. The overall learning process is formulated into a unified federated optimization framework. Specifically, unlike previous methods that share exactly the same item embeddings across users in a federated system, dual personalization allows mild finetuning of item embeddings for each user to generate user-specific views for item representations which can be integrated into existing federated recommendation methods to gain improvements immediately. Experiments on multiple benchmark datasets have demonstrated the effectiveness of PFedRec and the dual personalization mechanism. Moreover, we provide visualizations and in-depth analysis of the personalization techniques in item embedding, which shed novel insights on the design of recommender system",
+      "url": "http://arxiv.org/abs/2301.08143v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Personalized Federated Sequential Recommender",
+      "authors": "Yicheng Di",
+      "year": "2026",
+      "abstract": "In the domain of consumer electronics, personalized sequential recommendation has emerged as a central task. Current methodologies in this field are largely centered on modeling user behavior and have achieved notable performance. Nevertheless, the inherent quadratic computational complexity typical of most existing approaches often leads to inefficiencies that hinder real-time recommendation. Moreover, these methods face challenges in being effectively adapted to the personalized requirements of users across diverse scenarios. To tackle these issues, we propose the Personalized Federated Sequential Recommender (PFSR). In this framework, an Associative Mamba Block is introduced to capture user profiles from a global perspective while improving prediction efficiency. In addition, a Variable Response Mechanism is developed to enable fine-tuning of parameters in accordance with individual user needs. A Dynamic Magnitude Loss is further devised to preserve greater amounts of localized personalized information throughout the training process.",
+      "url": "http://arxiv.org/abs/2603.22349v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "HeteFedRec: Federated Recommender Systems with Model Heterogeneity",
+      "authors": "Wei Yuan, Liang Qu, Lizhen Cui, Yongxin Tong, Xiaofang Zhou, Hongzhi Yin",
+      "year": "2023",
+      "abstract": "Owing to the nature of privacy protection, federated recommender systems (FedRecs) have garnered increasing interest in the realm of on-device recommender systems. However, most existing FedRecs only allow participating clients to collaboratively train a recommendation model of the same public parameter size. Training a model of the same size for all clients can lead to suboptimal performance since clients possess varying resources. For example, clients with limited training data may prefer to train a smaller recommendation model to avoid excessive data consumption, while clients with sufficient data would benefit from a larger model to achieve higher recommendation accuracy. To address the above challenge, this paper introduces HeteFedRec, a novel FedRec framework that enables the assignment of personalized model sizes to participants. In HeteFedRec, we present a heterogeneous recommendation model aggregation strategy, including a unified dual-task learning mechanism and a dimensional decorrelation regularization, to allow knowledge aggregation among recommender models of different sizes. Additionally, a relation-based ensemble knowledge distillation method is proposed to effectively distil knowledge from heterogeneous item embeddings. Extensive experiments conducted on three real-world recommendation datasets demonstrate the effectiveness and efficiency of HeteFedRec in training federated recommender systems under heterogeneous settings.",
+      "url": "http://arxiv.org/abs/2307.12810v3",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Blockchain-based Federated Recommendation with Incentive Mechanism",
+      "authors": "Jianhai Chen, Yanlin Wu, Dazhong Rong, Guoyao Yu, Lingqi Jiang, Zhenguang Liu, Peng Zhou, Rui Shen",
+      "year": "2024",
+      "abstract": "Nowadays, federated recommendation technology is rapidly evolving to help multiple organisations share data and train models while meeting user privacy, data security and government regulatory requirements. However, federated recommendation increases customer system costs such as power, computational and communication resources. Besides, federated recommendation systems are also susceptible to model attacks and data poisoning by participating malicious clients. Therefore, most customers are unwilling to participate in federated recommendation without any incentive. To address these problems, we propose a blockchain-based federated recommendation system with incentive mechanism to promote more trustworthy, secure, and efficient federated recommendation service. First, we construct a federated recommendation system based on NeuMF and FedAvg. Then we introduce a reverse auction mechanism to select optimal clients that can maximize the social surplus. Finally, we employ blockchain for on-chain evidence storage of models to ensure the safety of the federated recommendation system. The experimental results show that our proposed incentive mechanism can attract clients with superior training data to engage in the federal recommendation at a lower cost, which can increase the economic benefit of federal recommendation by 54.9\\% while improve the recommendation performance. Thus our work provides theoretical and technological support for the construction of a harmonious and healthy ec",
+      "url": "http://arxiv.org/abs/2409.01563v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Robust Federated Recommendation System",
+      "authors": "Chen Chen, Jingfeng Zhang, Anthony K. H. Tung, Mohan Kankanhalli, Gang Chen",
+      "year": "2020",
+      "abstract": "Federated recommendation systems can provide good performance without collecting users' private data, making them attractive. However, they are susceptible to low-cost poisoning attacks that can degrade their performance. In this paper, we develop a novel federated recommendation technique that is robust against the poisoning attack where Byzantine clients prevail. We argue that the key to Byzantine detection is monitoring of gradients of the model parameters of clients. We then propose a robust learning strategy where instead of using model parameters, the central server computes and utilizes the gradients to filter out Byzantine clients. Theoretically, we justify our robust learning strategy by our proposed definition of Byzantine resilience. Empirically, we confirm the efficacy of our robust learning strategy employing four datasets in a federated recommendation system.",
+      "url": "http://arxiv.org/abs/2006.08259v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "A Systematic Survey on Federated Sequential Recommendation",
+      "authors": "Yichen Li, Qiyu Qin, Gaoyang Zhu, Wenchao Xu, Haozhao Wang, Yuhua Li, Rui Zhang, Ruixuan Li",
+      "year": "2025",
+      "abstract": "Sequential recommendation is an advanced recommendation technique that utilizes the sequence of user behaviors to generate personalized suggestions by modeling the temporal dependencies and patterns in user preferences. However, it requires a server to centrally collect users' data, which poses a threat to the data privacy of different users. In recent years, federated learning has emerged as a distributed architecture that allows participants to train a global model while keeping their private data locally. This survey pioneers Federated Sequential Recommendation (FedSR), where each user joins as a participant in federated training to achieve a recommendation service that balances data privacy and model performance. We begin with an introduction to the background and unique challenges of FedSR. Then, we review existing solutions from two levels, each of which includes two specific techniques. Additionally, we discuss the critical challenges and future research directions in FedSR.",
+      "url": "http://arxiv.org/abs/2504.05313v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Graph Federated Learning for Personalized Privacy Recommendation",
+      "authors": "Ce Na, Kai Yang, Dengzhao Fang, Yu Li, Jingtong Gao, Chengcheng Zhu, Jiale Zhang, Xiaobing Sun, Yi Chang",
+      "year": "2025",
+      "abstract": "Federated recommendation systems (FedRecs) have gained significant attention for providing privacy-preserving recommendation services. However, existing FedRecs assume that all users have the same requirements for privacy protection, i.e., they do not upload any data to the server. The approaches overlook the potential to enhance the recommendation service by utilizing publicly available user data. In real-world applications, users can choose to be private or public. Private users' interaction data is not shared, while public users' interaction data can be shared. Inspired by the issue, this paper proposes a novel Graph Federated Learning for Personalized Privacy Recommendation (GFed-PP) that adapts to different privacy requirements while improving recommendation performance. GFed-PP incorporates the interaction data of public users to build a user-item interaction graph, which is then used to form a user relationship graph. A lightweight graph convolutional network (GCN) is employed to learn each user's user-specific personalized item embedding. To protect user privacy, each client learns the user embedding and the scoring function locally. Additionally, GFed-PP achieves optimization of the federated recommendation framework through the initialization of item embedding on clients and the aggregation of the user relationship graph on the server. Experimental results demonstrate that GFed-PP significantly outperforms existing methods for five datasets, offering superior recomm",
+      "url": "http://arxiv.org/abs/2508.06208v1",
+      "venue": "arXiv"
+    }
+  ],
+  "dp_rec": [
+    {
+      "title": "Position Paper on Simulating Privacy Dynamics in Recommender Systems",
+      "authors": "Peter Müllner, Elisabeth Lex, Dominik Kowald",
+      "year": "2021",
+      "abstract": "In this position paper, we discuss the merits of simulating privacy dynamics in recommender systems. We study this issue at hand from two perspectives: Firstly, we present a conceptual approach to integrate privacy into recommender system simulations, whose key elements are privacy agents. These agents can enhance users' profiles with different privacy preferences, e.g., their inclination to disclose data to the recommender system. Plus, they can protect users' privacy by guarding all actions that could be a threat to privacy. For example, agents can prohibit a user's privacy-threatening actions or apply privacy-enhancing techniques, e.g., Differential Privacy, to make actions less threatening. Secondly, we identify three critical topics for future research in privacy-aware recommender system simulations: (i) How could we model users' privacy preferences and protect users from performing any privacy-threatening actions? (ii) To what extent do privacy agents modify the users' document preferences? (iii) How do privacy preferences and privacy protections impact recommendations and privacy of others? Our conceptual privacy-aware simulation approach makes it possible to investigate the impact of privacy preferences and privacy protection on the micro-level, i.e., a single user, but also on the macro-level, i.e., all recommender system users. With this work, we hope to present perspectives on how privacy-aware simulations could be realized, such that they enable researchers to stu",
+      "url": "http://arxiv.org/abs/2109.06473v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Decentralized Matrix Factorization with Heterogeneous Differential Privacy",
+      "authors": "Wentao Hu, Hui Fang",
+      "year": "2022",
+      "abstract": "Conventional matrix factorization relies on centralized collection of users' data for recommendation, which might introduce an increased risk of privacy leakage especially when the recommender is untrusted. Existing differentially private matrix factorization methods either assume the recommender is trusted, or can only provide a uniform level of privacy protection for all users and items with untrusted recommender. In this paper, we propose a novel Heterogeneous Differentially Private Matrix Factorization algorithm (denoted as HDPMF) for untrusted recommender. To the best of our knowledge, we are the first to achieve heterogeneous differential privacy for decentralized matrix factorization in untrusted recommender scenario. Specifically, our framework uses modified stretching mechanism with an innovative rescaling scheme to achieve better trade off between privacy and accuracy. Meanwhile, by allocating privacy budget properly, we can capture homogeneous privacy preference within a user/item but heterogeneous privacy preference across different users/items. Theoretical analysis confirms that HDPMF renders rigorous privacy guarantee, and exhaustive experiments demonstrate its superiority especially in strong privacy guarantee, high dimension model and sparse dataset scenario.",
+      "url": "http://arxiv.org/abs/2212.00306v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Towards Differential Privacy in Sequential Recommendation: A Noisy Graph Neural Network Approach",
+      "authors": "Wentao Hu, Hui Fang",
+      "year": "2023",
+      "abstract": "With increasing frequency of high-profile privacy breaches in various online platforms, users are becoming more concerned about their privacy. And recommender system is the core component of online platforms for providing personalized service, consequently, its privacy preservation has attracted great attention. As the gold standard of privacy protection, differential privacy has been widely adopted to preserve privacy in recommender systems. However, existing differentially private recommender systems only consider static and independent interactions, so they cannot apply to sequential recommendation where behaviors are dynamic and dependent. Meanwhile, little attention has been paid on the privacy risk of sensitive user features, most of them only protect user feedbacks. In this work, we propose a novel DIfferentially Private Sequential recommendation framework with a noisy Graph Neural Network approach (denoted as DIPSGNN) to address these limitations. To the best of our knowledge, we are the first to achieve differential privacy in sequential recommendation with dependent interactions. Specifically, in DIPSGNN, we first leverage piecewise mechanism to protect sensitive user features. Then, we innovatively add calibrated noise into aggregation step of graph neural network based on aggregation perturbation mechanism. And this noisy graph neural network can protect sequentially dependent interactions and capture user preferences simultaneously. Extensive experiments demonstr",
+      "url": "http://arxiv.org/abs/2309.11515v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "The Impact of Differential Privacy on Recommendation Accuracy and Popularity Bias",
+      "authors": "Peter Müllner, Elisabeth Lex, Markus Schedl, Dominik Kowald",
+      "year": "2024",
+      "abstract": "Collaborative filtering-based recommender systems leverage vast amounts of behavioral user data, which poses severe privacy risks. Thus, often, random noise is added to the data to ensure Differential Privacy (DP). However, to date, it is not well understood, in which ways this impacts personalized recommendations. In this work, we study how DP impacts recommendation accuracy and popularity bias, when applied to the training data of state-of-the-art recommendation models. Our findings are three-fold: First, we find that nearly all users' recommendations change when DP is applied. Second, recommendation accuracy drops substantially while recommended item popularity experiences a sharp increase, suggesting that popularity bias worsens. Third, we find that DP exacerbates popularity bias more severely for users who prefer unpopular items than for users that prefer popular items.",
+      "url": "http://arxiv.org/abs/2401.03883v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Successive Point-of-Interest Recommendation with Local Differential Privacy",
+      "authors": "Jong Seon Kim, Jong Wook Kim, Yon Dohn Chung",
+      "year": "2019",
+      "abstract": "A point-of-interest (POI) recommendation system performs an important role in location-based services because it can help people to explore new locations and promote advertisers to launch advertisements at appropriate locations. The existing POI recommendation systems require raw check-in history of users, which might cause location privacy violations. Although there have been several matrix factorization (MF) based privacy-preserving recommendation systems, they can only focus on user-POI relationships without considering the human movements in check-in history. To tackle this problem, we design a successive POI recommendation framework with local differential privacy, named SPIREL. SPIREL uses two types of information derived from the check-in history as input for the factorization: a transition pattern between two POIs and the visit counts of POIs. We propose a novel objective function for learning the user-POI and POI-POI relationships simultaneously. We further integrate local differential privacy mechanisms in our proposed framework to prevent potential location privacy breaches. Experiments using four public datasets demonstrate that SPIREL achieves better POI recommendation quality while accomplishing stronger privacy protection.",
+      "url": "http://arxiv.org/abs/1908.09485v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Meta-Learning and Targeted Differential Privacy to Improve the Accuracy-Privacy Trade-off in Recommendations",
+      "authors": "Peter Müllner, Dominik Kowald, Markus Schedl, Elisabeth Lex",
+      "year": "2026",
+      "abstract": "Balancing differential privacy (DP) with recommendation accuracy is a key challenge in privacy-preserving recommender systems, since DP-noise degrades accuracy. We address this trade-off at both the data and model levels. At the data level, we apply DP only to the most stereotypical user data likely to reveal sensitive attributes, such as gender or age, to reduce unnecessary perturbation; we refer to this as targeted DP. At the model level, we use meta-learning to improve robustness to remaining DP-noise. This achieves a better trade-off between accuracy and privacy than standard approaches: Meta-learning improves accuracy and targeted DP leads to lower empirical privacy risk compared to uniformly applied DP and full DP baselines. Overall, our findings show that selectively applying DP at the data level together with meta-learning at the model level can effectively balance recommendation accuracy and user privacy.",
+      "url": "http://arxiv.org/abs/2604.26390v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Randomized algorithms for precise measurement of differentially-private, personalized recommendations",
+      "authors": "Allegra Laro, Yanqing Chen, Hao He, Babak Aghazadeh",
+      "year": "2023",
+      "abstract": "Personalized recommendations form an important part of today's internet ecosystem, helping artists and creators to reach interested users, and helping users to discover new and engaging content. However, many users today are skeptical of platforms that personalize recommendations, in part due to historically careless treatment of personal data and data privacy. Now, businesses that rely on personalized recommendations are entering a new paradigm, where many of their systems must be overhauled to be privacy-first. In this article, we propose an algorithm for personalized recommendations that facilitates both precise and differentially-private measurement. We consider advertising as an example application, and conduct offline experiments to quantify how the proposed privacy-preserving algorithm affects key metrics related to user experience, advertiser value, and platform revenue compared to the extremes of both (private) non-personalized and non-private, personalized implementations.",
+      "url": "http://arxiv.org/abs/2308.03735v3",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Differential Private Knowledge Transfer for Privacy-Preserving Cross-Domain Recommendation",
+      "authors": "Chaochao Chen, Huiwen Wu, Jiajie Su, Lingjuan Lyu, Xiaolin Zheng, Li Wang",
+      "year": "2022",
+      "abstract": "Cross Domain Recommendation (CDR) has been popularly studied to alleviate the cold-start and data sparsity problem commonly existed in recommender systems. CDR models can improve the recommendation performance of a target domain by leveraging the data of other source domains. However, most existing CDR models assume information can directly 'transfer across the bridge', ignoring the privacy issues. To solve the privacy concern in CDR, in this paper, we propose a novel two stage based privacy-preserving CDR framework (PriCDR). In the first stage, we propose two methods, i.e., Johnson-Lindenstrauss Transform (JLT) based and Sparse-awareJLT (SJLT) based, to publish the rating matrix of the source domain using differential privacy. We theoretically analyze the privacy and utility of our proposed differential privacy based rating publishing methods. In the second stage, we propose a novel heterogeneous CDR model (HeteroCDR), which uses deep auto-encoder and deep neural network to model the published source rating matrix and target rating matrix respectively. To this end, PriCDR can not only protect the data privacy of the source domain, but also alleviate the data sparsity of the source domain. We conduct experiments on two benchmark datasets and the results demonstrate the effectiveness of our proposed PriCDR and HeteroCDR.",
+      "url": "http://arxiv.org/abs/2202.04893v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "BGTplanner: Maximizing Training Accuracy for Differentially Private Federated Recommenders via Strategic Privacy Budget Allocation",
+      "authors": "Xianzhi Zhang, Yipeng Zhou, Miao Hu, Di Wu, Pengshan Liao, Mohsen Guizani, Michael Sheng",
+      "year": "2024",
+      "abstract": "To mitigate the rising concern about privacy leakage, the federated recommender (FR) paradigm emerges, in which decentralized clients co-train the recommendation model without exposing their raw user-item rating data. The differentially private federated recommender (DPFR) further enhances FR by injecting differentially private (DP) noises into clients. Yet, current DPFRs, suffering from noise distortion, cannot achieve satisfactory accuracy. Various efforts have been dedicated to improving DPFRs by adaptively allocating the privacy budget over the learning process. However, due to the intricate relation between privacy budget allocation and model accuracy, existing works are still far from maximizing DPFR accuracy. To address this challenge, we develop BGTplanner (Budget Planner) to strategically allocate the privacy budget for each round of DPFR training, improving overall training performance. Specifically, we leverage the Gaussian process regression and historical information to predict the change in recommendation accuracy with a certain allocated privacy budget. Additionally, Contextual Multi-Armed Bandit (CMAB) is harnessed to make privacy budget allocation decisions by reconciling the current improvement and long-term privacy constraints. Our extensive experimental results on real datasets demonstrate that \\emph{BGTplanner} achieves an average improvement of 6.76\\% in training performance compared to state-of-the-art baselines.",
+      "url": "http://arxiv.org/abs/2412.02934v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Centering Policy and Practice: Research Gaps around Usable Differential Privacy",
+      "authors": "Rachel Cummings, Jayshree Sarathy",
+      "year": "2024",
+      "abstract": "As a mathematically rigorous framework that has amassed a rich theoretical literature, differential privacy is considered by many experts to be the gold standard for privacy-preserving data analysis. Others argue that while differential privacy is a clean formulation in theory, it poses significant challenges in practice. Both perspectives are, in our view, valid and important. To bridge the gaps between differential privacy's promises and its real-world usability, researchers and practitioners must work together to advance policy and practice of this technology. In this paper, we outline pressing open questions towards building usable differential privacy and offer recommendations for the field, such as developing risk frameworks to align with user needs, tailoring communications for different stakeholders, modeling the impact of privacy-loss parameters, investing in effective user interfaces, and facilitating algorithmic and procedural audits of differential privacy systems.",
+      "url": "http://arxiv.org/abs/2406.12103v1",
+      "venue": "arXiv"
+    }
+  ],
+  "llm_rec": [
+    {
+      "title": "Recommender Systems in the Era of Large Language Models (LLMs)",
+      "authors": "Zihuai Zhao, Wenqi Fan, Jiatong Li, Yunqing Liu, Xiaowei Mei, Yiqi Wang, Zhen Wen, Fei Wang, Xiangyu Zhao, Jiliang Tang, Qing Li",
+      "year": "2023",
+      "abstract": "With the prosperity of e-commerce and web applications, Recommender Systems (RecSys) have become an important component of our daily life, providing personalized suggestions that cater to user preferences. While Deep Neural Networks (DNNs) have made significant advancements in enhancing recommender systems by modeling user-item interactions and incorporating textual side information, DNN-based methods still face limitations, such as difficulties in understanding users' interests and capturing textual side information, inabilities in generalizing to various recommendation scenarios and reasoning on their predictions, etc. Meanwhile, the emergence of Large Language Models (LLMs), such as ChatGPT and GPT4, has revolutionized the fields of Natural Language Processing (NLP) and Artificial Intelligence (AI), due to their remarkable abilities in fundamental responsibilities of language understanding and generation, as well as impressive generalization and reasoning capabilities. As a result, recent studies have attempted to harness the power of LLMs to enhance recommender systems. Given the rapid evolution of this research direction in recommender systems, there is a pressing need for a systematic overview that summarizes existing LLM-empowered recommender systems, to provide researchers in relevant fields with an in-depth understanding. Therefore, in this paper, we conduct a comprehensive review of LLM-empowered recommender systems from various aspects including Pre-training, Fine-",
+      "url": "http://arxiv.org/abs/2307.02046v6",
+      "venue": "arXiv"
+    },
+    {
+      "title": "LLM-Rec: Personalized Recommendation via Prompting Large Language Models",
+      "authors": "Hanjia Lyu, Song Jiang, Hanqing Zeng, Yinglong Xia, Qifan Wang, Si Zhang, Ren Chen, Christopher Leung, Jiajie Tang, Jiebo Luo",
+      "year": "2023",
+      "abstract": "Text-based recommendation holds a wide range of practical applications due to its versatility, as textual descriptions can represent nearly any type of item. However, directly employing the original item descriptions may not yield optimal recommendation performance due to the lack of comprehensive information to align with user preferences. Recent advances in large language models (LLMs) have showcased their remarkable ability to harness commonsense knowledge and reasoning. In this study, we introduce a novel approach, coined LLM-Rec, which incorporates four distinct prompting strategies of text enrichment for improving personalized text-based recommendations. Our empirical experiments reveal that using LLM-augmented text significantly enhances recommendation quality. Even basic MLP (Multi-Layer Perceptron) models achieve comparable or even better results than complex content-based methods. Notably, the success of LLM-Rec lies in its prompting strategies, which effectively tap into the language model's comprehension of both general and specific item characteristics. This highlights the importance of employing diverse prompts and input augmentation techniques to boost the recommendation effectiveness of LLMs.",
+      "url": "http://arxiv.org/abs/2307.15780v3",
+      "venue": "arXiv"
+    },
+    {
+      "title": "A Survey on Large Language Models for Recommendation",
+      "authors": "Likang Wu, Zhi Zheng, Zhaopeng Qiu, Hao Wang, Hongchao Gu, Tingjia Shen, Chuan Qin, Chen Zhu, Hengshu Zhu, Qi Liu, Hui Xiong, Enhong Chen",
+      "year": "2023",
+      "abstract": "Large Language Models (LLMs) have emerged as powerful tools in the field of Natural Language Processing (NLP) and have recently gained significant attention in the domain of Recommendation Systems (RS). These models, trained on massive amounts of data using self-supervised learning, have demonstrated remarkable success in learning universal representations and have the potential to enhance various aspects of recommendation systems by some effective transfer techniques such as fine-tuning and prompt tuning, and so on. The crucial aspect of harnessing the power of language models in enhancing recommendation quality is the utilization of their high-quality representations of textual features and their extensive coverage of external knowledge to establish correlations between items and users. To provide a comprehensive understanding of the existing LLM-based recommendation systems, this survey presents a taxonomy that categorizes these models into two major paradigms, respectively Discriminative LLM for Recommendation (DLLM4Rec) and Generative LLM for Recommendation (GLLM4Rec), with the latter being systematically sorted out for the first time. Furthermore, we systematically review and analyze existing LLM-based recommendation systems within each paradigm, providing insights into their methodologies, techniques, and performance. Additionally, we identify key challenges and several valuable findings to provide researchers and practitioners with inspiration. We have also created a ",
+      "url": "http://arxiv.org/abs/2305.19860v5",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Large Language Model Driven Recommendation",
+      "authors": "Anton Korikov, Scott Sanner, Yashar Deldjoo, Zhankui He, Julian McAuley, Arnau Ramisa, Rene Vidal, Mahesh Sathiamoorthy, Atoosa Kasrizadeh, Silvia Milano, Francesco Ricci",
+      "year": "2024",
+      "abstract": "While previous chapters focused on recommendation systems (RSs) based on standardized, non-verbal user feedback such as purchases, views, and clicks -- the advent of LLMs has unlocked the use of natural language (NL) interactions for recommendation. This chapter discusses how LLMs' abilities for general NL reasoning present novel opportunities to build highly personalized RSs -- which can effectively connect nuanced and diverse user preferences to items, potentially via interactive dialogues. To begin this discussion, we first present a taxonomy of the key data sources for language-driven recommendation, covering item descriptions, user-system interactions, and user profiles. We then proceed to fundamental techniques for LLM recommendation, reviewing the use of encoder-only and autoregressive LLM recommendation in both tuned and untuned settings. Afterwards, we move to multi-module recommendation architectures in which LLMs interact with components such as retrievers and RSs in multi-stage pipelines. This brings us to architectures for conversational recommender systems (CRSs), in which LLMs facilitate multi-turn dialogues where each turn presents an opportunity not only to make recommendations, but also to engage with the user in interactive preference elicitation, critiquing, and question-answering.",
+      "url": "http://arxiv.org/abs/2408.10946v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "On Explaining Recommendations with Large Language Models: A Review",
+      "authors": "Alan Said",
+      "year": "2024",
+      "abstract": "The rise of Large Language Models (LLMs), such as LLaMA and ChatGPT, has opened new opportunities for enhancing recommender systems through improved explainability. This paper provides a systematic literature review focused on leveraging LLMs to generate explanations for recommendations -- a critical aspect for fostering transparency and user trust. We conducted a comprehensive search within the ACM Guide to Computing Literature, covering publications from the launch of ChatGPT (November 2022) to the present (November 2024). Our search yielded 232 articles, but after applying inclusion criteria, only six were identified as directly addressing the use of LLMs in explaining recommendations. This scarcity highlights that, despite the rise of LLMs, their application in explainable recommender systems is still in an early stage. We analyze these select studies to understand current methodologies, identify challenges, and suggest directions for future research. Our findings underscore the potential of LLMs improving explanations of recommender systems and encourage the development of more transparent and user-centric recommendation explanation solutions.",
+      "url": "http://arxiv.org/abs/2411.19576v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "GenRec: Large Language Model for Generative Recommendation",
+      "authors": "Jianchao Ji, Zelong Li, Shuyuan Xu, Wenyue Hua, Yingqiang Ge, Juntao Tan, Yongfeng Zhang",
+      "year": "2023",
+      "abstract": "In recent years, large language models (LLM) have emerged as powerful tools for diverse natural language processing tasks. However, their potential for recommender systems under the generative recommendation paradigm remains relatively unexplored. This paper presents an innovative approach to recommendation systems using large language models (LLMs) based on text data. In this paper, we present a novel LLM for generative recommendation (GenRec) that utilized the expressive power of LLM to directly generate the target item to recommend, rather than calculating ranking score for each candidate item one by one as in traditional discriminative recommendation. GenRec uses LLM's understanding ability to interpret context, learn user preferences, and generate relevant recommendation. Our proposed approach leverages the vast knowledge encoded in large language models to accomplish recommendation tasks. We first we formulate specialized prompts to enhance the ability of LLM to comprehend recommendation tasks. Subsequently, we use these prompts to fine-tune the LLaMA backbone LLM on a dataset of user-item interactions, represented by textual data, to capture user preferences and item characteristics. Our research underscores the potential of LLM-based generative recommendation in revolutionizing the domain of recommendation systems and offers a foundational framework for future explorations in this field. We conduct extensive experiments on benchmark datasets, and the experiments shows",
+      "url": "http://arxiv.org/abs/2307.00457v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "GR-LLMs: Recent Advances in Generative Recommendation Based on Large Language Models",
+      "authors": "Zhen Yang, Haitao Lin, Jiawei xue, Ziji Zhang",
+      "year": "2025",
+      "abstract": "In the past year, Generative Recommendations (GRs) have undergone substantial advancements, especially in leveraging the powerful sequence modeling and reasoning capabilities of Large Language Models (LLMs) to enhance overall recommendation performance. LLM-based GRs are forming a new paradigm that is distinctly different from discriminative recommendations, showing strong potential to replace traditional recommendation systems heavily dependent on complex hand-crafted features. In this paper, we provide a comprehensive survey aimed at facilitating further research of LLM-based GRs. Initially, we outline the general preliminaries and application cases of LLM-based GRs. Subsequently, we introduce the main considerations when LLM-based GRs are applied in real industrial scenarios. Finally, we explore promising directions for LLM-based GRs. We hope that this survey contributes to the ongoing advancement of the GR domain.",
+      "url": "http://arxiv.org/abs/2507.06507v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Large Language Models are Not Stable Recommender Systems",
+      "authors": "Tianhui Ma, Yuan Cheng, Hengshu Zhu, Hui Xiong",
+      "year": "2023",
+      "abstract": "With the significant successes of large language models (LLMs) in many natural language processing tasks, there is growing interest among researchers in exploring LLMs for novel recommender systems. However, we have observed that directly using LLMs as a recommender system is usually unstable due to its inherent position bias. To this end, we introduce exploratory research and find consistent patterns of positional bias in LLMs that influence the performance of recommendation across a range of scenarios. Then, we propose a Bayesian probabilistic framework, STELLA (Stable LLM for Recommendation), which involves a two-stage pipeline. During the first probing stage, we identify patterns in a transition matrix using a probing detection dataset. And in the second recommendation stage, a Bayesian strategy is employed to adjust the biased output of LLMs with an entropy indicator. Therefore, our framework can capitalize on existing pattern information to calibrate instability of LLMs, and enhance recommendation performance. Finally, extensive experiments clearly validate the effectiveness of our framework.",
+      "url": "http://arxiv.org/abs/2312.15746v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Aligning Large Language Models with Recommendation Knowledge",
+      "authors": "Yuwei Cao, Nikhil Mehta, Xinyang Yi, Raghunandan Keshavan, Lukasz Heldt, Lichan Hong, Ed H. Chi, Maheswaran Sathiamoorthy",
+      "year": "2024",
+      "abstract": "Large language models (LLMs) have recently been used as backbones for recommender systems. However, their performance often lags behind conventional methods in standard tasks like retrieval. We attribute this to a mismatch between LLMs' knowledge and the knowledge crucial for effective recommendations. While LLMs excel at natural language reasoning, they cannot model complex user-item interactions inherent in recommendation tasks. We propose bridging the knowledge gap and equipping LLMs with recommendation-specific knowledge to address this. Operations such as Masked Item Modeling (MIM) and Bayesian Personalized Ranking (BPR) have found success in conventional recommender systems. Inspired by this, we simulate these operations through natural language to generate auxiliary-task data samples that encode item correlations and user preferences. Fine-tuning LLMs on such auxiliary-task data samples and incorporating more informative recommendation-task data samples facilitates the injection of recommendation-specific knowledge into LLMs. Extensive experiments across retrieval, ranking, and rating prediction tasks on LLMs such as FLAN-T5-Base and FLAN-T5-XL show the effectiveness of our technique in domains such as Amazon Toys & Games, Beauty, and Sports & Outdoors. Notably, our method outperforms conventional and LLM-based baselines, including the current SOTA, by significant margins in retrieval, showcasing its potential for enhancing recommendation quality.",
+      "url": "http://arxiv.org/abs/2404.00245v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Leveraging Large Language Models for Sequential Recommendation",
+      "authors": "Jesse Harte, Wouter Zorgdrager, Panos Louridas, Asterios Katsifodimos, Dietmar Jannach, Marios Fragkoulis",
+      "year": "2023",
+      "abstract": "Sequential recommendation problems have received increasing attention in research during the past few years, leading to the inception of a large variety of algorithmic approaches. In this work, we explore how large language models (LLMs), which are nowadays introducing disruptive effects in many AI-based applications, can be used to build or improve sequential recommendation approaches. Specifically, we devise and evaluate three approaches to leverage the power of LLMs in different ways. Our results from experiments on two datasets show that initializing the state-of-the-art sequential recommendation model BERT4Rec with embeddings obtained from an LLM improves NDCG by 15-20% compared to the vanilla BERT4Rec model. Furthermore, we find that a simple approach that leverages LLM embeddings for producing recommendations, can provide competitive performance by highlighting semantically related items. We publicly share the code and data of our experiments to ensure reproducibility.",
+      "url": "http://arxiv.org/abs/2309.09261v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Cognitive Biases in Large Language Models for News Recommendation",
+      "authors": "Yougang Lyu, Xiaoyu Zhang, Zhaochun Ren, Maarten de Rijke",
+      "year": "2024",
+      "abstract": "Despite large language models (LLMs) increasingly becoming important components of news recommender systems, employing LLMs in such systems introduces new risks, such as the influence of cognitive biases in LLMs. Cognitive biases refer to systematic patterns of deviation from norms or rationality in the judgment process, which can result in inaccurate outputs from LLMs, thus threatening the reliability of news recommender systems. Specifically, LLM-based news recommender systems affected by cognitive biases could lead to the propagation of misinformation, reinforcement of stereotypes, and the formation of echo chambers. In this paper, we explore the potential impact of multiple cognitive biases on LLM-based news recommender systems, including anchoring bias, framing bias, status quo bias and group attribution bias. Furthermore, to facilitate future research at improving the reliability of LLM-based news recommender systems, we discuss strategies to mitigate these biases through data augmentation, prompt engineering and learning algorithms aspects.",
+      "url": "http://arxiv.org/abs/2410.02897v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "The Application of Large Language Models in Recommendation Systems",
+      "authors": "Peiyang Yu, Zeqiu Xu, Jiani Wang, Xiaochuan Xu",
+      "year": "2025",
+      "abstract": "The integration of Large Language Models into recommendation frameworks presents key advantages for personalization and adaptability of experiences to the users. Classic methods of recommendations, such as collaborative filtering and content-based filtering, are seriously limited in the solution of cold-start problems, sparsity of data, and lack of diversity in information considered. LLMs, of which GPT-4 is a good example, have emerged as powerful tools that enable recommendation frameworks to tap into unstructured data sources such as user reviews, social interactions, and text-based content. By analyzing these data sources, LLMs improve the accuracy and relevance of recommendations, thereby overcoming some of the limitations of traditional approaches. This work discusses applications of LLMs in recommendation systems, especially in electronic commerce, social media platforms, streaming services, and educational technologies. This showcases how LLMs enrich recommendation diversity, user engagement, and the system's adaptability; yet it also looks into the challenges connected to their technical implementation. This can also be presented as a study that shows the potential of LLMs for changing user experiences and making innovation possible in industries.",
+      "url": "http://arxiv.org/abs/2501.02178v2",
+      "venue": "arXiv"
+    }
+  ],
+  "multi_obj_fair": [
+    {
+      "title": "Fairness and Diversity in Recommender Systems: A Survey",
+      "authors": "Yuying Zhao, Yu Wang, Yunchao Liu, Xueqi Cheng, Charu Aggarwal, Tyler Derr",
+      "year": "2023",
+      "abstract": "Recommender systems are effective tools for mitigating information overload and have seen extensive applications across various domains. However, the single focus on utility goals proves to be inadequate in addressing real-world concerns, leading to increasing attention to fairness-aware and diversity-aware recommender systems. While most existing studies explore fairness and diversity independently, we identify strong connections between these two domains. In this survey, we first discuss each of them individually and then dive into their connections. Additionally, motivated by the concepts of user-level and item-level fairness, we broaden the understanding of diversity to encompass not only the item level but also the user level. With this expanded perspective on user and item-level diversity, we re-interpret fairness studies from the viewpoint of diversity. This fresh perspective enhances our understanding of fairness-related work and paves the way for potential future research directions. Papers discussed in this survey along with public code links are available at https://github.com/YuyingZhao/Awesome-Fairness-and-Diversity-Papers-in-Recommender-Systems .",
+      "url": "http://arxiv.org/abs/2307.04644v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Multi-FR: A Multi-objective Optimization Framework for Multi-stakeholder Fairness-aware Recommendation",
+      "authors": "Haolun Wu, Chen Ma, Bhaskar Mitra, Fernando Diaz, Xue Liu",
+      "year": "2021",
+      "abstract": "Nowadays, most online services are hosted on multi-stakeholder marketplaces, where consumers and producers may have different objectives. Conventional recommendation systems, however, mainly focus on maximizing consumers' satisfaction by recommending the most relevant items to each individual. This may result in unfair exposure of items, thus jeopardizing producer benefits. Additionally, they do not care whether consumers from diverse demographic groups are equally satisfied. To address these limitations, we propose a multi-objective optimization framework for fairness-aware recommendation, Multi-FR, that adaptively balances accuracy and fairness for various stakeholders with Pareto optimality guarantee. We first propose four fairness constraints on consumers and producers. In order to train the whole framework in an end-to-end way, we utilize the smooth rank and stochastic ranking policy to make these fairness criteria differentiable and friendly to back-propagation. Then, we adopt the multiple gradient descent algorithm to generate a Pareto set of solutions, from which the most appropriate one is selected by the Least Misery Strategy. The experimental results demonstrate that Multi-FR largely improves recommendation fairness on multiple stakeholders over the state-of-the-art approaches while maintaining almost the same recommendation accuracy. The training efficiency study confirms our model's ability to simultaneously optimize different fairness constraints for many stakeh",
+      "url": "http://arxiv.org/abs/2105.02951v3",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Multi-Objective Recommendations: A Tutorial",
+      "authors": "Yong Zheng,  David,  Wang",
+      "year": "2021",
+      "abstract": "Recommender systems (RecSys) have been well developed to assist user decision making. Traditional RecSys usually optimize a single objective (e.g., rating prediction errors or ranking quality) in the model. There is an emerging demand in multi-objective optimization recently in RecSys, especially in the area of multi-stakeholder and multi-task recommender systems. This article provides an overview of multi-objective recommendations, followed by the discussions with case studies. The document is considered as a supplementary material for our tutorial on multi-objective recommendations at ACM SIGKDD 2021.",
+      "url": "http://arxiv.org/abs/2108.06367v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "FAIR-MATCH: A Multi-Objective Framework for Bias Mitigation in Reciprocal Dating Recommendations",
+      "authors": "Madhav Kotecha",
+      "year": "2025",
+      "abstract": "Online dating platforms have fundamentally transformed the formation of romantic relationships, with millions of users worldwide relying on algorithmic matching systems to find compatible partners. However, current recommendation systems in dating applications suffer from significant algorithmic deficiencies, including but not limited to popularity bias, filter bubble effects, and inadequate reciprocity modeling that limit effectiveness and introduce harmful biases. This research integrates foundational work with recent empirical findings to deliver a detailed analysis of dating app recommendation systems, highlighting key issues and suggesting research-backed solutions. Through analysis of reciprocal recommendation frameworks, fairness evaluation metrics, and industry implementations, we demonstrate that current systems achieve modest performance with collaborative filtering reaching 25.1\\% while reciprocal methods achieve 28.7\\%. Our proposed mathematical framework addresses these limitations through enhanced similarity measures, multi-objective optimization, and fairness-aware algorithms that maintain competitive accuracy while improving demographic representation to reduce algorithmic bias.",
+      "url": "http://arxiv.org/abs/2507.01063v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Choosing the Best of Both Worlds: Diverse and Novel Recommendations through Multi-Objective Reinforcement Learning",
+      "authors": "Dusan Stamenkovic, Alexandros Karatzoglou, Ioannis Arapakis, Xin Xin, Kleomenis Katevas",
+      "year": "2021",
+      "abstract": "Since the inception of Recommender Systems (RS), the accuracy of the recommendations in terms of relevance has been the golden criterion for evaluating the quality of RS algorithms. However, by focusing on item relevance, one pays a significant price in terms of other important metrics: users get stuck in a \"filter bubble\" and their array of options is significantly reduced, hence degrading the quality of the user experience and leading to churn. Recommendation, and in particular session-based/sequential recommendation, is a complex task with multiple - and often conflicting objectives - that existing state-of-the-art approaches fail to address. In this work, we take on the aforementioned challenge and introduce Scalarized Multi-Objective Reinforcement Learning (SMORL) for the RS setting, a novel Reinforcement Learning (RL) framework that can effectively address multi-objective recommendation tasks. The proposed SMORL agent augments standard recommendation models with additional RL layers that enforce it to simultaneously satisfy three principal objectives: accuracy, diversity, and novelty of recommendations. We integrate this framework with four state-of-the-art session-based recommendation models and compare it with a single-objective RL agent that only focuses on accuracy. Our experimental results on two real-world datasets reveal a substantial increase in aggregate diversity, a moderate increase in accuracy, reduced repetitiveness of recommendations, and demonstrate the i",
+      "url": "http://arxiv.org/abs/2110.15097v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "User and Recommender Behavior Over Time: Contextualizing Activity, Effectiveness, Diversity, and Fairness in Book Recommendation",
+      "authors": "Samira Vaez Barenji, Sushobhan Parajuli, Michael D. Ekstrand",
+      "year": "2025",
+      "abstract": "Data is an essential resource for studying recommender systems. While there has been significant work on improving and evaluating state-of-the-art models and measuring various properties of recommender system outputs, less attention has been given to the data itself, particularly how data has changed over time. Such documentation and analysis provide guidance and context for designing and evaluating recommender systems, particularly for evaluation designs making use of time (e.g., temporal splitting). In this paper, we present a temporal explanatory analysis of the UCSD Book Graph dataset scraped from Goodreads, a social reading and recommendation platform active since 2006. We measure the book interaction data using a set of activity, diversity, and fairness metrics; we then train a set of collaborative filtering algorithms on rolling training windows to observe how the same measures evolve over time in the recommendations. Additionally, we explore whether the introduction of algorithmic recommendations in 2011 was followed by observable changes in user or recommender system behavior.",
+      "url": "http://arxiv.org/abs/2505.04518v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Multisided Fairness for Recommendation",
+      "authors": "Robin Burke",
+      "year": "2017",
+      "abstract": "Recent work on machine learning has begun to consider issues of fairness. In this paper, we extend the concept of fairness to recommendation. In particular, we show that in some recommendation contexts, fairness may be a multisided concept, in which fair outcomes for multiple individuals need to be considered. Based on these considerations, we present a taxonomy of classes of fairness-aware recommender systems and suggest possible fairness-aware recommendation architectures.",
+      "url": "http://arxiv.org/abs/1707.00093v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Fairness and Diversity in the Recommendation and Ranking of Participatory Media Content",
+      "authors": " Muskaan, Mehak Preet Dhaliwal, Aaditeshwar Seth",
+      "year": "2019",
+      "abstract": "Online participatory media platforms that enable one-to-many communication among users, see a significant amount of user generated content and consequently face a problem of being able to recommend a subset of this content to its users. We address the problem of recommending and ranking this content such that different viewpoints about a topic get exposure in a fair and diverse manner. We build our model in the context of a voice-based participatory media platform running in rural central India, for low-income and less-literate communities, that plays audio messages in a ranked list to users over a phone call and allows them to contribute their own messages. In this paper, we describe our model and evaluate it using call-logs from the platform, to compare the fairness and diversity performance of our model with the manual editorial processes currently being followed. Our models are generic and can be adapted and applied to other participatory media platforms as well.",
+      "url": "http://arxiv.org/abs/1907.07253v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "MoParkeR : Multi-objective Parking Recommendation",
+      "authors": "Mohammad Saiedur Rahaman, Wei Shao, Flora D. Salim, Ayad Turky, Andy Song, Jeffrey Chan, Junliang Jiang, Doug Bradbrook",
+      "year": "2021",
+      "abstract": "Existing parking recommendation solutions mainly focus on finding and suggesting parking spaces based on the unoccupied options only. However, there are other factors associated with parking spaces that can influence someone's choice of parking such as fare, parking rule, walking distance to destination, travel time, likelihood to be unoccupied at a given time. More importantly, these factors may change over time and conflict with each other which makes the recommendations produced by current parking recommender systems ineffective. In this paper, we propose a novel problem called multi-objective parking recommendation. We present a solution by designing a multi-objective parking recommendation engine called MoParkeR that considers various conflicting factors together. Specifically, we utilise a non-dominated sorting technique to calculate a set of Pareto-optimal solutions, consisting of recommended trade-off parking spots. We conduct extensive experiments using two real-world datasets to show the applicability of our multi-objective recommendation methodology.",
+      "url": "http://arxiv.org/abs/2106.07384v1",
+      "venue": "arXiv"
+    },
+    {
+      "title": "A Survey on the Fairness of Recommender Systems",
+      "authors": "Yifan Wang, Weizhi Ma, Min Zhang, Yiqun Liu, Shaoping Ma",
+      "year": "2022",
+      "abstract": "Recommender systems are an essential tool to relieve the information overload challenge and play an important role in people's daily lives. Since recommendations involve allocations of social resources (e.g., job recommendation), an important issue is whether recommendations are fair. Unfair recommendations are not only unethical but also harm the long-term interests of the recommender system itself. As a result, fairness issues in recommender systems have recently attracted increasing attention. However, due to multiple complex resource allocation processes and various fairness definitions, the research on fairness in recommendation is scattered. To fill this gap, we review over 60 papers published in top conferences/journals, including TOIS, SIGIR, and WWW. First, we summarize fairness definitions in the recommendation and provide several views to classify fairness issues. Then, we review recommendation datasets and measurements in fairness studies and provide an elaborate taxonomy of fairness methods in the recommendation. Finally, we conclude this survey by outlining some promising future directions.",
+      "url": "http://arxiv.org/abs/2206.03761v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Explainable Fairness in Recommendation",
+      "authors": "Yingqiang Ge, Juntao Tan, Yan Zhu, Yinglong Xia, Jiebo Luo, Shuchang Liu, Zuohui Fu, Shijie Geng, Zelong Li, Yongfeng Zhang",
+      "year": "2022",
+      "abstract": "Existing research on fairness-aware recommendation has mainly focused on the quantification of fairness and the development of fair recommendation models, neither of which studies a more substantial problem--identifying the underlying reason of model disparity in recommendation. This information is critical for recommender system designers to understand the intrinsic recommendation mechanism and provides insights on how to improve model fairness to decision makers. Fortunately, with the rapid development of Explainable AI, we can use model explainability to gain insights into model (un)fairness. In this paper, we study the problem of explainable fairness, which helps to gain insights about why a system is fair or unfair, and guides the design of fair recommender systems with a more informed and unified methodology. Particularly, we focus on a common setting with feature-aware recommendation and exposure unfairness, but the proposed explainable fairness framework is general and can be applied to other recommendation settings and fairness definitions. We propose a Counterfactual Explainable Fairness framework, called CEF, which generates explanations about model fairness that can improve the fairness without significantly hurting the performance.The CEF framework formulates an optimization problem to learn the \"minimal\" change of the input features that changes the recommendation results to a certain level of fairness. Based on the counterfactual recommendation result of each f",
+      "url": "http://arxiv.org/abs/2204.11159v2",
+      "venue": "arXiv"
+    },
+    {
+      "title": "Is ChatGPT Fair for Recommendation? Evaluating Fairness in Large Language Model Recommendation",
+      "authors": "Jizhi Zhang, Keqin Bao, Yang Zhang, Wenjie Wang, Fuli Feng, Xiangnan He",
+      "year": "2023",
+      "abstract": "The remarkable achievements of Large Language Models (LLMs) have led to the emergence of a novel recommendation paradigm -- Recommendation via LLM (RecLLM). Nevertheless, it is important to note that LLMs may contain social prejudices, and therefore, the fairness of recommendations made by RecLLM requires further investigation. To avoid the potential risks of RecLLM, it is imperative to evaluate the fairness of RecLLM with respect to various sensitive attributes on the user side. Due to the differences between the RecLLM paradigm and the traditional recommendation paradigm, it is problematic to directly use the fairness benchmark of traditional recommendation. To address the dilemma, we propose a novel benchmark called Fairness of Recommendation via LLM (FaiRLLM). This benchmark comprises carefully crafted metrics and a dataset that accounts for eight sensitive attributes1 in two recommendation scenarios: music and movies. By utilizing our FaiRLLM benchmark, we conducted an evaluation of ChatGPT and discovered that it still exhibits unfairness to some sensitive attributes when generating recommendations. Our code and dataset can be found at https://github.com/jizhi-zhang/FaiRLLM.",
+      "url": "http://arxiv.org/abs/2305.07609v4",
+      "venue": "arXiv"
+    }
+  ]
+}

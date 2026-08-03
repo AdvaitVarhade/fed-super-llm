@@ -1,0 +1,36 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+FIGURE 2. Rmse-PC results of the popularity-debiasing methods for the HPF, NeuMF, SKMeans, VaeCF, and WBPR algorithms on the (a) ML, (b) DB, and
+(c) Yelp datasets. Statistical significance is indicated using star notation, where (*), (**), and (***) denote p < 0.05, p < 0.01, and p < 0.001, respectively,
+based on paired Wilcoxon signed-rank tests across seeds; stars correspond to SUPER versus the second-best debiasing method for the corresponding
+setting. Stars are shown only when SUPER is the best-performing method in that setting; otherwise no star is displayed.
+FIGURE 3. MRMC results of the popularity-debiasing methods for the HPF, NeuMF, SKMeans, VaeCF, and WBPR algorithms on the (a) ML, (b) DB, and
+(c) Yelp datasets. Statistical significance is indicated using star notation, where (*), (**), and (***) denote p < 0.05, p < 0.01, and p < 0.001, respectively,
+based on paired Wilcoxon signed-rank tests across seeds; stars correspond to SUPER versus the second-best debiasing method for the corresponding
+setting. Stars are shown only when SUPER is the best-performing method in that setting; otherwise no star is displayed.
+matches a user’s historical inclinations, MRMC examines
+whether that alignment holds consistently across the recom-
+mended ranks.
+A global view of these metrics, presented in Figure 2 for
+Rmse-PC and Figure 3 for MRMC, indicates that SUPER
+achieves consistently lower calibration errors than a broad
+spectrum of popularity-debiasing strategies. Our experimen-
+tal benchmark covers (i) re-ranking-based debiasing methods
+(AUG, MUL, VaR), (ii) representation- or causality-driven
+approaches (CausE, DICE, MACR), and (iii) user-aware
+optimization frameworks (PDRO, PPAC,CausalEPP).
+Although PDRO and PPAC explicitly model robustness or
+personalized calibration objectives, their empirical behavior
+reveals notable calibration instability. Across all datasets and
+backbone recommenders, these methods frequently exhibit
+substantially higher Rmse-PC values, indicating difficulties
+in aligning recommendation popularity with users’ historical
+tendencies. The gap becomes even more pronounced under
+the rank-sensitive MRMC metric, where both methods
+often produce markedly elevated miscalibration scores. This
+pattern suggests that optimizing for distributional robustness
+or adaptive weighting alone may not sufficiently regulate
+where exposure occurs within the ranked list.
+Similarly, while CausalEPP introduces a causal perspec-
+tive by penalizing exposure-driven popularity signals, its
+calibration performance remains less stable than that of
+37594 VOLUME 14, 2026

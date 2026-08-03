@@ -1,0 +1,108 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+Identifiability Consideration: We emphasize that recov-
+ering a user’s causal preference for popularity from
+observational interaction logs is fundamentally challenging
+in the absence of impression or exposure data. Histor-
+ical interactions may reflect not only genuine interest
+but also visibility effects, position bias, and popularity
+reinforcement.
+Accordingly, SUPER does not interpret the estimated
+popularity inclination as a ground-truth latent preference.
+Instead, it is treated as a behavioral proxy that serves as
+an operational calibration signal for controlling head–tail
+exposure at the user level. This perspective aligns with
+the standard offline evaluation setting commonly adopted
+in popularity-bias research, where behavioral interaction
+patterns are used as practical estimators of user tendencies
+when exposure logs are unavailable.
+D. CONSTRUCTING THE FINAL TOP-N
+RECOMMENDATIONS
+With the user-specific inclination Popu in hand, we produce
+the final top-N recommendation list by proportionally
+blending items predicted by the popular-only and tail-only
+models. The code provided in the integration phase performs
+the following steps:
+1) Generate Predictions Separately: Using the previ-
+ously trained models, we produce two sets of rating
+predictions for each user:
+• Popular Predictions: From the popular-only
+model.
+• Tail Predictions: From the tail-only model.
+2) Determine User’s Proportion for Popular and Tail
+Items: Given the user’s popularity inclination Popu,
+we translate this ratio into a distribution for the final
+top-N list. For a top-N size (e.g., N=10), if Popu =
+0.3, we select N × 0.3 = 3 items from the popular
+predictions and N × 0.7 = 7 items from the tail
+predictions.
+3) Selecting the Top Items: Using the post-processing
+approach in Algorithm 2, we first compute Npop =
+⌊N × Popu⌋ and Ntail = N − Npop. We then rank
+the items predicted by Mpop in descending order and
+choose the top Npop. Similarly, we rank the items pre-
+dicted by Mtail in descending order and select the top
+Ntail. By adhering to these user-specific proportions,
+we ensure that each final recommendation list reflects
+both the user’s inclination toward mainstream versus
+niche content, and the system’s objective of blending
+popular and tail items in a balanced manner.
+4) Combine and Output the Final Recommendations:
+Rather than simply concatenating popular and tail
+selections in a static proportion, we follow a blueprint-
+based merge that respects how the user historically
+alternates between head and tail items. Specifically,
+we retrieve the user’s real rating list Lu, sorted by
+descending preference, and note the positions at which
+Algorithm 1 SUPER Pre-Processing
+Require: Dataset D (columns {user_id, item_id, . . .}),
+Pareto threshold α (e.g., 0.20)
+Ensure: Partitioned sets (D pop, Dtail) and trained models
+(Mpop, Mtail)
+1: threshold ← D.shape[0] × α ▷ Compute
+interaction-volume threshold for head vs. tail
+2: counts ← count item_id frequencies in D ▷ Number of
+user interactions per item
+3: sorted_counts ← sort(Counts, Desc) ▷ Rank items from
+most to least popular
+4: popular_items, long-tail_items ← ∅
+5: total_ratings ← 0
+6: for (item_id, count) ∈ sorted_counts do
+7: total_ratings ← total_ratings + count
+8: if total_ratings < threshold then
+9: popular_items.append(item_id)
+10: else
+11: long-tail_items.append(item_id)
+12: end if
+13: end for
+14: Dpop ← Filter(D, popular_items) ▷ All records for
+items deemed popular
+15: Dtail ← Filter(D, long-tail_items) ▷ All records for
+items deemed less popular
+16: Mpop ← Train(Dpop) ▷ Model specialized for head
+items
+17: Mtail ← Train(Dtail) ▷ Model specialized for tail items
+return (Dpop, Dtail, Mpop, Mtail)
+Note: The Pareto threshold is defined over cumulative
+interaction volume rather than item count, ensuring
+that the head set captures the items responsible for the
+majority of observed user activity.
+the user has historically consumed popular (head )
+items versus those for which the user has opted for
+niche (tail) options. Here, Lu is constructed exclusively
+from the user’s observed historical interactions in the
+training data and contains only items that the user
+has actually rated or interacted with; it never includes
+unrated or test-only items. For each position in the
+top-N list, we then pull the highest-scoring candidate
+from the popular or tail pool based on whether that
+position is designated as head or tail in the user’s
+original consumption pattern. This step ensures that
+each user’s final top-N recommendations align with
+their personal ratio of head-to-tail items, reflecting
+the user’s observed behavioral transitions between
+popular and niche content rather than enforcing a
+uniform, one-size-fits-all allocation. As a result, the
+system delivers a more accurate and user-centric
+experience, reflecting individual popularity inclina-
+tion while maintaining diverse coverage. Crucially,
+VOLUME 14, 2026 37587

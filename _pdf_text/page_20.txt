@@ -1,0 +1,109 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+In practical terms, these findings position SUPER as a
+robust and versatile debiasing framework for real-world
+recommendation systems. Rather than optimizing a sin-
+gle dimension in isolation, SUPER delivers stable and
+well-balanced performance across multiple evaluation crite-
+ria, ensuring that personalization, diversity, and alignment
+with users’ observed popularity tendencies are jointly
+preserved.
+Finally, all evaluations are conducted under a static offline
+setting using fixed historical interaction data, which is the
+standard protocol adopted in popularity-bias and calibration
+research; consequently, dynamic popularity adaptation and
+real-time preference drift are intentionally outside the scope
+of this study. Future work may therefore explore adaptive
+exposure regulation under dynamic interaction environments.
+Additional Remarks:
+The popularity inclination proxy (Pop u) in SUPER is
+computed from the user’s full interaction history to capture
+overall exposure tendencies toward popular versus tail
+items. Evaluation metrics such as RMSE-PC, on the other
+hand, focus on positively perceived items. This distinction
+allows the framework to model exposure calibration while
+preserving preference-oriented evaluation.
+The blueprint used in the merging stage is derived from
+preference-ranked interactions rather than chronological
+order. This design aims to provide a stable representation of
+user preference structure, especially in public datasets where
+timestamp information may be incomplete or inconsistent.
+Finally, the GKPI indicator is intended as a compact
+comparative summary of multiple evaluation dimensions
+within the same experimental setting. Individual metrics
+remain the primary basis for interpretation, while GKPI
+highlights the overall balance between accuracy and long-tail
+exposure.
+J. KEY OBSERVATIONS AND IMPLICATIONS
+The experimental findings collectively emphasize that
+popularity debiasing is most effective when treated as
+a user-centric calibration problem rather than a purely
+system-level exposure optimization task. Instead of enforcing
+uniform head–tail ratios or aggressive long-tail promotion
+across all users, SUPER demonstrates that aligning recom-
+mendation exposure with individual popularity inclinations
+leads to a more stable and interpretable trade-off among
+accuracy, diversity, and fairness objectives.
+A key implication of these results is that strong calibration
+does not necessarily conflict with beyond-accuracy goals.
+By dynamically adjusting the head–tail composition during
+list construction, SUPER achieves meaningful improvements
+in long-tail exposure, diversity, and novelty while preserving
+ranking quality and avoiding overcorrection. This behavior
+contrasts with several competing debiasing strategies that
+optimize a single objective at the expense of user-level
+coherence.
+From a practical perspective, these observations sug-
+gest that future popularity-debiasing approaches should
+incorporate personalization as a first-class component rather
+than relying on global constraints or static re-ranking rules.
+SUPER provides a scalable example of how user-specific
+preference modeling can be integrated into post-processing
+pipelines without incurring substantial computational
+overhead.
+Overall, the results indicate that user-aligned popularity
+calibration offers a principled and robust pathway toward
+fairer and more diverse recommender systems, particularly
+in real-world settings characterized by heterogeneous user
+preferences and data sparsity.
+VI. LIMITATIONS
+Although SUPER demonstrates promising effectiveness in
+mitigating popularity bias and maintaining robust calibration
+under controlled experimental settings, several limitations
+emerge when one considers its applicability in more complex,
+real-world scenarios.
+A. LIMITATIONS RELATED TO POPULARITY MODELING
+1) POPULARITY INCLINATION AS A SINGLE PREFERENCE
+DIMENSION
+We acknowledge that the popularity inclination ratio (Pop u)
+captures only one dimension of user preference and does
+not aim to represent the full spectrum of individual tastes.
+In SUPER, popularity inclination is intentionally modeled as
+an orthogonal control signal that regulates exposure to head
+versus tail items, while all other preference dimensions (e.g.,
+genre affinity, topical relevance, or rating intensity) remain
+fully governed by the underlying backbone recommender.
+In this sense, SUPER does not replace or override standard
+preference modeling, but complements it by calibrating
+popularity exposure at the user level.
+Furthermore, since the public benchmark datasets used
+in this study do not provide impression or exposure logs,
+it is not possible to fully disentangle preference from
+exposure in a causal sense. SUPER therefore treats popularity
+inclination as a robust behavioral estimate rather than a
+true latent preference. We further emphasize that popularity
+debiasing inherently involves normative design choices
+regarding how exposure should be regulated. SUPER makes
+these assumptions explicit rather than implicit by framing
+popularity inclination as an operational calibration signal
+rather than a definitive representation of true user preference.
+2) LIMITS OF CAUSAL PREFERENCE IDENTIFICATION
+We emphasize that SUPER is not designed as a causal
+inference framework and does not attempt to recover users’
+latent ‘‘true preferences’’ from observational interaction
+data. Disentangling preference from exposure typically
+requires impression logs, randomized interventions, or strong
+identification assumptions that are not available in standard
+offline recommendation benchmarks. Accordingly, SUPER
+adopts a pragmatic perspective by treating observed interac-
+tions as behavioral signals subject to exposure effects and
+37602 VOLUME 14, 2026

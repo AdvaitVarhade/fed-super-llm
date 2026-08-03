@@ -1,0 +1,72 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+FIGURE 1. Overview of the proposed SUPER hybrid framework for popularity debiasing. The pipeline integrates
+Pareto-based popularity profiling, specialized dual modeling, and a user-centric exposure calibration module to
+construct personalized Top-N recommendations while maintaining alignment with observed user popularity
+tendencies.
+1) COMPLEXITY ANALYSIS (ALGORITHM 1)
+Let n denote the number of items in the catalog (or the number
+of candidate items scored per user at inference time), m the
+number of observed interactions (ratings) in the dataset, f
+the latent dimension of the backbone model, N the target
+recommendation list size (e.g., N=10), and M the size of
+an optional intermediate candidate set (if used). We report
+complexities separately for (i) offline preprocessing/training
+steps that scale with (n, m, f ) and (ii) online per-user list
+construction that scales primarily with n (scoring/sorting) and
+N (merging).
+• Sorting items by popularity: O(n log n), where n is the
+number of items.
+• Extracting subsets Dpop, Dtail: Approximately O(m),
+where m is the total number of interactions.
+• Training models (backbone-dependent): The train-
+ing cost is algorithm-specific. For example, matrix-
+factorization-based models are often expressed as O(mf )
+per epoch, where m denotes the number of interactions
+and f the latent dimension, while neural or graph-based
+recommenders may exhibit different scaling behav-
+ior. Accordingly, we report training complexity as a
+model-dependent estimate rather than a strict theoretical
+bound.
+The above complexities are provided as coarse, illustrative
+approximations intended to communicate relative compu-
+tational trends. Exact costs may vary depending on the
+backbone model, optimization procedure, number of training
+epochs, and implementation details.
+This phase is offline and does not need to be repeated for
+each user.
+Importantly,SUPER does not introduce additional iterative
+training loops beyond the backbone recommender. Its
+extra computational cost is limited to lightweight head–tail
+partitioning and rank-level merging, meaning that overall
+runtime is typically dominated by backbone training and
+per-user ranking operations.
+C. ESTIMATING USER POPULARITY INCLINATION
+A key insight of our approach is that not all users value
+popularity equally. While some may prefer mainstream
+hits, others might favor more specialized or under-the-
+radar offerings. To capture these differences, we estimate
+each user’s popularity inclination using the Pareto-based
+classification of items.
+For each user u, we define the set of consumed items as the
+items with an observed interaction (e.g., an explicit rating) in
+the offline dataset. Formally,
+Cu = {i | ru,i is observed }.
+Since impression logs are not available in the public
+benchmarks used in this study, Cu provides a behavioral
+proxy for popularity inclination. The user’s popularity-
+inclination ratio is then computed as
+Popu = |Cu ∩ H|
+|Cu| ,
+where H denotes the set of popular (head) items defined in
+Algorithm 1.
+For example, if a user’s interaction history contains 30%
+head items and 70% tail items, then Popu = 0.3. This
+ratio serves as a personalized calibration signal indicating
+how strongly the user’s observed behavior leans toward
+popular versus tail content, and it guides the subsequent
+head–tail blending during top-N construction. Importantly,
+to reduce preference–exposure conflation in evaluation,
+our popularity-calibration metric RMSE-PC is computed
+on enjoyed items (items rated above the user’s mean),
+as described in Section IV.
+37586 VOLUME 14, 2026

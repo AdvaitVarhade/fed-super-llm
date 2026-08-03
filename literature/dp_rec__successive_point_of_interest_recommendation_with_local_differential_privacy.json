@@ -1,0 +1,8 @@
+{
+  "title": "Successive Point-of-Interest Recommendation with Local Differential Privacy",
+  "authors": "Jong Seon Kim, Jong Wook Kim, Yon Dohn Chung",
+  "year": "2019",
+  "abstract": "A point-of-interest (POI) recommendation system performs an important role in location-based services because it can help people to explore new locations and promote advertisers to launch advertisements at appropriate locations. The existing POI recommendation systems require raw check-in history of users, which might cause location privacy violations. Although there have been several matrix factorization (MF) based privacy-preserving recommendation systems, they can only focus on user-POI relationships without considering the human movements in check-in history. To tackle this problem, we design a successive POI recommendation framework with local differential privacy, named SPIREL. SPIREL uses two types of information derived from the check-in history as input for the factorization: a transition pattern between two POIs and the visit counts of POIs. We propose a novel objective function for learning the user-POI and POI-POI relationships simultaneously. We further integrate local differential privacy mechanisms in our proposed framework to prevent potential location privacy breaches. Experiments using four public datasets demonstrate that SPIREL achieves better POI recommendation quality while accomplishing stronger privacy protection.",
+  "url": "http://arxiv.org/abs/1908.09485v2",
+  "venue": "arXiv"
+}

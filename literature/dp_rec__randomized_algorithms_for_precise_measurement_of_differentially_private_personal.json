@@ -1,0 +1,8 @@
+{
+  "title": "Randomized algorithms for precise measurement of differentially-private, personalized recommendations",
+  "authors": "Allegra Laro, Yanqing Chen, Hao He, Babak Aghazadeh",
+  "year": "2023",
+  "abstract": "Personalized recommendations form an important part of today's internet ecosystem, helping artists and creators to reach interested users, and helping users to discover new and engaging content. However, many users today are skeptical of platforms that personalize recommendations, in part due to historically careless treatment of personal data and data privacy. Now, businesses that rely on personalized recommendations are entering a new paradigm, where many of their systems must be overhauled to be privacy-first. In this article, we propose an algorithm for personalized recommendations that facilitates both precise and differentially-private measurement. We consider advertising as an example application, and conduct offline experiments to quantify how the proposed privacy-preserving algorithm affects key metrics related to user experience, advertiser value, and platform revenue compared to the extremes of both (private) non-personalized and non-private, personalized implementations.",
+  "url": "http://arxiv.org/abs/2308.03735v3",
+  "venue": "arXiv"
+}

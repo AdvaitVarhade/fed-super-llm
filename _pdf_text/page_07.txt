@@ -1,0 +1,106 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+Importantly, if the blueprint were to request more than Npop
+head items within the first N positions, only the first Npop
+selections could be drawn from Cpop(u); once the head quota
+is met, the remaining positions must be filled from Ctail(u) to
+satisfy the user-specific composition implied by Popu.
+3) COMPLEXITY ANALYSIS (ALGORITHM 2):
+For each user, the backbone(s) produce predicted scores over
+candidate items. In the worst case, scoring and sorting over all
+items incurs O(n) and O(n log n) time, respectively. SUPER
+itself does not add an additional global optimization step;
+after obtaining the per-pool ranked lists, it truncates them to
+Cpop and Ctail of sizes Npop and Ntail with Npop + Ntail = N,
+and performs the hard-quota / soft-blueprint merge in O(N)
+time. Therefore, the additional overhead of SUPER beyond
+backbone scoring is O(N) per user, and overall runtime is
+dominated by backbone inference and (when applicable)
+large-scale sorting (Table 3).
+E. BENEFITS OF THE SMART USER-CENTRIC APPROACH
+This method addresses several limitations of prior techniques:
+User-Centric Calibration: By determining how many
+recommendations should come from the popular set versus
+the tail set for each individual user, we ensure that rec-
+ommendations align more closely with that user’s observed
+consumption distribution.
+Fair Representation of the Long-Tail: Our approach
+naturally incorporates tail items into the recommendation
+process, promoting diversity and providing opportunities for
+lesser-known items to surface.
+Mitigating Popularity Bias: Rather than merely
+down-ranking popular items or imposing blanket constraints,
+this solution trains models separately on both subsets and then
+tailors the blend of final recommendations. The result is a
+more nuanced debiasing that accounts for each user’s own
+level of comfort with mainstream or niche items.
+Scalable and Adaptable: The approach is flexible and
+can be applied to various datasets, domains, and underlying
+recommendation algorithms. The pre-processing does not
+assume a specific model architecture, making the framework
+portable and easily integrated into different scenarios.
+More broadly, SUPER can be viewed as a user-adaptive
+exposure control framework that operates at the ranking layer.
+Instead of relying solely on global exposure constraints or
+stochastic reallocation, the method introduces a structured
+yet lightweight regularization signal that preserves alignment
+between observed behavioral patterns and recommendation
+exposure. This perspective positions SUPER within a grow-
+ing class of calibration-oriented recommender approaches
+that emphasize exposure coherence alongside ranking
+accuracy.
+F. ILLUSTRATIVE SCENARIO
+To clarify how the SUPER framework operates in practice,
+consider a hypothetical user whose historical records indicate
+a moderate preference for popular (head) items relative to
+niche (tail) ones. Suppose, for instance, that this user has
+interacted with 200 items in total, with 130 of those classified
+as popular and the remaining 70 belonging to the tail.
+From these statistics, one infers that the user’s popularity
+inclination ratio is
+Popu = 130
+200 = 0.65.
+Hence, approximately 65% of this individual’s consumed
+items are from the head portion of the catalog, while 35%
+are from the tail.
+1) PRE-PROCESSING AND PREDICTION
+Following the SUPER design, two specialized models are
+trained: one (Mpop) exclusively on the head-dominant subset
+and another (M tail) exclusively on the tail-dominant subset.
+At recommendation time, each model produces a ranked list
+of items for the user (for instance, top-10 suggestions per
+model):
+• Popular-Only Model Output: A descending list of items
+predominantly aligned with the head part of the catalog.
+• Tail-Only Model Output: A descending list emphasizing
+less popular or niche items.
+2) DETERMINING USER-SPECIFIC PROPORTIONS
+Since Popu = 0.65, if the system is to produce a top-10
+recommendation list, it will compute
+Npop = ⌊10× 0.65⌋ =6, Ntail = 10 − 6 = 4.
+This calculation instructs SUPER to select 6 items from the
+user-specific popular-only ranking and 4 items from the tail-
+only ranking.
+3) CONSTRUCTING THE SMART RECOMMENDATION LIST
+While each model’s output (M pop and Mtail) is first sorted
+in descending order of predicted relevance, the final merge
+does not merely concatenate top-N pop and top-N tail. Instead,
+we reference the user’s historical blueprint of head–tail
+consumption to guide how these items are interleaved.
+Suppose, for example, that positions in the user’s real rating
+list alternately reflect head or tail preferences. Then for each
+rank k in the top-N recommendation, we:
+1) Determine whether the kth historical position is head or
+tail in the user’s consumption blueprint.
+2) If it is head, pick the next highest-scoring item from
+Mpop’s descending list.
+3) If it is tail, choose the next highest-scoring item from
+Mtail’s descending list.
+This process yields a smart top-N list that matches the
+user’s empirically observed ratio of interest in head vs.
+tail content without enforcing a uniform or arbitrary blend.
+By anchoring the final merge to the user’s documented
+head–tail trajectory, the system more faithfully reflects
+individualized consumption patterns, thereby ensuring that
+diverse, personalized recommendations emerge in a manner
+consistent with the user’s actual historical preferences.
+VOLUME 14, 2026 37589

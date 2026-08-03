@@ -1,0 +1,86 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+TABLE 2. Detailed properties of the ML, DB, and Yelp datasets, including head–tail popularity statistics.
+• Root Mean Square Error in Popularity Calibration
+(Rmse-PC) : [44] This metric measures how closely
+the popularity level of the recommended top-N items
+aligns with each user’s interaction-derived popularity-
+inclination proxy. Unlike interaction-based measures,
+Rmse-PC relies only on enjoyed items (items rated above
+the user’s mean rating), thereby reducing exposure-
+driven noise. Lower values indicate better popularity
+calibration.
+• Mean Rank Miscalibration (MRMC): MRMC evalu-
+ates how well the cumulative popularity distribution of
+a ranked recommendation list matches the user’s histor-
+ical head–tail consumption pattern. It computes rank-
+wise divergence between historical and recommended
+popularity distributions and averages this miscalibration
+across users. Lower MRMC values correspond to better
+alignment.
+• nDCG (Normalized Discounted Cumulative Gain):
+We report nDCG to assess ranking quality in terms
+of relevance and position sensitivity [21], [33]. Higher
+values indicate better accuracy.
+• Average Percentage of Long-Tail Items (APLT):
+APLT measures the proportion of tail items in the top-N
+recommendation lists, reflecting the system’s tendency
+to promote niche content [45]. Higher values indicate
+stronger long-tail exposure.
+• Entropy: Entropy quantifies the dispersion of recom-
+mended items across the catalog, based on the frequency
+with which items appear in users’ top-N lists [8]. Higher
+entropy indicates more balanced item exposure.
+• Long-Tail Coverage (LTC):LTC measures the fraction
+of tail items that appear at least once in the union of
+all recommendation lists [45], capturing global catalog-
+level coverage.
+• Novelty: Novelty is computed as the average self-information
+of recommended items:
+Novelty@N(u) = 1
+N
+∑
+i∈Rec@N(u)
+− log2 p(i), (1)
+where p(i) = ni∑
+j∈I nj
+and ni is the number of training
+interactions for item i (computed on the training split
+only). Higher values indicate more novel recommenda-
+tions.
+• General Key Performance Indicator (GKPI): A
+Comprehensive Performance Measure
+Recommender system performance is inherently multi-
+dimensional, as accuracy-oriented and beyond-accuracy
+metrics often reflect competing objectives. To facilitate a
+concise comparison across methods, we report the Gen-
+eral Key Performance Indicator (GKPI) as a compact
+summary measure that aggregates multiple evaluation
+dimensions into a single score.
+GKPI combines a core accuracy metric (nDCG) with
+four beyond-accuracy metrics (APLT, Novelty, Entropy,
+and LTC). Rather than replacing these metrics, GKPI
+serves as an auxiliary indicator that highlights whether a
+method achieves a balanced trade-off between relevance
+and popularity-aware objectives.
+To avoid dominance by any single dimension, each
+beyond-accuracy metric is paired with nDCG using a
+harmonic-type mean:
+H(x, y) = 2xy
+x + y. (2)
+The harmonic mean penalizes extreme imbalance,
+ensuring that strong performance in one dimension can-
+not fully compensate for weak performance in another.
+This property is particularly suitable for popularity
+debiasing, where over-optimizing diversity or novelty
+may significantly harm relevance.
+GKPI is then computed as the arithmetic mean
+of the four harmonic combinations between nDCG
+and each beyond-accuracy metric. Equal weighting is
+intentionally adopted to avoid introducing additional
+hyperparameters or domain-specific assumptions, and to
+maintain neutrality across evaluation dimensions in the
+absence of a universally accepted prioritization scheme.
+Clarification on the Role of GKPIP: We emphasize that
+GKPI is not an optimization objective, nor a replacement for
+individual metrics. All substantive conclusions in this study
+VOLUME 14, 2026 37591

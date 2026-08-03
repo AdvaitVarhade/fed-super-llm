@@ -1,0 +1,111 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+C. PAPER ORGANIZATION
+The remainder of the paper is organized as follows. Section II
+reviews related work on popularity bias and its mitigation.
+Section III presents the proposed SUPER framework in
+detail. Section IV describes the experimental setup, datasets,
+and evaluation metrics. Section V reports and discusses the
+experimental results. Section VI outlines the limitations of
+the proposed approach, and Section VII concludes the paper
+and suggests avenues for future research.
+II. RELATED WORK
+Popularity-bias mitigation strategies in recommender
+systems are commonly categorized into pre-processing,
+in-processing, and post-processingapproaches. Pre-processing
+methods aim to reduce imbalance in the training data
+before model learning, for example by separating head and
+tail items or reweighting interactions to amplify under-
+represented content [28], [29]. In-processing techniques
+modify the learning objective or model constraints to
+penalize popularity-correlated signals or explicitly optimize
+for diversity and fairness [10], [11], [19], [30], [31]. While
+effective, these approaches are often tightly coupled to
+specific model architectures and may require substantial
+redesign to generalize across recommenders.
+Post-processing methods operate after a base recom-
+mender generates prediction scores and adjust the final
+ranked list to control exposure. Representative exam-
+ples include inverse-popularity calibration [32], [33],
+diversification mechanisms such as xQuAD [20], and
+exposure-balancing formulations including Discrepancy
+Minimization [34] and FA*IR [35]. Due to their model-
+agnostic nature, post-processing approaches are particularly
+attractive for benchmarking and comparative evaluation
+across multiple backbone recommenders.
+Among user-centric mitigation approaches, Calibrated
+Popularity [21] is closely related to our work, as it seeks
+to align the popularity distribution of recommendations
+with a user’s historical consumption. However, a central
+challenge in such calibration lies in the fact that historical
+interactions may conflate preference with exposure. Treating
+all consumed items equally can overestimate affinity for
+popular content that was merely visible or promoted.
+Some other studies therefore emphasize the need for
+behaviorally meaningful user profiling that better reflects
+genuine preference signals [7], [23], [24], [25]. Nevertheless,
+there remains a practical gap for methods that (i) operate
+consistently across diverse recommendation algorithms and
+(ii) calibrate popularity exposure at the individual user
+level while preserving ranking quality and beyond-accuracy
+objectives.
+Recent research has increasingly focused on user-aware
+and optimization-driven strategies for mitigating popularity
+bias. Approaches such as Popularity-aware Distributionally
+Robust Optimization (PDRO) [36], Personalized Popularity-
+Aware Calibration (PPAC) [37], and Causal Exposure-based
+Popularity Penalization (CausalEPP) [38] exemplify this
+trend by incorporating robustness, personalization, or causal
+reasoning into the debiasing process. While these methods
+improve exposure control through distributional optimization
+or adaptive calibration, they often rely on stronger modeling
+assumptions and tighter integration with the learning objec-
+tive. Consequently, ensuring consistent rank-level alignment
+with user-specific popularity tendencies while preserving
+model-agnostic applicability remains an open challenge.
+Beyond optimization-based and calibration-driven meth-
+ods [37], very recent studies increasingly explore causality-
+aware, robustness-oriented, and representation-level debias-
+ing strategies. For example, causal graph diffusion models
+have been proposed to improve out-of-distribution recom-
+mendation by capturing structural dependencies beyond
+observational interactions [39]. Motivation-aware retrieval
+approaches further emphasize aligning long-tail exposure
+with users’ latent intent rather than relying solely on
+interaction frequency [40]. Similarly, causal intervention
+frameworks address the evolving nature of person popularity,
+highlighting the temporal dynamics of exposure bias [38].
+In parallel, unbiased learning-to-rank methods based on
+conditional mutual information minimization seek to disen-
+tangle relevance from spurious popularity correlations [41],
+while adversarial graph-dropout techniques improve robust-
+ness in graph-based collaborative filtering [42].
+Recent work also demonstrates that popularity bias persists
+even in large language model-based recommenders, suggest-
+ing that exposure imbalance remains a fundamental challenge
+across emerging recommendation paradigms [43]. Tem-
+poral recommenders, including the Netflix Prize-winning
+approaches, demonstrate that user preferences evolve over
+time; however, these models primarily optimize predictive
+accuracy rather than user-level exposure calibration, leaving
+popularity alignment as a complementary challenge.
+Collectively, these studies, including temporal, causal,
+and robustness-oriented approaches, indicate a broader shift
+toward integrating personalization-aware mechanisms into
+popularity-debiasing pipelines. SUPER aligns with this
+emerging direction by emphasizing user-level exposure
+calibration while maintaining model-agnostic applicability
+under standard offline evaluation settings.
+To address this gap, we propose SUPER, which combines
+Pareto-based user-centric popularity profiling with a hybrid
+pre- and post-processing framework. This design enables
+fine-grained control over head–tail exposure at the individual
+level while remaining compatible with multiple backbone
+recommenders and standard offline evaluation protocols.
+Rather than competing within a single methodological
+paradigm, SUPER is designed to complement existing
+debiasing strategies by introducing a lightweight user-centric
+calibration layer that operates independently of the underly-
+ing recommender. In this sense, the framework can be inter-
+preted as a practical bridge between classical model-agnostic
+exposure control and emerging user-aware optimization
+37584 VOLUME 14, 2026

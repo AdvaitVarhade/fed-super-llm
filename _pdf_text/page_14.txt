@@ -1,0 +1,37 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+FIGURE 4. APLT results of the popularity-debiasing methods for the HPF, NeuMF, SKMeans, VaeCF, and WBPR algorithms on the (a) ML, (b) DB, and
+(c) Yelp datasets. Stars denote statistically significant improvements of SUPER over the second-best method and are displayed only when SUPER is the
+best-performing method; hence, no star means SUPER is not the best in that setting.
+FIGURE 5. Entropy results of the popularity-debiasing methods for the HPF, NeuMF, SKMeans, VaeCF, and WBPR algorithms on the (a) ML, (b) DB, and
+(c) Yelp datasets. Stars denote statistically significant improvements of SUPER over the second-best method and are displayed only when SUPER is the
+best-performing method; hence, no star means SUPER is not the best in that setting.
+novelty. By contrast, SUPER consistently navigates this
+trade-off, suggesting that user-aligned exposure control is
+critical for achieving sustainable long-tail integration.
+Overall, these findings reinforce the central premise of this
+work: effective popularity debiasing is not solely a matter of
+maximizing tail exposure, but of calibrating that exposure in
+a manner consistent with user-specific consumption patterns.
+2) ENTROPY
+Entropy measures how evenly recommendations are dis-
+tributed across the item catalog, reflecting overall diversity.
+As illustrated in Figure 5, approaches such as xQuad, MUL,
+and MACR frequently attain high entropy values by explicitly
+diversifying recommendation lists or enforcing balanced
+exposure across item groups. However, such gains are
+often accompanied by weaker alignment with user-specific
+popularity tendencies, particularly when diversification is
+applied uniformly.
+In addition, user-aware optimization and calibration
+frameworks such as PDRO and PPAC, as well as
+exposure-correction strategies like CausalEPP, tend to
+exhibit more moderate entropy behavior: they mitigate pop-
+ularity effects through robustness, calibration, or exposure
+penalization objectives rather than aggressively maximizing
+catalog dispersion. As a result, their entropy gains are
+typically less pronounced than strongly diversification-driven
+re-ranking methods, but may be achieved with improved
+rank-level coherence.
+By contrast, SUPER consistently attains competi-
+tive entropy across datasets without relying on rigid
+37596 VOLUME 14, 2026

@@ -1,0 +1,8 @@
+{
+  "title": "Federated Conversational Recommender System",
+  "authors": "Allen Lin, Jianling Wang, Ziwei Zhu, James Caverlee",
+  "year": "2025",
+  "abstract": "Conversational Recommender Systems (CRSs) have become increasingly popular as a powerful tool for providing personalized recommendation experiences. By directly engaging with users in a conversational manner to learn their current and fine-grained preferences, a CRS can quickly derive recommendations that are relevant and justifiable. However, existing conversational recommendation systems (CRSs) typically rely on a centralized training and deployment process, which involves collecting and storing explicitly-communicated user preferences in a centralized repository. These fine-grained user preferences are completely human-interpretable and can easily be used to infer sensitive information (e.g., financial status, political stands, and health information) about the user, if leaked or breached. To address the user privacy concerns in CRS, we first define a set of privacy protection guidelines for preserving user privacy under the conversational recommendation setting. Based on these guidelines, we propose a novel federated conversational recommendation framework that effectively reduces the risk of exposing user privacy by (i) de-centralizing both the historical interests estimation stage and the interactive preference elicitation stage and (ii) strictly bounding privacy leakage by enforcing user-level differential privacy with meticulously selected privacy budgets. Through extensive experiments, we show that the proposed framework not only satisfies these user privacy protecti",
+  "url": "http://arxiv.org/abs/2503.00999v1",
+  "venue": "arXiv"
+}

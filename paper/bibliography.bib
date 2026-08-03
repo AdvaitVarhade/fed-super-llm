@@ -1,0 +1,170 @@
+% Bibliography — Privacy-Preserving Federated SUPER extension paper.
+%
+% Verification policy:
+%   - Every entry is either (a) verified via CrossRef/arXiv DOI, or
+%   - (b) a foundational, unambiguous reference cross-checked against author lists.
+%   - Entries requiring further verification are tagged with the note
+%     "PLACEHOLDER - verify before submission" per the no-hallucination rule.
+
+% =========================================================
+%  BASE PAPER (verified via CrossRef DOI lookup, 2026-07)
+% =========================================================
+@article{yavru2026super,
+  title   = {{SUPER}: Smart User-Centric Popularity Exposure Reduction for Fair and Diverse Recommendations},
+  author  = {Yavru, Ismail Burak and Yalcin, Emre and Bilge, Alper and Gunduz, Sevcan Yilmaz},
+  journal = {IEEE Access},
+  volume  = {14},
+  pages   = {37582--37605},
+  year    = {2026},
+  doi     = {10.1109/access.2026.3671645}
+}
+
+% =========================================================
+%  POPULARITY BIAS & FAIRNESS IN RECOMMENDATION
+% =========================================================
+@inproceedings{abdollahpouri2019unfairness,
+  title     = {The Unfairness of Popularity Bias in Recommendation},
+  author    = {Abdollahpouri, Himan and Mansoury, Masoud and Burke, Robin and Mobasher, Bamshad},
+  booktitle = {RecSys Workshop on Recommendation in Multistakeholder Environments},
+  year      = {2019},
+  note      = {arXiv:1907.13286; cited as ref26 of SUPER (Yavru et al., 2026)}
+}
+
+@inproceedings{abdollahpouri2020multistakeholder,
+  title     = {Popularity Bias in Recommendation: A Multi-Stakeholder Perspective},
+  author    = {Abdollahpouri, Himan and Burke, Robin and Mobasher, Bamshad},
+  booktitle = {RecSys Workshop on Impact of recommender systems},
+  year      = {2020},
+  note      = {PLACEHOLDER - verify venue before submission}
+}
+
+@inproceedings{abdollahpouri2019managing,
+  title     = {Managing Popularity Bias in Recommender Systems with Personalized Re-Ranking},
+  author    = {Abdollahpouri, Himan and Burke, Robin and Mobasher, Bamshad},
+  booktitle = {RecSys Late-Breaking Results},
+  year      = {2019},
+  note      = {arXiv:1901.07555; cited as ref20 of SUPER (Yavru et al., 2026)}
+}
+
+@article{zhao2023fairness,
+  title   = {Fairness and Diversity in Recommender Systems: A Survey},
+  author  = {Zhao, Ziwei and Lin, Wei and Deng, Junlin and others},
+  journal = {ACM Transactions on Information Systems},
+  year    = {2023},
+  note    = {PLACEHOLDER - verify authors/DOI before submission}
+}
+
+% =========================================================
+%  FEDERATED LEARNING & FEDERATED RECOMMENDATION
+% =========================================================
+@inproceedings{mcmahan2017fedavg,
+  title     = {Communication-Efficient Learning of Deep Networks from Decentralized Data},
+  author    = {McMahan, Brendan and Moore, Eider and Ramage, Daniel and Hampson, Seth and {Aguera y Arcas}, Blaise},
+  booktitle = {AISTATS (PMLR)},
+  volume    = {54},
+  pages     = {1273--1282},
+  year      = {2017}
+}
+
+@inproceedings{konecny2016fed,
+  title     = {Federated Learning: Strategies for Improving Communication Efficiency},
+  author    = {Kone\v{c}n\'{y}, Jakub and McMahan, H. Brendan and Yu, Felix X. and Richt\'{a}rik, Peter and Suresh, Ananda Theertha and Bacon, Dave},
+  booktitle = {NIPS Workshop on Private Multi-Party Machine Learning},
+  year      = {2016},
+  note      = {arXiv:1610.05492}
+}
+
+@article{sun2022fedsurvey,
+  title   = {A Survey on Federated Recommendation Systems},
+  author = {Sun, Shuyi and others},
+  journal = {IEEE TBDATA},
+  year   = {2022},
+  note   = {PLACEHOLDER - verify authors/venue/DOI before submission}
+}
+
+@inproceedings{chaofd2020fedncf,
+  title     = {FedNCF: Federated Neural Collaborative Filtering for Privacy-Preserving Recommendation},
+  author    = {Chao, Gao and others},
+  booktitle = {RecSys Workshop on Recommender Systems and the Next Generation of AI},
+  year      = {2020},
+  note      = {PLACEHOLDER - verify exact authors/venue before submission}
+}
+
+% =========================================================
+%  DIFFERENTIAL PRIVACY
+% =========================================================
+@inproceedings{abadi2016dp,
+  title     = {Deep Learning with Differential Privacy},
+  author    = {Abadi, Martin and Chu, Andy and Goodfellow, Ian and McMahan, H. Brendan and Mironov, Ilya and Talwar, Kunal and Zhang, Li},
+  booktitle = {ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+  pages     = {308--318},
+  year      = {2016},
+  doi       = {10.1145/2976749.2978318}
+}
+
+@inproceedings{dwork2014dpbook,
+  title     = {The Algorithmic Foundations of Differential Privacy},
+  author    = {Dwork, Cynthia and Roth, Aaron},
+  booktitle = {Foundations and Trends in Theoretical Computer Science},
+  year      = {2014},
+  note      = {PLACEHOLDER - verify before submission}
+}
+
+% =========================================================
+%  COLLABORATIVE FILTERING BACKBONES
+% =========================================================
+@inproceedings{rendle2009bpr,
+  title     = {{BPR}: {B}ayesian Personalized Ranking from Implicit Feedback},
+  author    = {Rendle, Steffen and Freudenthaler, Christoph and Gantner, Zeno and Schmidt-Thieme, Lars},
+  booktitle = {UAI},
+  pages     = {422--431},
+  year      = {2009},
+  note      = {arXiv:1205.2618 (verified)}
+}
+
+@inproceedings{he2017ncf,
+  title     = {Neural Collaborative Filtering},
+  author    = {He, Xiangnan and Liao, Lizi and Zhang, Hanwang and Nie, Liqiang and Hu, Xia and Chua, Tat-Seng},
+  booktitle = {International World Wide Web Conference (WWW)},
+  pages     = {173--182},
+  year      = {2017},
+  doi       = {10.1145/3038912.3052569}
+}
+
+@techreport{harper2015movielens,
+  author      = {Harper, F. Maxwell and Konstan, Joseph A.},
+  title       = {The {MovieLens} Datasets: History and Context},
+  institution = {ACM Transactions on Interactive Intelligent Systems (TIIS)},
+  year        = {2016},
+  doi         = {10.1145/2827872}
+}
+
+% =========================================================
+%  LLM / SEMANTIC EMBEDDINGS FOR RECOMMENDATION
+% =========================================================
+@inproceedings{reimers2019sbert,
+  title     = {{Sentence-BERT}: Sentence Embeddings using Siamese {BERT}-Networks},
+  author    = {Reimers, Nils and Gurevych, Iryna},
+  booktitle = {EMNLP-IJCNLP},
+  pages     = {3982--3992},
+  year      = {2019},
+  doi       = {10.18653/v1/d19-1410}
+}
+
+@inproceedings{lyu2023llmrec,
+  title     = {{LLM-Rec}: Personalized Recommendation via Prompting Large Language Models},
+  author    = {Lyu, Hanjia and Jiang, Song and Zeng, Hanqing and Xia, Yinglong and Wang, Qifan and Zhang, Si and Chen, Ren and Leung, Christopher and Tang, Jiebo and Luo, Jun},
+  booktitle = {ACL Findings},
+  year      = {2023}
+}
+
+% =========================================================
+%  OTHER (POST-PROCESSING DIVERSIFICATION, ABLATION BASELINES)
+% =========================================================
+@inproceedings{santos2010xquad,
+  title     = {Explicit Diversification of Search Results},
+  author    = {dos Santos, Rodrygo L. T. and Macdonald, Craig and Ounis, Iadh},
+  booktitle = {SIGIR Workshop on Diversity in Document Retrieval},
+  year      = {2010},
+  note      = {PLACEHOLDER - venue approximate}
+}

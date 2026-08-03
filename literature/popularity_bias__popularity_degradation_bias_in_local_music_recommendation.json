@@ -1,0 +1,8 @@
+{
+  "title": "Popularity Degradation Bias in Local Music Recommendation",
+  "authors": "April Trainor, Douglas Turnbull",
+  "year": "2023",
+  "abstract": "In this paper, we study the effect of popularity degradation bias in the context of local music recommendations. Specifically, we examine how accurate two top-performing recommendation algorithms, Weight Relevance Matrix Factorization (WRMF) and Multinomial Variational Autoencoder (Mult-VAE), are at recommending artists as a function of artist popularity. We find that both algorithms improve recommendation performance for more popular artists and, as such, exhibit popularity degradation bias. While both algorithms produce a similar level of performance for more popular artists, Mult-VAE shows better relative performance for less popular artists. This suggests that this algorithm should be preferred for local (long-tail) music artist recommendation.",
+  "url": "http://arxiv.org/abs/2309.11671v1",
+  "venue": "arXiv"
+}

@@ -1,0 +1,71 @@
+Received 24 February 2026, accepted 4 March 2026, date of publication 6 March 2026, date of current version 12 March 2026.
+Digital Object Identifier 10.1 109/ACCESS.2026.3671645
+SUPER: Smart User-Centric Popularity Exposure
+Reduction for Fair and Diverse Recommendations
+ISMAIL BURAK YAVRU
+ 1, EMRE YALCIN
+ 2, ALPER BILGE
+ 3,
+AND SEVCAN YILMAZ GUNDUZ
+ 4
+1Department of Information Technologies, Bursa Uludağ University, 16059 Bursa, Türkiye
+2Computer Engineering Department, Sivas Cumhuriyet University, 58140 Sivas, Türkiye
+3Computer Engineering Department, Akdeniz University, 07058 Antalya, Türkiye
+4Computer Engineering Department, Eskişehir Technical University, 26555 Eskişehir, Türkiye
+Corresponding author: Ismail Burak Yavru (burakyavru@uludag.edu.tr)
+This work was supported by the Scientific Research Project Fund of Eskisehir Technical University under Project 22DRP261.
+ABSTRACT We present SUPER, a novel approach to mitigating popularity bias in recommender systems by
+explicitly modeling user-specific preferences for item popularity. Unlike existing methods that apply uniform
+adjustments to reduce the dominance of popular items, SUPER leverages each individual’s inclination
+toward mainstream versus niche content. By combining a Pareto-based item partitioning with personalized
+preference calibration, we incorporate both popular and tail subsets into the training and recommendation
+refinement processes. Experimental evaluations on multiple benchmark datasets demonstrate that SUPER
+substantially improves diversity and fairness while maintaining robust accuracy. Furthermore, our findings
+indicate that aligning the recommendations with each user’s interaction-derived popularity tendency
+promotes a broader exposure to underrepresented items and produces more satisfying recommendation
+experiences. These insights underscore the potential of personalized debiasing strategies to promote
+equitable and context-sensitive content curation in modern recommendation systems.
+INDEX TERMSDiversity, fairness, popularity bias problem, popularity debiasing, pre- and post-processing,
+user-centric recommendation.
+I. INTRODUCTION
+Recommender systems (RSs) have become indispensable
+components of modern digital platforms by guiding users
+toward content aligned with their interests in increasingly
+large information spaces. Leveraging data mining, machine
+learning, and artificial intelligence techniques, RSs identify
+patterns in user behavior and generate personalized sug-
+gestions that improve user satisfaction and engagement [1],
+[2]. Beyond classical applications such as e-commerce and
+media streaming, recommendation mechanisms also play
+an important role within expert systems, where intelligent
+decision-support frameworks rely on personalized guidance
+across various domains [3], [4]. Related challenges of
+preference imbalance and selective exposure have also
+been studied in adjacent intelligent systems domains, such
+as visual interaction and rehabilitation-oriented learning
+The associate editor coordinating the review of this manuscript and
+approving it for publication was Fabrizio Messina
+.
+frameworks, where user-centric modeling and imbalance-
+aware learning play a critical role [5], [6].
+A persistent challenge faced by RSs is popularity bias,
+where a small subset of frequently consumed (head ) items
+receives disproportionately high exposure, while the majority
+of less popular (tail ) items remain under-recommended [7],
+[8], [9]. This ‘‘rich-get-richer’’ phenomenon reduces cat-
+alog coverage, limits meaningful discovery, and yields
+homogenized recommendation lists. Empirical studies have
+reported the prevalence of popularity bias across diverse
+domains, including movies [10], [11], education [12],
+tourism [13], books [14], and music [15], [16]. Beyond
+technical implications, popularity bias can also reinforce
+cultural uniformity and hinder the visibility of emerg-
+ing or niche content [17]. Similar imbalance phenomena
+have also been studied in other data-driven domains,
+such as industrial computer-vision systems addressing
+information-density imbalance, highlighting that the chal-
+lenge of uneven data and exposure distributions is a general
+37582
+
+ 2026 The Authors. This work is licensed under a Creative Commons Attribution 4.0 License.
+For more information, see https://creativecommons.org/licenses/by/4.0/ VOLUME 14, 2026

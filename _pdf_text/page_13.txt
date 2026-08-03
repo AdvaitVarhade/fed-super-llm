@@ -1,0 +1,112 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+SUPER, particularly in sparse settings where accurately
+disentangling preference from exposure becomes inherently
+challenging. These observations collectively indicate that
+stronger modeling assumptions do not necessarily translate
+into improved rank-level calibration.
+In contrast, SUPER maintains consistently low calibration
+error by directly regulating head–tail exposure during the
+construction of each user’s top-N list. Rather than relying
+solely on global optimization objectives, the method com-
+bines user-specific popularity inclination with a rank-aware
+merging strategy, thereby preventing abrupt exposure shifts
+across positions.
+A closer examination of Figure 2(a–b) reveals that on
+the ML and DoubanBooks datasets, SUPER outperforms
+nearly all competing approaches in terms of Rmse-PC. For
+instance, on the ML dataset with the VaeCF recommender,
+SUPER reduces Rmse-PC from 0.108 achieved by the
+second-best method (Fair ) to 0.044, corresponding to an
+improvement of approximately 59%, while simultaneously
+yielding a lower MRMC. Such gains highlight the importance
+of position-aware exposure regulation, particularly in datasets
+characterized by heterogeneous user behavior.
+This advantage becomes even more evident on the sparse
+Yelp dataset, where limited interaction histories amplify the
+risk of popularity misalignment. In this challenging regime,
+several competing approaches,including robustness-oriented
+and calibration-driven methods, display increased calibration
+errors. SUPER, by contrast, preserves stable Rmse-PC and
+MRMC values, suggesting that explicit rank-level control
+provides resilience against noisy behavioral signals.
+Turning to Figure 3, we observe that SUPER con-
+sistently preserves calibration coherence throughout the
+ranked list. Methods such as PDRO, PPAC, CausE, DICE,
+and MACR may approximate the aggregate head-to-tail
+ratio, yet often exhibit rank-level volatility, with corrective
+adjustments concentrated in specific portions of the list.
+By contrast, SUPER achieves lower MRMC, indicating
+smoother and more behaviorally consistent exposure across
+ranks.
+These findings suggest that controlling only the aggregate
+popularity proportion is insufficient; position-aware exposure
+regulation emerges as a critical requirement for achieving
+robust rank-level calibration. In this sense, SUPER can be
+interpreted as a rank-aware popularity calibration frame-
+work, where the user-level head–tail ratio constrains overall
+composition while the blueprint-based merge regularizes the
+positional structure of exposure.
+Several factors contribute to this superior calibration
+behavior. First, SUPER treats user popularity inclination as
+a dynamic reference rather than a rigid global constraint,
+mitigating the risk of overcorrection commonly observed
+in optimization-heavy methods. Second, its effectiveness
+across diverse backbone recommenders (HPF, NeuMF,
+SKMeans, VaeCF, and WBPR) demonstrates that the calibra-
+tion gains are not architecture-dependent. Finally, its stable
+performance in sparse domains highlights the advantage
+of lightweight, user-aligned exposure control over more
+assumption-intensive strategies.
+Overall, the calibration results demonstrate that SUPER
+more effectively captures the interplay between mainstream
+and niche interests at both the global and rank levels com-
+pared to re-ranking-based, causal, representation-driven, and
+robustness-oriented debiasing methods. By jointly minimiz-
+ing Rmse-PC and MRMC, SUPER delivers recommendation
+lists that remain closely aligned with users’ interaction-
+derived popularity preferences throughout the entire top-N
+sequence.
+B. BEYOND-ACCURACY DIMENSIONS: APLT, ENTROPY,
+LTC, AND NOVELTY
+While effective calibration is vital for user satisfaction,
+recommender systems also benefit from promoting diversity,
+facilitating item discovery, and broadening coverage of
+less popular content. We therefore assess APLT (Average
+Percentage of Long-Tail Items), Entropy, LTC (Long-Tail
+Coverage), and Novelty to capture multiple beyond-accuracy
+dimensions. These metrics provide complementary insights
+into how different debiasing strategies, including re-ranking-
+based, causality-aware, and representation-driven methods,
+affect exposure patterns beyond pure relevance.
+1) APLT
+A higher APLT reflects the extent to which a debiasing
+method promotes long-tail items within the top-N recom-
+mendations, thereby encouraging exposure to less popular
+content. As illustrated in Figure 4, methods such as MUL
+and representation-oriented approaches including DICE and
+CausE achieve elevated APLT scores by aggressively priori-
+tizing underrepresented items. While this strategy increases
+tail exposure, it may also introduce deviations from users’
+historical popularity tendencies, a pattern consistent with
+their higher calibration errors observed in Rmse-PC and
+MRMC.
+In contrast, recent optimization-driven frameworks such as
+PDRO and PPAC exhibit markedly low APLT values across
+backbone recommenders, indicating limited integration of
+tail items into the recommendation lists. This behavior
+suggests that distributional robustness or adaptive calibration
+objectives alone do not necessarily translate into effective
+long-tail promotion, and may instead preserve head-dominant
+recommendation structures.
+Across all settings, SUPER achieves a balanced incorpo-
+ration of tail items, maintaining competitive APLT without
+indiscriminately saturating recommendation lists with niche
+content. Rather than enforcing uniform corrective shifts,
+SUPER regulates tail exposure in accordance with each user’s
+popularity inclination, enabling meaningful discovery while
+preserving behavioral coherence.
+This distinction becomes particularly important in scenar-
+ios characterized by heterogeneous user preferences, where
+overly aggressive tail promotion may undermine personaliza-
+tion, and insufficient tail exposure may limit recommendation
+VOLUME 14, 2026 37595

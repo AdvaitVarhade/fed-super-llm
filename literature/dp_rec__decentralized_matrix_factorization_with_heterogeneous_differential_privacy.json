@@ -1,0 +1,8 @@
+{
+  "title": "Decentralized Matrix Factorization with Heterogeneous Differential Privacy",
+  "authors": "Wentao Hu, Hui Fang",
+  "year": "2022",
+  "abstract": "Conventional matrix factorization relies on centralized collection of users' data for recommendation, which might introduce an increased risk of privacy leakage especially when the recommender is untrusted. Existing differentially private matrix factorization methods either assume the recommender is trusted, or can only provide a uniform level of privacy protection for all users and items with untrusted recommender. In this paper, we propose a novel Heterogeneous Differentially Private Matrix Factorization algorithm (denoted as HDPMF) for untrusted recommender. To the best of our knowledge, we are the first to achieve heterogeneous differential privacy for decentralized matrix factorization in untrusted recommender scenario. Specifically, our framework uses modified stretching mechanism with an innovative rescaling scheme to achieve better trade off between privacy and accuracy. Meanwhile, by allocating privacy budget properly, we can capture homogeneous privacy preference within a user/item but heterogeneous privacy preference across different users/items. Theoretical analysis confirms that HDPMF renders rigorous privacy guarantee, and exhaustive experiments demonstrate its superiority especially in strong privacy guarantee, high dimension model and sparse dataset scenario.",
+  "url": "http://arxiv.org/abs/2212.00306v2",
+  "venue": "arXiv"
+}

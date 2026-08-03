@@ -1,0 +1,8 @@
+{
+  "title": "A Systematic Survey on Federated Sequential Recommendation",
+  "authors": "Yichen Li, Qiyu Qin, Gaoyang Zhu, Wenchao Xu, Haozhao Wang, Yuhua Li, Rui Zhang, Ruixuan Li",
+  "year": "2025",
+  "abstract": "Sequential recommendation is an advanced recommendation technique that utilizes the sequence of user behaviors to generate personalized suggestions by modeling the temporal dependencies and patterns in user preferences. However, it requires a server to centrally collect users' data, which poses a threat to the data privacy of different users. In recent years, federated learning has emerged as a distributed architecture that allows participants to train a global model while keeping their private data locally. This survey pioneers Federated Sequential Recommendation (FedSR), where each user joins as a participant in federated training to achieve a recommendation service that balances data privacy and model performance. We begin with an introduction to the background and unique challenges of FedSR. Then, we review existing solutions from two levels, each of which includes two specific techniques. Additionally, we discuss the critical challenges and future research directions in FedSR.",
+  "url": "http://arxiv.org/abs/2504.05313v1",
+  "venue": "arXiv"
+}

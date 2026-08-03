@@ -1,0 +1,8 @@
+{
+  "title": "User and Recommender Behavior Over Time: Contextualizing Activity, Effectiveness, Diversity, and Fairness in Book Recommendation",
+  "authors": "Samira Vaez Barenji, Sushobhan Parajuli, Michael D. Ekstrand",
+  "year": "2025",
+  "abstract": "Data is an essential resource for studying recommender systems. While there has been significant work on improving and evaluating state-of-the-art models and measuring various properties of recommender system outputs, less attention has been given to the data itself, particularly how data has changed over time. Such documentation and analysis provide guidance and context for designing and evaluating recommender systems, particularly for evaluation designs making use of time (e.g., temporal splitting). In this paper, we present a temporal explanatory analysis of the UCSD Book Graph dataset scraped from Goodreads, a social reading and recommendation platform active since 2006. We measure the book interaction data using a set of activity, diversity, and fairness metrics; we then train a set of collaborative filtering algorithms on rolling training windows to observe how the same measures evolve over time in the recommendations. Additionally, we explore whether the introduction of algorithmic recommendations in 2011 was followed by observable changes in user or recommender system behavior.",
+  "url": "http://arxiv.org/abs/2505.04518v1",
+  "venue": "arXiv"
+}

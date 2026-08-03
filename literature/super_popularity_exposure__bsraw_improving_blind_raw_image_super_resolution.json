@@ -1,0 +1,8 @@
+{
+  "title": "BSRAW: Improving Blind RAW Image Super-Resolution",
+  "authors": "Marcos V. Conde, Florin Vasluianu, Radu Timofte",
+  "year": "2023",
+  "abstract": "In smartphones and compact cameras, the Image Signal Processor (ISP) transforms the RAW sensor image into a human-readable sRGB image. Most popular super-resolution methods depart from a sRGB image and upscale it further, improving its quality. However, modeling the degradations in the sRGB domain is complicated because of the non-linear ISP transformations. Despite this known issue, only a few methods work directly with RAW images and tackle real-world sensor degradations. We tackle blind image super-resolution in the RAW domain. We design a realistic degradation pipeline tailored specifically for training models with raw sensor data. Our approach considers sensor noise, defocus, exposure, and other common issues. Our BSRAW models trained with our pipeline can upscale real-scene RAW images and improve their quality. As part of this effort, we also present a new DSLM dataset and benchmark for this task.",
+  "url": "http://arxiv.org/abs/2312.15487v1",
+  "venue": "arXiv"
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Towards Differential Privacy in Sequential Recommendation: A Noisy Graph Neural Network Approach",
+  "authors": "Wentao Hu, Hui Fang",
+  "year": "2023",
+  "abstract": "With increasing frequency of high-profile privacy breaches in various online platforms, users are becoming more concerned about their privacy. And recommender system is the core component of online platforms for providing personalized service, consequently, its privacy preservation has attracted great attention. As the gold standard of privacy protection, differential privacy has been widely adopted to preserve privacy in recommender systems. However, existing differentially private recommender systems only consider static and independent interactions, so they cannot apply to sequential recommendation where behaviors are dynamic and dependent. Meanwhile, little attention has been paid on the privacy risk of sensitive user features, most of them only protect user feedbacks. In this work, we propose a novel DIfferentially Private Sequential recommendation framework with a noisy Graph Neural Network approach (denoted as DIPSGNN) to address these limitations. To the best of our knowledge, we are the first to achieve differential privacy in sequential recommendation with dependent interactions. Specifically, in DIPSGNN, we first leverage piecewise mechanism to protect sensitive user features. Then, we innovatively add calibrated noise into aggregation step of graph neural network based on aggregation perturbation mechanism. And this noisy graph neural network can protect sequentially dependent interactions and capture user preferences simultaneously. Extensive experiments demonstr",
+  "url": "http://arxiv.org/abs/2309.11515v2",
+  "venue": "arXiv"
+}

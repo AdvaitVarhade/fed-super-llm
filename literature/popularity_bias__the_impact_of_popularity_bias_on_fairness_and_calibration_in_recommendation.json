@@ -1,0 +1,8 @@
+{
+  "title": "The Impact of Popularity Bias on Fairness and Calibration in Recommendation",
+  "authors": "Himan Abdollahpouri, Masoud Mansoury, Robin Burke, Bamshad Mobasher",
+  "year": "2019",
+  "abstract": "Recently there has been a growing interest in fairness-aware recommender systems, including fairness in providing consistent performance across different users or groups of users. A recommender system could be considered unfair if the recommendations do not fairly represent the tastes of a certain group of users while other groups receive recommendations that are consistent with their preferences. In this paper, we use a metric called miscalibration for measuring how a recommendation algorithm is responsive to users' true preferences and we consider how various algorithms may result in different degrees of miscalibration. A well-known type of bias in recommendation is popularity bias where few popular items are over-represented in recommendations, while the majority of other items do not get significant exposure. We conjecture that popularity bias is one important factor leading to miscalibration in recommendation. Our experimental results using two real-world datasets show that there is a strong correlation between how different user groups are affected by algorithmic popularity bias and their level of interest in popular items. Moreover, we show algorithms with greater popularity bias amplification tend to have greater miscalibration.",
+  "url": "http://arxiv.org/abs/1910.05755v3",
+  "venue": "arXiv"
+}

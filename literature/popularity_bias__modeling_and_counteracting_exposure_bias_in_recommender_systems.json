@@ -1,0 +1,8 @@
+{
+  "title": "Modeling and Counteracting Exposure Bias in Recommender Systems",
+  "authors": "Sami Khenissi, Olfa Nasraoui",
+  "year": "2020",
+  "abstract": "What we discover and see online, and consequently our opinions and decisions, are becoming increasingly affected by automated machine learned predictions. Similarly, the predictive accuracy of learning machines heavily depends on the feedback data that we provide them. This mutual influence can lead to closed-loop interactions that may cause unknown biases which can be exacerbated after several iterations of machine learning predictions and user feedback. Machine-caused biases risk leading to undesirable social effects ranging from polarization to unfairness and filter bubbles. In this paper, we study the bias inherent in widely used recommendation strategies such as matrix factorization. Then we model the exposure that is borne from the interaction between the user and the recommender system and propose new debiasing strategies for these systems. Finally, we try to mitigate the recommendation system bias by engineering solutions for several state of the art recommender system models. Our results show that recommender systems are biased and depend on the prior exposure of the user. We also show that the studied bias iteratively decreases diversity in the output recommendations. Our debiasing method demonstrates the need for alternative recommendation strategies that take into account the exposure process in order to reduce bias. Our research findings show the importance of understanding the nature of and dealing with bias in machine learning models such as recommender systems",
+  "url": "http://arxiv.org/abs/2001.04832v1",
+  "venue": "arXiv"
+}

@@ -1,0 +1,108 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+are derived from standard evaluation measures, including
+nDCG, RMSE-PC, MRMC, APLT, Entropy, LTC, and
+Novelty. GKPI is reported solely as a high-level summary
+to support interpretability when multiple metrics exhibit
+trade-offs. In this sense, GKPI should be interpreted as
+a comparative rubric for overall balance rather than a
+ground-truth measure of user satisfaction. It is particularly
+useful when methods exhibit conflicting metric-level behav-
+ior (e.g., higher novelty but lower nDCG), providing a single
+summary that rewards simultaneous strength across relevance
+and beyond-accuracy dimensions.
+All of the discussed beyond-accuracy metrics, APLT,
+Entropy, Novelty, and LTC, benefit from higher values,
+generally signifying a more diverse, less biased, and more
+dynamic recommendation environment. By employing these
+measures in conjunction, one gains a comprehensive perspec-
+tive on how effectively the system tackles popularity bias
+while simultaneously catering to varied user preferences and
+stimulating content exploration. Meanwhile, the calibration
+metrics Rmse-PC and MRMC gauge how closely recom-
+mended items’ popularity aligns with each user’s under-
+lying inclinations. Taken together, beyond-accuracy and
+calibration indicators provide a well-rounded assessment of
+trade-offs among recommendation goals (relevance, exposure
+calibration, and diversity-related objectives) under standard
+offline evaluation.
+Moreover, the GKPI integrates these multiple dimen-
+sions, accuracy (nDCG) and beyond-accuracy measures
+(APLT,Entropy,Novelty, LTC), into a single, consolidated
+index, offering a streamlined yet holistic view of system per-
+formance. By balancing user-centric popularity calibration
+with broader objectives like diversity and novelty, the GKPI
+facilitates direct comparisons among different debiasing
+strategies, helping to identify approaches that deliver both
+rich user experiences and equitable content exposure.
+C. EXPERIMENTATION METHODOLOGY
+Our experimental design follows standard practices in
+recommendation system evaluation while incorporating spe-
+cific considerations for popularity bias and user-centricity.
+We employ a leave-one-out evaluation scheme [46], which
+is widely regarded as a robust protocol in the literature.
+For each user, we set aside one interaction for testing and
+use the remaining interactions for training. This ensures that
+the evaluation is both user-specific and scenario-agnostic,
+allowing for fine-grained insights into how each approach
+performs across varied user profiles.
+For all backbone recommenders, hyperparameters were
+selected using literature-recommended search ranges and
+a held-out validation split. The same tuning protocol was
+applied consistently across all datasets. Importantly, all
+popularity-debiasing methods were evaluated on top of
+identical tuned base recommenders, ensuring that perfor-
+mance differences reflect the debiasing strategies rather than
+disparities in model optimization. Since SUPER operates as a
+post-processing method, it introduces no additional trainable
+parameters beyond those of the base recommender.
+Although SUPER does not introduce any additional learn-
+ing objectives, loss functions, or optimization procedures
+beyond those of the backbone recommenders, it requires
+training the same backbone model separately on the head and
+tail item subsets. These models share identical architectures
+and hyperparameters, and differ only in the training data
+partition. The popularity-aware behavior of SUPER is
+achieved exclusively through a lightweight post-processing
+merge, without modifying the underlying model structures or
+training objectives.
+Following the training phase, we use the models to
+predict user preferences for all candidate items. We then
+directly construct the top-N (where typically N = 10)
+recommendation list for each user by blending the outputs
+of the popular-only and tail-only models based on the
+user’s derived popularity inclination ratio (as described in
+Section III). Unlike some existing methods that first select
+a large candidate set (e.g., top-100) before final refining [20],
+[47], our approach integrates popularity inclination into the
+recommendation generation process seamlessly, reducing
+complexity and ensuring closer alignment with user tastes
+from the outset.
+By re-ranking items according to user-specific distribu-
+tions between popular and tail content, the system can
+dynamically adjust each top-N list. This method does not
+rely on static thresholds or one-size-fits-all debiasing rules,
+but rather adapts to evolving user interests. The final
+recommendation lists are evaluated using the aforementioned
+metrics, yielding a comprehensive performance profile.
+D. BASELINE METHODS AND COMPARED APPROACHES
+To assess the effectiveness of the proposed SUPER frame-
+work, we compare it against a diverse set of base-
+line recommenders and state-of-the-art popularity-debiasing
+approaches. The selected baselines cover different model-
+ing paradigms, including probabilistic factorization, neural
+models, clustering-based methods, and pairwise ranking
+approaches. This diversity ensures that the observed results
+are not specific to a particular recommender family.
+1) BASELINE RECOMMENDERS
+We employ the following widely used recommender models
+as backbones:
+• HPF [48]: A probabilistic matrix factorization model
+designed for implicit feedback and sparse data.
+• SKMeans [49]: A clustering-based recommender that
+groups users or items using cosine similarity.
+• VaeCF [50]: A variational autoencoder-based collab-
+orative filtering model capturing non-linear user–item
+interactions.
+• NeuMF [51]: A neural hybrid model combining gener-
+alized matrix factorization and multi-layer perceptrons.
+37592 VOLUME 14, 2026

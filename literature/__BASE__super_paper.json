@@ -1,0 +1,27 @@
+﻿{
+  "title": "SUPER: Smart User-Centric Popularity Exposure Reduction for Fair and Diverse Recommendations",
+  "authors": "Yavru, I. B.; Yalcin, E.; Bilge, A.; Yilmaz Gunduz, S.",
+  "year": 2026,
+  "venue": "IEEE Access 14:37582-37605",
+  "doi": "10.1109/ACCESS.2026.3671645",
+  "url": "https://doi.org/10.1109/access.2026.3671645",
+  "summary": "Two-phase hybrid: (1) PRE-PROCESSING — Pareto partition of items by cumulative interaction volume (alpha=0.20); train two separate recommenders M_pop on head set and M_tail on tail set; (2) POST-PROCESSING — per user, compute Pop_u = |C_u ∩ H| / |C_u| (fraction of user's interactions that are head items). Set N_pop = floor(N*Pop_u), N_tail = N - N_pop. Build candidate pools C_pop=top-N_pop from M_pop, C_tail=top-N_tail from M_tail. BLUEPRINT-BASED MERGE: scan user's training history Lu (by position), pick next item from C_pop if blueprint[k]=head else from C_tail, falling back deterministically to the other pool when its quota is exhausted. Hard quota / soft blueprint.",
+  "metrics": {
+    "nDCG": "ranking accuracy",
+    "APLT": "Average Percentage of Long-Tail items (per user)",
+    "Entropy": "distribution evenness",
+    "LTC": "Long-Tail Coverage (system level)",
+    "Novelty": "self-information: -log2(p(i))",
+    "Rmse-PC": "RMSE of popularity calibration (LOWER better)",
+    "MRMC": "Mean Rank Miscalibration (LOWER better)",
+    "GKPI": "General KPI = arithmetic mean of harmonic means of nDCG with each of {APLT, Entropy, Novelty, LTC}"
+  },
+  "key_numbers": {
+    "ML_VaeCF_SUPER_GKPI": 0.472,
+    "ML_VaeCF_PPAC_GKPI": 0.321,
+    "ML_VaeCF_SUPER_RmsePC_improvement_vs_Fair": "0.108 -> 0.044 (59% reduction)"
+  },
+  "baselines_compared_against": ["HPF","NeuMF","SKMeans","VaeCF","WBPR","FA*IR","DM","xQuAD","Aug","Mul","VaR","CausE","DICE","MACR","PDRO","PPAC","CausalEPP"],
+  "relevance_extension": "Our extension preserves the Pareto partition + blueprint merge core; wraps it with (a) Federated Learning for M_pop and M_tail (privacy), (b) Differential Privacy on FL gradients, (c) LLM-based user profiling for additional Pop_u estimation signal, (d) Multi-objective tuning of the head/tail split beyond pure historical ratio.",
+  "files_extracted_at": "_pdf_text/page_*.txt"
+}

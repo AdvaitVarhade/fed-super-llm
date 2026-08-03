@@ -1,0 +1,107 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+Algorithm 2 SUPER Post-Processing (Hard Quota, Soft
+Blueprint)
+Require: User popularity inclination Popu, Popular pre-
+dictions Ppop(u) (descending), Tail predictions Ptail(u)
+(descending), Real rating list Lu (descending), Target list
+size N, Popular item set H
+Ensure: Final top-N recommendation list RecList(u)
+1: Npop ←⌊N · Popu⌋, Ntail ←N − Npop
+2: Cpop ←Ppop(u)[1:Npop], Ctail ←Ptail(u)[1:Ntail]
+3: idxpop ←1, idxtail ←1, RecList(u) ←∅
+4: B ← min(N, |Lu|)
+5: for k ← 1 to B do
+6: bk ← I[Lu[k] ∈ H] ▷ blueprint: head(1)/tail(0)
+7: if bk = 1andidxpop ≤ Npop then
+8: append Cpop[idxpop]; idxpop ← idxpop + 1
+9: else if bk = 0andidxtail ≤ Ntail then
+10: append Ctail[idxtail]; idxtail ← idxtail + 1
+11: else if idxpop ≤ Npop then
+12: append Cpop[idxpop]; idxpop ← idxpop + 1
+13: else
+14: append Ctail[idxtail]; idxtail ← idxtail + 1
+15: end if
+16: end for
+17: while |RecList(u)| < Nandidxpop ≤ Npop do
+18: append Cpop[idxpop]; idxpop ← idxpop + 1
+19: end while
+20: while |RecList(u)| < Nandidxtail ≤ Ntail do
+21: append Ctail[idxtail]; idxtail ← idxtail + 1
+22: end while
+23: return RecList(u)
+Note: The final list satisfies a hard quota / soft blueprint
+rule. The quotas (Npop, Ntail) derived from Pop u are
+enforced strictly, while the blueprint extracted from the
+first B = min(N, |Lu|) ranks of L u is used only as
+a rank-level preference for choosing the next pool as
+long as the corresponding quota remains. If the blueprint
+requests a pool whose quota is exhausted, the algorithm
+deterministically switches to the other pool to maintain
+validity while preserving the hard composition.
+the overall head–tail composition is enforced by
+hard user-specific quotas derived from Popu, while the
+blueprint serves only as a soft rank-level ordering prior.
+Under the leave-one-out protocol, the blueprint list Lu
+is constructed strictly from the training interactions of
+user u (i.e., excluding the held-out test item), ensuring
+that the merging prior does not access evaluation labels.
+The complete post-processing and blueprint-based merging
+procedure described above is formally summarized in
+Algorithm 2.
+1) BLUEPRINT-BASED MERGING: INTUITION AND EXAMPLE
+Algorithm 2 constructs the final recommendation list using a
+hard quota / soft blueprint strategy. First, the user-specific
+popularity inclination Popu determines a hard head–tail
+composition for the final top-N list via Npop = ⌊N· Popu⌋
+and Ntail = N − Npop. This quota is enforced strictly: even
+if the user’s historical list Lu is dominated by head items at
+the top ranks, once the head quota is satisfied, the remaining
+positions must be filled from the tail pool (and vice versa).
+Given these hard quotas, the blueprint derived from Lu is
+used only as a soft, rank-level ordering prior that decides
+which pool to draw from next as long as the corresponding
+quota is still available. Concretely, the algorithm first
+truncates the two candidate pools to Cpop and Ctail containing
+the top- Npop and top-N tail items from the popular-only and
+tail-only models, respectively. It then scans the first B =
+min(N, |Lu|) positions of Lu to obtain a head/tail indicator
+at each rank, and attempts to follow this indicator when
+selecting the next item. If the blueprint requests a pool whose
+quota is already exhausted, the method deterministically falls
+back to the other pool, thereby maintaining a valid top-N list
+while preserving the hard head–tail composition dictated by
+Popu.
+From a conceptual perspective, this blueprint acts as a
+lightweight positional regularizer : proportional allocation
+alone controls the aggregate head–tail ratio but does not
+constrain where exposure occurs across ranks, which may
+lead to position-level miscalibration. By introducing rank-
+aware guidance without altering backbone relevance scores,
+the soft blueprint stabilizes exposure distribution across
+positions, while the hard quota guarantees that the final list
+always matches the user-specific popularity inclination. For
+short or noisy histories, we apply the blueprint only for the
+first min(N , |Lu|) ranks and fill any remaining slots using the
+residual user-specific quotas. If the blueprint covers fewer
+than N positions (i.e., |Lu| < N), the remaining ranks
+are filled greedily from the residual pools while strictly
+satisfying the hard quotas (N pop, Ntail); in this completion
+phase, the exact within-quota ordering is not constrained by
+the blueprint.
+2) WORKED EXAMPLE
+Consider a target list size N = 6 and a user with Popu = 0.5,
+yielding Npop = 3 and Ntail = 3. Assume the user’s real
+rating list Lu induces the following head–tail blueprint over
+ranks:
+Lu = [Pop, Tail,Pop, Pop, Tail,Tail].
+Let the quota-limited candidate pools (sorted by predicted
+relevance within each pool) be
+Cpop(u) = [p1, p2, p3], Ctail(u) = [t1, t2, t3].
+The list is then constructed under a hard quota / soft blueprint
+rule: at each rank, the blueprint requests either head or tail,
+but the algorithm selects from that pool only if its remaining
+quota allows; otherwise it deterministically switches to the
+other pool. For the above blueprint, all requests are feasible
+within the quotas, hence scanning Lu yields
+RecList(u) = [p1, t1, p2, p3, t2, t3].
+37588 VOLUME 14, 2026

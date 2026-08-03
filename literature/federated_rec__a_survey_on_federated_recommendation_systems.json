@@ -1,0 +1,8 @@
+{
+  "title": "A Survey on Federated Recommendation Systems",
+  "authors": "Zehua Sun, Yonghui Xu, Yong Liu, Wei He, Lanju Kong, Fangzhao Wu, Yali Jiang, Lizhen Cui",
+  "year": "2022",
+  "abstract": "Federated learning has recently been applied to recommendation systems to protect user privacy. In federated learning settings, recommendation systems can train recommendation models only collecting the intermediate parameters instead of the real user data, which greatly enhances the user privacy. Beside, federated recommendation systems enable to collaborate with other data platforms to improve recommended model performance while meeting the regulation and privacy constraints. However, federated recommendation systems faces many new challenges such as privacy, security, heterogeneity and communication costs. While significant research has been conducted in these areas, gaps in the surveying literature still exist. In this survey, we-(1) summarize some common privacy mechanisms used in federated recommendation systems and discuss the advantages and limitations of each mechanism; (2) review some robust aggregation strategies and several novel attacks against security; (3) summarize some approaches to address heterogeneity and communication costs problems; (4)introduce some open source platforms that can be used to build federated recommendation systems; (5) present some prospective research directions in the future. This survey can guide researchers and practitioners understand the research progress in these areas.",
+  "url": "http://arxiv.org/abs/2301.00767v2",
+  "venue": "arXiv"
+}

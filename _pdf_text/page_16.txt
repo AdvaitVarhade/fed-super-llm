@@ -1,0 +1,75 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+FIGURE 8. nDCG results of the popularity-debiasing methods for the HPF, NeuMF, SKMeans, VaeCF, and WBPR algorithms on the (a) ML, (b) DB,
+and (c) Yelp datasets. Stars denote paired Wilcoxon signed-rank significance across seeds for SUPER versus the second-best method, where (*),
+(**), and (***) indicate p < 0.05, p < 0.01, and p < 0.001. Stars are shown only when SUPER is the best-performing method; hence, no star means
+SUPER is not the best in that setting.
+novelty, but this behavior can also coincide with weaker
+alignment to users’ historical popularity tendencies (cf.
+Rmse-PC and MRMC).
+Across datasets, CausalEPP is consistently competitive in
+novelty and can match or exceed the strongest baselines in
+several settings, reflecting its exposure-aware penalization
+of popularity-driven signals. PDRO and PPAC generally
+provide more moderate novelty gains, indicating a more
+conservative shift toward tail exploration.
+Overall, SUPER yields consistently strong novelty without
+relying on indiscriminate exploration: by calibrating the
+head–tail composition at the user level and maintaining
+rank-level exposure coherence, it promotes meaningful
+discovery while preserving a stable and personalized recom-
+mendation structure.
+C. RANKING ACCURACY: nDCG
+Although the preceding analyses emphasize calibration and
+beyond-accuracy dimensions, ranking accuracy remains a
+fundamental determinant of recommendation quality. The
+nDCG (normalized Discounted Cumulative Gain) metric
+evaluates how effectively each method positions relevant
+items near the top of the ranked list. Figure 8 presents
+results for the HPF, NeuMF, SKMeans, VaeCF, and WBPR
+recommenders under a diverse set of popularity-debiasing
+strategies.
+Several methods achieve strong ranking accuracy by prior-
+itizing relevance preservation during debiasing. In particular,
+CausalEPP consistently delivers the highest nDCG scores,
+while calibration-oriented approaches such as PPAC also
+demonstrate competitive ranking performance. These results
+suggest that exposure-aware correction and personalized
+calibration can effectively mitigate popularity bias without
+severely disrupting relevance ordering.
+Importantly, SUPER remains highly competitive in terms
+of nDCG across datasets and backbone recommenders,
+despite simultaneously optimizing for calibration and
+beyond-accuracy objectives. Unlike methods that prioritize
+ranking accuracy through stronger exposure corrections,
+SUPER adopts a balanced strategy that regulates head–tail
+composition at the user level while preserving stable
+relevance signals.
+This behavior highlights a key insight: maximizing ranking
+accuracy alone does not necessarily guarantee user-aligned
+recommendation quality. Methods that achieve the high-
+est nDCG may still exhibit weaker calibration or less
+controlled exposure patterns (see Sections V-A and V-B).
+By contrast, SUPER demonstrates that strong ranking perfor-
+mance can coexist with improved popularity alignment and
+diversity.
+Furthermore, the stability of SUPER’s nDCG across
+diverse base recommenders indicates that its benefits are not
+architecture-dependent. Even in challenging recommenda-
+tion environments, the method maintains reliable relevance
+ordering while mitigating popularity bias. Collectively, these
+findings suggest that user-centric popularity calibration and
+accurate ranking are complementary rather than conflicting
+objectives.
+These findings reinforce the central premise of this work:
+effective popularity debiasing should be evaluated not solely
+through ranking accuracy, but through its ability to balance
+relevance, calibration, and exposure.
+D. HOLISTIC ANALYSIS: GKPI
+Although individual metrics provide valuable insights into
+specific aspects of recommendation quality, interpreting
+overall system performance becomes challenging when
+these criteria yield conflicting signals. To address this
+issue, we employ a holistic evaluation measure, GKPI,
+which aggregates ranking accuracy and beyond-accuracy
+dimensions into a single composite score. Figure 9 presents
+37598 VOLUME 14, 2026

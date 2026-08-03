@@ -1,0 +1,44 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+FIGURE 6. LTCresults of the popularity-debiasing methods for the HPF, NeuMF, SKMeans, VaeCF, and WBPR algorithms on the (a) ML, (b) DB, and
+(c) Yelp datasets. Stars denote statistically significant improvements of SUPER over the second-best method and are displayed only when SUPER
+is the best-performing method; hence, no star means SUPER is not the best in that setting.
+FIGURE 7. Novelty results of the popularity-debiasing methods for the HPF, NeuMF, SKMeans, VaeCF, and WBPR algorithms on the (a) ML, (b) DB,
+and (c) Yelp datasets. Stars denote statistically significant improvements of SUPER over the second-best method and are displayed only when
+SUPER is the best-performing method; hence, no star means SUPER is not the best in that setting.
+diversification constraints. By dynamically balancing head
+and tail items according to each user’s inferred inclination,
+SUPER preserves broad item exposure while maintaining
+strong popularity calibration, highlighting its ability to
+harmonize diversity and user-centric relevance.
+3) LTC (LONG-TAIL COVERAGE)
+While APLT captures the per-user fraction of tail items,
+LTC measures system-level coverage, i.e., how broadly tail
+items appear across all users’ top-N lists. As shown in
+Figure 6, methods that aggressively promote tail content,
+such as MUL and AUG, as well as exposure-correction
+and representation/causality-oriented approaches like CausE,
+DICE, and MACR, tend to achieve higher LTC by spreading
+long-tail exposure across a larger portion of the cata-
+log. A similar effect is observed for calibration-driven
+approaches such as PPAC, which can also yield strong
+tail coverage in some datasets by amplifying user-tail
+alignment.
+However, maximizing LTC via broad tail promotion
+may come with the risk of overexposing niche items
+for popularity-oriented users, potentially weakening per-
+sonalization and calibration. In contrast, SUPER achieves
+a consistently competitive (moderate-to-high) LTC across
+datasets by controlling tail exposure at the user level rather
+than enforcing a global objective. This user-centric exposure
+control preserves meaningful long-tail coverage without
+relying on blanket tail amplification. Methods such as PDRO
+and CausalEPP, which prioritize robustness or exposure-
+confounding correction, typically yield more conservative tail
+coverage, reflecting their different optimization focus.
+4) NOVELTY
+Novelty captures the extent to which a recommender intro-
+duces users to previously unseen or infrequently interacted
+items. As shown in Figure 7, methods that apply strong
+popularity suppression or aggressive long-tail promotion
+(e.g., AUG, MUL, and DICE) typically achieve the highest
+VOLUME 14, 2026 37597

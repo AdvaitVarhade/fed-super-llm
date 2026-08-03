@@ -1,0 +1,90 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+TABLE 1. Combined complexity of key components.
+4) OUTCOME AND RATIONALE
+By adhering to the user’s estimated popularity inclination
+ratio, SUPER tailors the final recommendation to reflect
+each person’s established preferences while introducing
+an appropriate degree of diversity. This calibration-based
+mechanism simultaneously combats the tendency to overem-
+phasize prevalent items (thereby mitigating popularity bias)
+and ensures that the user’s legitimate tastes inform the
+ultimate combination of head and tail items. In so doing, the
+user is more likely to encounter content that resonates with
+their observed tastes, encouraging an enriched and balanced
+discovery experience across the broader catalog.
+G. COMBINED COMPLEXITY TABLE
+The Table 1 summarizes the complexity of key components
+from the two-phase approach.
+Notation for Table 1: Here, n denotes the number of
+items in the catalog (or scored candidates per user), m
+the total number of interactions, f the latent dimension of
+the backbone model, N the final recommendation length
+(Top-N), and M an optional intermediate candidate size (e.g.,
+if a method first selects top-M items before constructing the
+final Top-N list).
+Given the dataset sizes in Table 2, the dominant cost for
+SUPER is the per-user ranking step over candidate items
+followed by sorting, which scales primarily with the item
+catalog size and the number of users. Thus, datasets with
+larger item sets (e.g., DoubanBooks) naturally incur higher
+wall-clock time in top-N generation, while the training cost
+remains identical to the underlying backbone recommender.
+After completing the offline training and classification
+steps, the online process involves generating user-specific
+top-N recommendations aligned with their personal popular-
+ity inclination. By doing so, the proposed Smart User-Centric
+approach offers a more balanced, diverse, and user-aligned
+solution to the popularity bias problem.
+IV. EXPERIMENTAL SETUP
+In this section, we present the experimental setup designed to
+assess the effectiveness of our Smart User-centric Popularity
+Exposure Reduction for Fair and Diverse Recommendations.
+We structure this evaluation by detailing the datasets
+employed, the chosen evaluation metrics, the experimentation
+methodology, and the baseline methods against which we
+compare our proposed solution. The aim is to provide a
+comprehensive and fair assessment of the approach’s ability
+to mitigate popularity bias while remaining closely aligned
+with individual user preferences. In forming our experimental
+design, we draw inspiration from prior works that have
+tackled popularity bias and related challenges [10], [20], [27].
+A. DATASETS
+To ensure the generalizability of our findings, we rely on
+three widely studied benchmark datasets: MovieLens-1M
+(ML),1 Douban Book (DB), 2 and Yelp.3 These datasets are
+commonly used in recommender system research and differ
+substantially in domain, size, and sparsity, thereby allowing
+us to examine how varying data characteristics influence the
+performance and robustness of our approach.
+• ML: Focuses on movie preferences, featuring over one
+million user ratings on a five-star scale. Its moderately
+dense structure offers a stable testbed for evaluating the
+debiasing capabilities of our method.
+• DB: Extracted from a large-scale online book com-
+munity, this dataset includes user-item interactions
+also recorded on a five-star scale. Its higher sparsity
+and larger catalog size enable analysis under more
+challenging conditions.
+• Yelp:Captures user reviews on local businesses, ranging
+from restaurants to service providers. The high sparsity
+and niche-oriented nature of these interactions make the
+Yelp dataset particularly suited to testing how well our
+approach handles long-tail and diverse user interests.
+All rating values across these datasets are discrete and span
+the [1–5] interval. The diversity in size, average rating
+patterns, and sparsity ratios mirrors real-world scenarios,
+ensuring that our conclusions are not narrowly tied to a single
+domain [9], [21].
+B. EVALUATION METRICS
+We evaluate the proposed method using a compact yet
+comprehensive set of metrics that capture recommenda-
+tion accuracy, popularity calibration, and beyond-accuracy
+objectives such as diversity and novelty. Following prior
+work on popularity bias and user-centric evaluation [8],
+[27], we deliberately omit Precision, Recall, and F1-score,
+as these metrics do not directly reflect popularity exposure or
+calibration effects.
+1https://grouplens.org/datasets/movielens/1m/
+2https://www.douban.com/
+3https://www.yelp.com/
+37590 VOLUME 14, 2026

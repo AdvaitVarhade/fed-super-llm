@@ -1,0 +1,133 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+dual modeling, and a blueprint-guided calibration strategy,
+the proposed approach integrates head and tail items while
+preserving personalization. Extensive experiments across
+multiple datasets and backbone recommenders demonstrate
+that SUPER maintains strong ranking performance, achieves
+robust popularity alignment, and supports beyond-accuracy
+objectives without relying on strong causal assumptions.
+These findings highlight the feasibility of balancing exposure
+and relevance through lightweight calibration under standard
+offline evaluation settings.
+Several directions remain for future research. Incorpo-
+rating temporal dynamics and drift-aware updates may
+further improve adaptability in rapidly evolving platforms,
+while enhanced initialization strategies could strengthen
+performance under sparse interaction regimes. Additionally,
+extending the framework to privacy-preserving or federated
+environments represents an important step toward real-world
+deployment.
+Overall, SUPER provides a scalable and model-agnostic
+pathway toward more balanced and user-aligned recom-
+mender systems, supporting the broader objective of deliver-
+ing fair, diverse, and behaviorally coherent recommendations.
+ACKNOWLEDGMENT
+This article was prepared from the studies within the scope of
+Ismail Burak Yavru’s Ph.D. dissertation.
+DATA AVAILABILITY STATEMENT
+The data will be made available upon reasonable request.
+DECLARATION OF GENERATIVE AI IN SCIENTIFIC
+WRITING
+During the preparation of this work the authors used ChatGPT
+in order to refine written text for grammar checking,
+readability, and fluency. After using this tool, the author
+reviewed and edited the content as needed and takes full
+responsibility for the content of the publication.
+REFERENCES
+[1] F. Ricci, L. Rokach, and B. Shapira, ‘‘Recommender systems: Introduction
+and challenges,’’ in Recommender Systems Handbook. Cham, Switzerland:
+Springer, 2015, pp. 1–34.
+[2] L. Li, J. Chen, and S. Raghunathan, ‘‘Recommender system rethink: Impli-
+cations for an electronic marketplace with competing manufacturers,’’ Inf.
+Syst. Res., vol. 29, no. 4, pp. 1003–1023, Dec. 2018.
+[3] E. Yalçın and A. Bilge, ‘‘Novel automatic group identification approaches
+for group recommendation,’’ Expert Syst. Appl., vol. 174, Jul. 2021,
+Art. no. 114709.
+[4] E. Yalçın, F. Ismailoglu, and A. Bilge, ‘‘An entropy empowered hybridized
+aggregation technique for group recommender systems,’’ Expert Syst.
+Appl., vol. 166, Mar. 2021, Art. no. 114111.
+[5] Z. Xing, Z. Meng, G. Zheng, L. Yang, X. Guo, L. Tan, and Y . Jiang,
+‘‘Human–computer interactive rehabilitation: A 3D graph deep learning
+method for non-contact gesture recognition in post-epidemic and aging
+societies,’’Measurement, vol. 257, Jan. 2026, Art. no. 118794.
+[6] Z. Xing, G. Ma, L. Wang, L. Yang, X. Guo, and S. Chen, ‘‘Toward visual
+interaction: Hand segmentation by combining 3-D graph deep learning and
+laser point cloud for intelligent rehabilitation,’’ IEEE Internet Things J.,
+vol. 12, no. 12, pp. 21328–21338, Jun. 2025.
+[7] A. B. Ahanger, S. W. Aalam, M. R. Bhat, and A. Assad, ‘‘Popularity bias
+in recommender systems—A review,’’ in Proc. Int. Conf. Emerg. Technol.
+Comput. Eng., 2022, pp. 431–444.
+[8] M. Elahi, D. K. Kholgh, M. S. Kiarostami, S. Saghari, S. P. Rad, and
+M. Tkalčič, ‘‘Investigating the impact of recommender systems on user-
+based and item-based popularity bias,’’ Inf. Process. Manage., vol. 58,
+no. 5, Sep. 2021, Art. no. 102655.
+[9] F. Fabbri, M. L. Croci, F. Bonchi, and C. Castillo, ‘‘Exposure inequality in
+people recommender systems: The long-term effects,’’ in Proc. Int. AAAI
+Conf. Web Social Media, vol. 16, 2022, pp. 194–204.
+[10] L. Boratto, G. Fenu, and M. Marras, ‘‘Connecting user and item
+perspectives in popularity debiasing for collaborative recommendation,’’
+Inf. Process. Manage., vol. 58, no. 1, Jan. 2021, Art. no. 102387.
+[11] R. Borges and K. Stefanidis, ‘‘On mitigating popularity bias in recom-
+mendations via variational autoencoders,’’ in Proc. 36th Annu. ACM Symp.
+Appl. Comput., Mar. 2021, pp. 1383–1389.
+[12] L. Boratto, G. Fenu, and M. Marras, ‘‘The effect of algorithmic bias on
+recommender systems for massive open online courses,’’ in Proc. Adv.
+Inf. Retrieval: 41st Eur. Conf. IR Res., Cologne, Germany, Apr. 2019,
+pp. 457–472.
+[13] P. Sánchez, ‘‘Exploiting contextual information for recommender systems
+oriented to tourism,’’ in Proc. 13th ACM Conf. Recommender Syst.,
+Sep. 2019, pp. 601–605.
+[14] M. Naghiaei, H. A. Rahmani, and M. Dehghan, ‘‘The unfairness of
+popularity bias in book recommendation,’’ in Proc. Adv. Bias Fairness Inf.
+Retr., 3rd Int. Workshop, Stavanger, Norway, Apr. 2022, pp. 69–81.
+[15] D. Jannach, I. Kamehkhosh, and G. Bonnin, ‘‘Biases in automated
+music playlist generation: A comparison of next-track recommending
+techniques,’’ in Proc. Conf. User Modeling Adaptation Personalization,
+Jul. 2016, pp. 281–285.
+[16] D. Kowald, M. Schedl, and E. Lex, ‘‘The unfairness of popularity bias in
+music recommendation: A reproducibility study,’’ in Proc. Adv. Inf. Retr.,
+42nd Eur. Conf. IR Res., Lisbon, Portugal, Apr. 2020, pp. 35–42.
+[17] S. Seymen, H. Abdollahpouri, and E. C. Malthouse, ‘‘A unified opti-
+mization toolbox for solving popularity bias, fairness, and diversity in
+recommender systems,’’ in Proc. MORS@ RecSys, vol. 2959, 2021, pp.
+1–10.
+[18] X. Wang, S. Gao, J. Guo, C. Wang, L. Xiong, and Y . Zou, ‘‘Deep learning-
+based integrated circuit surface defect detection: Addressing information
+density imbalance for industrial application,’’ Int. J. Comput. Intell. Syst.,
+vol. 17, no. 1, p. 29, Feb. 2024.
+[19] H. Abdollahpouri, R. Burke, and B. Mobasher, ‘‘Controlling popularity
+bias in learning-to-rank recommendation,’’ in Proc. 11th ACM Conf.
+Recommender Syst., Aug. 2017, pp. 42–46.
+[20] H. Abdollahpouri, R. Burke, and B. Mobasher, ‘‘Managing popularity
+bias in recommender systems with personalized re-ranking,’’ 2019,
+arXiv:1901.07555.
+[21] H. Abdollahpouri, M. Mansoury, R. Burke, B. Mobasher, and
+E. Malthouse, ‘‘User-centered evaluation of popularity bias in
+recommender systems,’’ in Proc. 29th ACM Conf. User Modeling,
+Adaptation Personalization, Jun. 2021, pp. 119–129.
+[22] Z. Liu, Y . Fang, and M. Wu, ‘‘Mitigating popularity bias for users and
+items with fairness-centric adaptive recommendation,’’ ACM Trans. Inf.
+Syst., vol. 41, no. 3, pp. 1–27, Jul. 2023.
+[23] Y . Tacli, E. Yalçın, and A. Bilge, ‘‘Novel approaches to measuring the
+popularity inclination of users for the popularity bias problem,’’ in Proc.
+Int. Symp. Multidisciplinary Stud. Innov. Technol. (ISMSIT), Oct. 2022,
+pp. 555–560.
+[24] X. Su, P. Li, and X. Zhu, ‘‘The influence of herd mentality on rating bias
+and popularity bias: A bi-process debiasing recommendation model based
+on matrix factorization,’’ Behav. Sci., vol. 13, no. 1, p. 63, Jan. 2023.
+[25] Y . Zhang, F. Feng, X. He, T. Wei, C. Song, G. Ling, and Y . Zhang, ‘‘Causal
+intervention for leveraging popularity bias in recommendation,’’ in Proc.
+44th Int. ACM SIGIR Conf. Res. Develop. Inf. Retr., Jul. 2021, pp. 11–20.
+[26] H. Abdollahpouri, M. Mansoury, R. Burke, and B. Mobasher, ‘‘The unfair-
+ness of popularity bias in recommendation,’’ 2019, arXiv:1907.13286.
+[27] E. Yalcin and A. Bilge, ‘‘Evaluating unfairness of popularity bias
+in recommender systems: A comprehensive user-centric analysis,’’ Inf.
+Process. Manage., vol. 59, no. 6, Nov. 2022, Art. no. 103100.
+[28] Y .-J. Park and A. Tuzhilin, ‘‘The long tail of recommender systems and
+how to leverage it,’’ in Proc. ACM Conf. Recommender Syst., Oct. 2008,
+pp. 11–18.
+[29] C. Chen, M. Zhang, Y . Liu, and S. Ma, ‘‘Missing data modeling with
+user activity and item popularity in recommendation,’’ in Proc. Inf. Retr.
+Technol., 14th Asia Inf. Retr. Societies Conf., Taipei, Taiwan, Nov. 2018,
+pp. 113–125.
+37604 VOLUME 14, 2026

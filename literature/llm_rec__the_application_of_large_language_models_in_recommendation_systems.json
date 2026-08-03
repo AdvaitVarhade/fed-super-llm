@@ -1,0 +1,8 @@
+{
+  "title": "The Application of Large Language Models in Recommendation Systems",
+  "authors": "Peiyang Yu, Zeqiu Xu, Jiani Wang, Xiaochuan Xu",
+  "year": "2025",
+  "abstract": "The integration of Large Language Models into recommendation frameworks presents key advantages for personalization and adaptability of experiences to the users. Classic methods of recommendations, such as collaborative filtering and content-based filtering, are seriously limited in the solution of cold-start problems, sparsity of data, and lack of diversity in information considered. LLMs, of which GPT-4 is a good example, have emerged as powerful tools that enable recommendation frameworks to tap into unstructured data sources such as user reviews, social interactions, and text-based content. By analyzing these data sources, LLMs improve the accuracy and relevance of recommendations, thereby overcoming some of the limitations of traditional approaches. This work discusses applications of LLMs in recommendation systems, especially in electronic commerce, social media platforms, streaming services, and educational technologies. This showcases how LLMs enrich recommendation diversity, user engagement, and the system's adaptability; yet it also looks into the challenges connected to their technical implementation. This can also be presented as a study that shows the potential of LLMs for changing user experiences and making innovation possible in industries.",
+  "url": "http://arxiv.org/abs/2501.02178v2",
+  "venue": "arXiv"
+}

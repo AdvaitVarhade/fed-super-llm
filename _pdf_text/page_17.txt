@@ -1,0 +1,78 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+FIGURE 9. GKPI results of the popularity-debiasing methods for the HPF, NeuMF, SKMeans, VaeCF, and WBPR algorithms on the (a) ML, (b) DB,
+and (c) Yelp datasets. Stars denote paired Wilcoxon signed-rank significance across seeds for SUPER versus the second-best method, where (*),
+(**), and (***) indicate p < 0.05, p < 0.01, and p < 0.001. Stars are shown only when SUPER is the best-performing method; hence, no star means
+SUPER is not the best in that setting.
+the resulting comparisons across all backbone recommenders
+and datasets.
+From an integrated perspective, the compared methods
+exhibit distinct strengths across evaluation dimensions.
+Diversification-oriented strategies such as MUL and xQuad
+tend to improve catalog coverage and novelty-related indica-
+tors, whereas representation- and causality-driven approaches
+including CausE, DICE, and MACR emphasize exposure con-
+trol and structural bias mitigation. User-aware optimization
+frameworks such as PPAC and robustness-oriented methods
+like PDRO further enhance calibration-oriented or stability-
+related metrics. These heterogeneous performance profiles
+highlight the inherently multi-objective nature of popularity
+debiasing.
+In contrast, SUPER consistently achieves the highest GKPI
+across datasets and backbone recommenders, indicating a
+more balanced trade-off among competing recommendation
+objectives. Following our evaluation protocol, comparisons
+are reported against the second-best debiasing method (i.e.,
+the strongest non-SUPER baseline under the seed-averaged
+mean for each setting). For example, on the ML dataset
+with the VaeCF recommender, SUPER attains a GKPI of
+0.472, surpassing the runner-up method (PPAC, 0.321) by an
+absolute margin of 0.151.
+These findings suggest that regulating head–tail exposure
+at the user level provides structural benefits that extend
+beyond isolated metric improvements. Rather than optimiz-
+ing a single dimension at the expense of others, SUPER
+maintains stable performance across accuracy, calibration,
+and beyond-accuracy criteria, which is particularly desirable
+in real-world recommendation environments where multiple
+quality dimensions must be satisfied simultaneously. This
+behavior supports the interpretation of GKPI as a prac-
+tical rubric for identifying methods that achieve coherent
+trade-offs rather than extreme optimization of isolated
+metrics.
+E. RUNTIME ANALYSIS: TOP-N RECOMMENDATION
+GENERATION COST
+Beyond recommendation quality and calibration, compu-
+tational efficiency is a critical factor for the practical
+deployment of popularity-debiasing methods. We therefore
+analyze the average wall-clock time required to generate top-
+10 recommendation lists under different debiasing strategies.
+The reported values correspond to the total post-processing
+cost, including candidate selection and list construction, aver-
+aged across all backbone recommenders and random seeds.
+For each dataset and method, we report the mean wall-clock
+time aggregated over all backbone recommenders and seeds
+(i.e., averaging the per-(recommender, seed) runtimes).
+All experiments were conducted on a single machine
+equipped with an Apple M2 Max processor (12-core CPU,
+38-core GPU), 32 GB RAM, and 1 TB SSD storage.
+No additional model retraining was performed during top-
+N generation; all methods operate purely at the inference
+or post-processing stage. The reported times measure only
+inference-time ranking and post-processing during top-N
+generation. They exclude all training costs; for SUPER, the
+two backbone models (head-only and tail-only) are trained
+offline with the same architecture and hyperparameters, and
+runtime reflects only the final merging/calibration step.
+Table 3 highlights substantial differences in computational
+cost among debiasing strategies. Network-flow-based meth-
+ods such as Discrepancy Minimization (DM) incur the high-
+est runtime overhead, reflecting their inherent optimization
+complexity. Similarly, diversification-oriented approaches
+such as VarERPs (which subsume AUG, MUL, and VaR) and
+xQuad require repeated score recomputation and iterative re-
+ranking, leading to significantly higher execution times.
+In contrast, SUPER consistently exhibits runtime perfor-
+mance comparable to lightweight post-processing methods
+such as CausE, DICE, and MACR, and remains close to
+the BASE recommendation cost. Across all datasets, the
+VOLUME 14, 2026 37599

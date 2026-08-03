@@ -1,0 +1,106 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+focuses on regulating how these signals influence ranking
+outcomes. The proposed framework therefore operates as
+an exposure-calibrated ranking mechanism rather than a
+deconfounding model. Investigating causal extensions that
+integrate propensity estimation or counterfactual learning
+represents an important direction for future work.
+Similarly, SUPER is not designed as a time-aware recom-
+mender; instead, it functions as a model-agnostic exposure-
+calibration layer that can operate on top of backbone
+algorithms with or without temporal dynamics.
+3) DYNAMICS OF POPULARITY AND USER PREFERENCE
+DRIFT
+The current formulation of SUPER estimates item popularity
+and user inclination under a static offline setting. However,
+the framework naturally supports dynamic updates with
+minimal modification. Item popularity statistics can be
+recomputed periodically or within sliding temporal win-
+dows to reflect evolving consumption trends. Similarly, the
+user-specific popularity inclination Popu can be updated
+incrementally using recent interactions, enabling the system
+to adapt when a user’s preference shifts toward more
+popular or more niche content over time. Importantly,
+such updates do not require retraining the underlying
+recommendation models; only the lightweight popularity
+statistics and post-processing ratios need to be refreshed.
+This design makes SUPER compatible with drift-aware and
+real-time recommendation pipelines, although a full temporal
+evaluation is left for future work.
+B. DATA, SCALABILITY, AND DEPLOYMENT CONSTRAINTS
+Another limitation arises from the system’s data require-
+ments. By design, SUPER depends on meaningful historical
+user interactions to gauge how strongly individuals lean
+toward popular or less-known items. This requirement poses
+challenges in cold-start conditions where new users or newly
+introduced products lack sufficient interaction logs. Under
+these constraints, calibrating head–tail preferences becomes
+less reliable, and the model may offer suboptimal suggestions
+until enough data accumulates.
+Further considerations pertain to the computational over-
+head associated with integrating user-centric popularity
+estimation into each recommendation. While the hybrid
+pre- and post-processing approach in SUPER is generally
+feasible for moderate data scales, very large systems with
+millions of active users and items might demand further
+optimization. Techniques such as incremental updates to
+the popularity classification or parallelized operations could
+mitigate performance bottlenecks, but the extent of these
+modifications remains to be assessed.
+Additionally, privacy-oriented constraints can limit the
+availability of detailed user interaction data. As SUPER relies
+on clear signals of user preferences and item popularity,
+approaches that blur or anonymize these inputs may reduce its
+precision in distinguishing head and tail items or in estimating
+a user’s observed inclination for mainstream versus niche
+content.
+C. ASSUMPTION SENSITIVITY AND POTENTIAL NEGATIVE
+EFFECTS
+1) SENSITIVITY TO THE PARETO THRESHOLD
+Although the 20% head threshold provides stable perfor-
+mance across datasets, the definition of popularity directly
+influences the estimation of user inclination and the resulting
+exposure calibration. Lower thresholds impose a stricter
+notion of popularity and may improve calibration, whereas
+higher thresholds can blur the distinction between head
+and tail items, potentially weakening exposure control. This
+sensitivity highlights that popularity partitioning is not purely
+structural but also assumption-dependent.
+2) FAILURE MODES OF THE BLUEPRINT STRATEGY
+The blueprint-based merge uses a user’s historical head–tail
+pattern as a soft positional prior for interleaving popular
+and tail candidates. For users with sparse, short, or noisy
+histories, this pattern may be unreliable and can inject
+incidental exposure noise into rank-level ordering. Notably,
+SUPER’s main calibration behavior is governed by the
+hard head–tail quota derived from Popu, while the blueprint
+only affects within-list placement as long as quota remains.
+Therefore, in cold-start or low-activity regimes, a robust
+variant can downweight or disable the blueprint and rely on
+proportional (quota-preserving) interleaving, optionally with
+simple smoothing based on history length.
+3) REPRESENTATION FRAGMENTATION FROM
+INDEPENDENT TRAINING
+Training separate models on head and tail subsets improves
+exposure controllability but may reduce cross-subset knowl-
+edge transfer. Consequently, latent signals learned in the pop-
+ular domain may not fully inform tail-item representations,
+potentially limiting recommendation quality for niche items.
+Joint or partially shared representations could mitigate this
+effect but may simultaneously reintroduce popularity bias.
+4) PERSONALIZATION-DIVERSITY TRADE-OFF
+While SUPER aims to calibrate exposure rather than maxi-
+mize diversity, increasing tail representation may not benefit
+all users equally. Popularity-oriented users may experience
+slight relevance degradation when additional tail items are
+introduced, whereas tail-oriented users typically benefit from
+improved discovery. This reflects a fundamental trade-off
+in popularity debiasing between exposure fairness and strict
+personalization.
+VII. CONCLUSION AND FUTURE DIRECTIONS
+This study introduced SUPER, a hybrid user-centric frame-
+work designed to mitigate popularity bias by calibrat-
+ing recommendation exposure according to each user’s
+observed inclination toward popular versus tail content. By
+combining Pareto-based popularity profiling, specialized
+VOLUME 14, 2026 37603

@@ -1,0 +1,107 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+approaches, enabling stable popularity alignment without
+imposing strong causal assumptions or architectural con-
+straints.
+Taken together, these developments suggest a shift from
+heuristic exposure balancing toward more structured and
+user-aware paradigms.
+III. THE PROPOSED SMART USER-CENTRIC POPULARITY
+DEBIASING METHOD
+One of the main objectives in tackling popularity bias is to
+ensure that recommendation lists reflect each user’s observed
+preferences regarding item popularity. While many existing
+techniques simply adjust item rankings post-hoc or rely on
+global debiasing strategies, our approach provides a more
+personalized and principled solution. By integrating the
+Pareto principle with user-specific popularity inclinations,
+we create a smart recommendation framework that harmo-
+nizes both popular and less-known (tail) items within the final
+recommendations.
+SUPER is not intended as a causal debiasing approach;
+rather, it is a calibration-oriented framework designed
+for standard offline recommendation settings where
+impression/exposure logs are unavailable. Accordingly,
+SUPER focuses on controllable exposure calibration under
+interaction-only benchmarks, where structurally separating
+head and tail interactions provides a practical way to reduce
+representation imbalance prior to ranking-time calibration.
+Figure 1 provides an overview of the SUPER pipeline,
+illustrating the offline head–tail partitioning, user popularity
+inclination estimation, and the blueprint-based merging
+strategy used to construct the final recommendation list.
+A. PRE-PROCESSING: SEPARATING THE DATASET INTO
+POPULAR AND TAIL ITEMS
+We begin by applying the Pareto principle to partition the
+entire item catalog into two distinct subsets:
+1) Popular (Head) Items (H): Items are sorted in
+descending order according to their rating frequency,
+and the ‘‘popular’’ set is defined as the minimal
+prefix of this sorted list whose cumulative rating count
+reaches 20% of all ratings in the dataset. This means
+that popular items are those accounting for 20% of the
+total interaction volume, rather than the top 20% of
+items by count, capturing the mainstream portion of the
+catalog that receives disproportionately high attention
+2) Tail Items (T): The remaining 80% of the catalog,
+items that have not attained widespread consumption,
+form the long-tail set. These items, though less
+frequently interacted with, can be crucial for delivering
+diverse and personalized recommendations to users
+with unique tastes.
+This preprocessing step clearly distinguishes between
+mainstream (popular) and niche (tail) content. By isolating
+the two sets upfront, we reduce the risk that the dominance of
+popular items overshadows the learning of tail-item signals
+in models specialized for niche content.
+Although the head–tail partitioning may appear
+structurally simple, it serves a principled role in miti-
+gating representation imbalance during model learning.
+In popularity-skewed datasets, jointly training on mixed
+interactions often biases latent representations toward head
+items, suppressing informative signals from the long-
+tail. By separating these subsets, the proposed framework
+introduces an implicit exposure regularization effect that
+stabilizes learning dynamics prior to calibration. The
+objective of this design is therefore not increased architectural
+complexity, but controlled representation learning that
+preserves minority-item signals while remaining compatible
+with diverse backbone recommenders.
+B. TRAINING ON POPULAR AND TAIL SUBSETS
+SEPARATELY
+After dividing the dataset, we train distinct recommendation
+models, one using only the popular subset and another using
+only the tail subset. This approach allows each model to
+specialize and learn latent patterns more effectively without
+being biased by the other subset’s distribution. For example:
+• Popular-Only Model: Trained on the H set, it excels at
+recommending widely-liked items.
+• Tail-Only Model: Trained on the T set, it focuses on
+uncovering hidden gems and niche content that might
+otherwise be overshadowed by popular items.
+Training these models independently decouples the learn-
+ing processes, ensuring that the tail-specialized model
+can gain a robust understanding of lesser-known con-
+tent without the interference of highly rated mainstream
+items. This decoupled training is intended to prevent
+popularity-dominant gradients from leaking into tail rep-
+resentations, which can occur under a shared embedding
+space. In this sense, the split-and-train design functions as a
+structural constraint that improves controllability of head–tail
+exposure before the final user-level calibration step.
+Algorithm 1 summarizes this pre-processing stage by
+(i) applying Pareto-based head–tail partitioning and
+(ii) training separate models on the popular and tail subsets.
+We note that the popular-item and tail-item components
+in SUPER are intentionally trained independently. While
+cross-subset knowledge transfer or shared representations
+could potentially improve raw tail-item accuracy, such
+mechanisms may also reintroduce popularity signals into
+tail representations and thereby weaken exposure con-
+trol. Following common practice in popularity-bias miti-
+gation, SUPER prioritizes controlled popularity exposure
+through decoupled modeling and post-processing calibra-
+tion, rather than joint representation learning. Exploring
+cross-subset transfer mechanisms is therefore treated as
+a complementary research direction and left for future
+work.
+VOLUME 14, 2026 37585

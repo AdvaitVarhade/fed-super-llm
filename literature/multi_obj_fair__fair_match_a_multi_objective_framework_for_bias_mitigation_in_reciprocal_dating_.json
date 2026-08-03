@@ -1,0 +1,8 @@
+{
+  "title": "FAIR-MATCH: A Multi-Objective Framework for Bias Mitigation in Reciprocal Dating Recommendations",
+  "authors": "Madhav Kotecha",
+  "year": "2025",
+  "abstract": "Online dating platforms have fundamentally transformed the formation of romantic relationships, with millions of users worldwide relying on algorithmic matching systems to find compatible partners. However, current recommendation systems in dating applications suffer from significant algorithmic deficiencies, including but not limited to popularity bias, filter bubble effects, and inadequate reciprocity modeling that limit effectiveness and introduce harmful biases. This research integrates foundational work with recent empirical findings to deliver a detailed analysis of dating app recommendation systems, highlighting key issues and suggesting research-backed solutions. Through analysis of reciprocal recommendation frameworks, fairness evaluation metrics, and industry implementations, we demonstrate that current systems achieve modest performance with collaborative filtering reaching 25.1\\% while reciprocal methods achieve 28.7\\%. Our proposed mathematical framework addresses these limitations through enhanced similarity measures, multi-objective optimization, and fairness-aware algorithms that maintain competitive accuracy while improving demographic representation to reduce algorithmic bias.",
+  "url": "http://arxiv.org/abs/2507.01063v2",
+  "venue": "arXiv"
+}

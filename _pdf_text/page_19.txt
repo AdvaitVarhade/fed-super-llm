@@ -1,0 +1,110 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+SUPER’s calibrated exposure mechanism, which prevents
+excessive injection of tail content that could undermine
+relevance. Conversely, users who historically favor tail
+items receive a higher proportion of niche recommendations
+without completely excluding popular items, ensuring that
+exploration is encouraged while maintaining recommenda-
+tion coherence. This observation confirms that SUPER does
+not enforce a uniform head–tail balance, but instead dynam-
+ically aligns recommendation exposure with individual user
+tendencies.
+2) DATASET SPARSITY AND DOMAIN CHARACTERISTICS
+Dataset characteristics further influence this behavior.
+In denser datasets such as MovieLens-1M, user popularity
+inclination can be estimated more reliably, resulting in
+particularly strong calibration and stable ranking behavior.
+In contrast, highly sparse datasets such as Yelp pose greater
+challenges due to limited interaction histories. Despite this,
+SUPER remains robust and competitive, indicating that it
+does not rely on overly precise popularity estimates and can
+function effectively even under severe sparsity.
+3) USER ACTIVITY LEVELS AND COLD-START ROBUSTNESS
+To further examine robustness with respect to user activity,
+we stratified users into three groups according to their
+total number of interactions: low-activity (<20), medium-
+activity (20–100), and high-activity (>100). For each group,
+we re-evaluated all debiasing methods across all datasets and
+baseline recommenders.
+The results for low-activity (cold-start) users indicate
+that Yelp is largely dominated by sparse profiles (13,685
+out of 16,239 users; 84.27% have < 20 interactions),
+where calibration is inherently challenging due to limited
+behavioral evidence. In this regime, RMSE-PC values remain
+small in absolute magnitude, yet clear relative differences
+still emerge across debiasing strategies. Notably, SUPER
+achieves the lowest average RMSE-PC of 0.0096 across
+backbone recommenders, outperforming strong baselines
+such as PDRO (0.0234), PPAC (0.0294), DICE (0.0435),
+and CausalEPP (0.0254). Even compared to competitive
+calibration-oriented methods like Fair (0.0249) and CausE
+(0.0377), SUPER maintains the best calibration, providing
+quantitative evidence of robustness under sparse interaction
+histories. For medium- and high-activity users, where the
+user-specific popularity inclination Popu can be estimated
+more reliably, SUPER remains among the top-performing
+methods in calibration while preserving competitive accuracy
+and beyond-accuracy performance.
+a: USER-CENTERED FAIRNESS VS. SYSTEM-LEVEL EXPOSURE
+While metrics such as Entropy, LTC, and Gini-type mea-
+sures capture how evenly recommendation exposure is
+distributed across items at the system level, they do not
+directly reflect fairness at the individual user level. In this
+work, user-centered fairness is primarily evaluated through
+calibration-oriented metrics (Rmse-PC and MRMC), which
+quantify how well recommendation exposure aligns with
+each user’s historical popularity inclination.
+Taken together with the above segment analyses, the results
+suggest that SUPER adapts smoothly across diverse user
+profiles without introducing systematic disadvantages to any
+particular group. Rather than enforcing uniform exposure
+across users, SUPER prioritizes aligning recommendation
+exposure with individual user tendencies, thereby providing
+a user-centric notion of fairness that remains robust under
+heterogeneity in both user activity and dataset sparsity.
+I. DISCUSSION OF OVERALL PERFORMANCE
+Taken collectively, the experimental results across calibra-
+tion, beyond-accuracy, and ranking accuracy dimensions
+demonstrate that SUPER not only aligns recommended
+content with users’ popularity preferences, but also consis-
+tently enhances diversity, long-tail exposure, and novel item
+discovery. While several debiasing techniques outperform
+SUPER in isolated metrics, such as MUL in terms of
+APLT, xQuad with respect to Entropy, or causality- and
+representation-driven methods like CausE and DICE in
+catalog-level exposure, these gains are frequently accompa-
+nied by increased calibration error or instability across ranked
+positions.
+Methods that rely on strong global constraints or uni-
+form corrective mechanisms often overshoot the intended
+proportion of tail items, leading to misalignment with indi-
+vidual users’ historical popularity inclinations. In particular,
+approaches such as CausE, DICE, and MACR may effectively
+mitigate exposure bias at an aggregate level, yet struggle
+to preserve rank-level coherence or user-specific balance,
+especially in sparse or heterogeneous datasets. Conversely,
+purely accuracy-driven baselines tend to maintain relevance
+but offer limited diversity, novelty, and long-tail coverage.
+By coupling user-specific popularity inclination with a
+dynamically balanced item selection strategy, SUPER adapts
+robustly to both moderate and sparse data conditions. This
+adaptability benefits not only calibration-oriented measures
+(Rmse-PC, MRMC), but also promotes equitable item
+exposure and meaningful exploration without resorting to
+indiscriminate tail promotion. As a result, SUPER achieves
+a more favorable overall trade-off across accuracy, fairness,
+and diversity objectives. More broadly, these findings suggest
+that popularity debiasing should not be framed solely as
+a diversity-enhancement or exposure-correction task, but
+rather as a structured calibration problem that requires bal-
+ancing relevance, exposure, and user-specific consumption
+patterns. The consistent performance of SUPER indicates
+that regulating the positional structure of exposure, rather
+than relying exclusively on global optimization objectives,
+can produce systemic improvements across multiple recom-
+mendation dimensions. This perspective highlights exposure
+structure as a controllable design variable in recommender
+systems, rather than a byproduct of ranking optimization,
+and underscores the importance of rank-aware calibration for
+achieving user-aligned recommendation quality.
+VOLUME 14, 2026 37601

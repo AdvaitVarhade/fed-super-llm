@@ -1,0 +1,124 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+[30] T. Kamishima, S. Akaho, H. Asoh, and J. Sakuma, ‘‘Correcting
+popularity bias by enhancing recommendation neutrality,’’ in Proc. RecSys
+Posters, 2014, p. 805.
+[31] L. Hou, X. Pan, and K. Liu, ‘‘Balancing the popularity bias of object
+similarities for personalised recommendation,’’ Eur. Phys. J. B, vol. 91,
+no. 3, pp. 1–7, Mar. 2018.
+[32] H. Abdollahpouri, R. Burke, and B. Mobasher, ‘‘Popularity-aware item
+weighting for long-tail recommendation,’’ 2018, arXiv:1802.05382.
+[33] D. Jannach, L. Lerche, I. Kamehkhosh, and M. Jugovac, ‘‘What
+recommenders recommend: An analysis of recommendation biases and
+possible countermeasures,’’ User Model. User-Adapted Interact., vol. 25,
+no. 5, pp. 427–491, Dec. 2015.
+[34] A. Antikacioglu and R. Ravi, ‘‘Post processing recommender systems for
+diversity,’’ inProc. 23rd ACM SIGKDD Int. Conf. Knowl. Discovery Data
+Mining, Aug. 2017, pp. 707–716.
+[35] M. Zehlike, F. Bonchi, C. Castillo, S. Hajian, M. Megahed, and R. Baeza-
+Yates, ‘‘FA*IR: A fair top-k ranking algorithm,’’ in Proc. ACM Conf. Inf.
+Knowl. Manage., Nov. 2017, pp. 1569–1578.
+[36] J. Zhao, W. Wang, X. Lin, L. Qu, J. Zhang, and T.-S. Chua, ‘‘Popularity-
+aware distributionally robust optimization for recommendation system,’’
+in Proc. 32nd ACM Int. Conf. Inf. Knowl. Manage., Oct. 2023,
+pp. 4967–4973.
+[37] W. Ning, R. Cheng, X. Yan, B. Kao, N. Huo, N. A. H. Haldar, and B. Tang,
+‘‘Debiasing recommendation with personal popularity,’’ inProc. ACM Web
+Conf., May 2024, pp. 3400–3409.
+[38] S. Tan, D. Li, R. Jiang, Z. Wang, X. Yu, and M. Okumura, ‘‘Taming
+recommendation bias with causal intervention on evolving personal
+popularity,’’ in Proc. 31st ACM SIGKDD Conf. Knowl. Discovery Data
+Mining V .2, Aug. 2025, pp. 2790–2800.
+[39] C. Zhao, E. Yang, Y . Liang, P. Lan, Y . Liu, J. Zhao, G. Guo, and X. Wang,
+‘‘Graph representation learning via causal diffusion for out-of-distribution
+recommendation,’’ in Proc. ACM Web Conf., Apr. 2025, pp. 334–346.
+[40] K. Zhao, M. Li, H. Zhao, K. Liu, Z. Li, and X. Li, ‘‘MotiR: Motivation-
+aware retrieval for long-tail recommendation,’’ in Proc. 63rd Annu.
+Meeting Assoc. Comput. Linguistics, 2025, pp. 934–945.
+[41] J. Jin, Z. He, M. Yang, W. Zhang, Y . Yu, J. Wang, and J. McAuley,
+‘‘InfoRank: Unbiased learning-to-rank via conditional mutual information
+minimization,’’ in Proc. ACM Web Conf., May 2024, pp. 1350–1361.
+[42] A. Zhang, W. Ma, P. Wei, L. Sheng, and X. Wang, ‘‘General debiasing for
+graph-based collaborative filtering via adversarial graph dropout,’’ in Proc.
+ACM Web Conf., May 2024, pp. 3864–3875.
+[43] J. Malte Lichtenberg, A. Buchholz, and P. Schwöbel, ‘‘Large language
+models as recommender systems: A study of popularity bias,’’ 2024,
+arXiv:2406.01285.
+[44] M. Gulsoy, E. Yalcin, Y . Tacli, and A. Bilge, ‘‘DUOR: Dynamic user-
+oriented re-ranking calibration strategy for popularity bias treatment
+of recommendation algorithms,’’ Int. J. Hum.-Comput. Stud., vol. 203,
+Sep. 2025, Art. no. 103578.
+[45] H. Abdollahpouri, ‘‘Popularity bias in recommendation: A multi-
+stakeholder perspective,’’ Ph.D. dissertation, Dept. Inf. Sci., Univ.
+Colorado Boulder, Boulder, CO, USA, 2020.
+[46] T.-T. Wong, ‘‘Performance evaluation of classification algorithms by k-
+fold and leave-one-out cross validation,’’ Pattern Recognit., vol. 48, no. 9,
+pp. 2839–2846, Sep. 2015.
+[47] E. Yalcin and A. Bilge, ‘‘Investigating and counteracting popularity bias in
+group recommendations,’’Inf. Process. Manage., vol. 58, no. 5, Sep. 2021,
+Art. no. 102608.
+[48] P. Gopalan, J. M. Hofman, and D. M. Blei, ‘‘Scalable recommendation with
+hierarchical Poisson factorization,’’ in Proc. UAI, 2015, pp. 326–335.
+[49] A. Salah, N. Rogovschi, and M. Nadif, ‘‘A dynamic collaborative filtering
+system via a weighted clustering approach,’’ Neurocomputing, vol. 175,
+pp. 206–215, Jan. 2016.
+[50] D. Liang, R. G. Krishnan, M. D. Hoffman, and T. Jebara, ‘‘Variational
+autoencoders for collaborative filtering,’’ in Proc. World Wide Web Conf.
+World Wide Web, 2018, pp. 689–698.
+[51] X. He, L. Liao, H. Zhang, L. Nie, X. Hu, and T.-S. Chua, ‘‘Neural
+collaborative filtering,’’ in Proc. WWW, 2017, pp. 173–182.
+[52] Z. Gantner, L. Drumond, C. Freudenthaler, and L. Schmidt-Thieme,
+‘‘Personalized ranking for non-uniformly sampled items,’’ Proc. Mach.
+Learn. Res., vol. 18, pp. 231–247, 2012.
+[53] S. Bonner and F. Vasile, ‘‘Causal embeddings for recommendation,’’ in
+Proc. 12th ACM Conf. Recommender Syst., Sep. 2018, pp. 104–112.
+[54] Y . Zheng, C. Gao, X. Li, X. He, Y . Li, and D. Jin, ‘‘Disentangling user
+interest and conformity for recommendation with causal embedding,’’ in
+Proc. Web Conf., Apr. 2021, pp. 2980–2991.
+[55] T. Wei, F. Feng, J. Chen, Z. Wu, J. Yi, and X. He, ‘‘Model-agnostic
+counterfactual reasoning for eliminating popularity bias in recommender
+system,’’ in Proc. 27th ACM SIGKDD Conf. Knowl. Discovery Data
+Mining, Aug. 2021, pp. 1791–1800.
+ISMAIL BURAK YAVRU was born in Bursa,
+Türkiye, in 1990. He received the B.Sc. degree
+in computer engineering from Anadolu University,
+Eskişehir, Türkiye, in 2013, and the M.Sc. degree
+in computer engineering from Eskişehir Technical
+University, Eskişehir, Türkiye, in 2019. He was
+a Senior Software Engineer and a Lecturer at
+several universities. He is currently a Senior
+Software Engineer with Bursa Uludağ University,
+Bursa. His research interests include recommender
+systems, deep learning, and popularity bias.
+EMRE YALCIN was born in Sivas, Türkiye,
+in 1990. He received the B.Sc. degree in computer
+engineering from Istanbul University, in 2012,
+the M.Sc. degree in computer engineering from
+Anadolu University, in 2016, and the Ph.D. degree
+in computer engineering from Eskişehir Technical
+University, in 2020. Since August 2023, he has
+been an Associate Professor with the Department
+of Computer Engineering, Sivas Cumhuriyet Uni-
+versity, Türkiye. He is working in recommender
+systems, information filtering, and machine learning. His current research
+mainly focuses on revealing and alleviating the challenges of popularity bias
+and other potential bias issues in recommender systems.
+ALPER BILGE was born in Bursa, Türkiye,
+in 1983. He received the B.Sc. degree in electrical
+and electronics engineering and the M.Sc. and
+Ph.D. degrees in computer engineering from
+Anadolu University, Eskişehir, Türkiye, in 2005,
+2008, and 2013, respectively. He is currently an
+Associate Professor with the Computer Engineer-
+ing Department, Akdeniz University. His research
+interests include recommender systems, informa-
+tion filtering, and privacy-preserving information
+processing.
+SEVCAN YILMAZ GUNDUZ received the B.S.,
+M.S., and Ph.D. degrees in computer engineer-
+ing from Anadolu University, Eskişehir, Türkiye,
+in 2007, 2009, and 2014, respectively. She is
+currently an Associate Professor with Eskişehir
+Technical University, Türkiye. Her research inter-
+ests include fuzzy logic, neural networks, deep
+learning, and recommender systems.
+VOLUME 14, 2026 37605

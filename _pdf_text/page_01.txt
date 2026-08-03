@@ -1,0 +1,111 @@
+I. B. Yavru et al.: SUPER: Smart User-Centric Popularity Exposure Reduction
+learning problem rather than one unique to recommender
+systems [18].
+To address these issues, a wide range of popularity-bias
+mitigation strategies has been proposed, including re-ranking
+approaches, fairness-aware objectives, and
+diversity-promoting constraints [10], [19], [20], [21], [22].
+While effective at the aggregate level, many of these methods
+lack genuine user-centricity. By emphasizing global exposure
+balance, they may inadvertently disregard individual users’
+preferences, replacing popularity bias with a different form
+of misalignment between recommendations and user tastes.
+Recent research therefore highlights the importance of
+modeling user-specific popularity tendencies, aiming to
+reduce preference–exposure confounding factors such as
+visibility, promotion, and social influence [7], [23], [24],
+[25]. Recent advances further investigate causal modeling,
+adversarial robustness, and motivation-aware retrieval to
+better disentangle exposure from genuine user preference in
+modern recommender systems.
+A. PROBLEM STATEMENT AND MOTIVATION
+Despite notable progress, existing popularity-bias mitigation
+approaches often fail to capture the nuanced and evolving
+nature of users’ preferences. A common implicit assumption
+is that interactions with popular items directly reflect a
+user’s affinity for mainstream content. In practice, however,
+users may engage with trending or prominently displayed
+items due to convenience, discounts, or social exposure
+rather than genuine interest. Treating such interactions as
+stable preference signals can mislead RSs and produce
+recommendation lists that increasingly diverge from users’
+stable preference patterns (as observed in interactions).
+We note, however, that without impression logs it is gen-
+erally not possible to identify causal user preferences from
+observational interaction data alone. Therefore, in this work,
+popularity inclination is modeled as a behavioral proxy used
+for calibration rather than as a ground-truth latent construct.
+For instance, consider a user with only a small number
+of interactions. Even within limited histories, users often
+exhibit observable differences in their consumption exposure
+patterns, some concentrate on widely consumed items,
+while others disproportionately engage with niche content.
+Although such signals do not constitute causal preference,
+they provide a practical behavioral basis for estimating
+a user-specific popularity-inclination proxy and calibrating
+head-tail exposure under standard offline recommendation
+settings.
+Many existing methods rely on post-processing re-ranking
+to elevate tail items [10], [17], [20] or introduce fairness
+and diversity constraints to rebalance exposure [21], [22].
+Although effective at improving catalog-level fairness, these
+techniques often operate on static or aggregate representa-
+tions of user behavior. More recent work has moved toward
+user-aware modeling by considering popularity proportions
+within user profiles [26], [27] or incorporating contextual and
+temporal factors [7], [23], [24], [25]. Nevertheless, accurately
+separating underlying preference signals from incidental
+exposure remains a key challenge.
+These observations motivate the need for a user-centric
+popularity-debiasing framework that explicitly models each
+user’s inclination toward popular versus tail content and uses
+this inclination to calibrate the final Top-N recommendation
+list. Such an approach aims to mitigate popularity bias with-
+out sacrificing personalization, enabling balanced, diverse,
+and preference-aligned recommendations.
+Accordingly, the goal is not to replace existing debi-
+asing paradigms, but to provide a structurally simple and
+model-agnostic mechanism that stabilizes popularity expo-
+sure at the user level. This perspective positions popularity
+calibration as a complementary control layer rather than a
+competing learning objective.
+B. RESEARCH QUESTIONS AND CONTRIBUTIONS
+This study introduces a smart user-centric popularity-
+debiasing framework that integrates user-specific popularity
+inclination into both the training and post-processing stages
+of recommendation generation. The framework is guided by
+the following research questions:
+RQ1: How can we estimate a robust behav-
+ioral proxy of users’ popularity inclination
+under interaction-only logs, while mitigating
+exposure–preference conflation?
+RQ2: How can we integrate user-specific pop-
+ularity tendencies into a hybrid recommendation
+framework that combines pre-processing strategies
+(training on popular and tail subsets separately)
+with a post-processing calibration step to ensure
+balanced and personalized top-N lists?
+RQ3: How can we rigorously evaluate this smart
+method’s effectiveness in mitigating popularity bias
+while maintaining or improving overall recommen-
+dation quality, diversity, and user satisfaction?
+To address these questions, we make the following
+contributions:
+1) User-Centric Popularity Profiling: We propose a
+refined technique that goes beyond simplistic measures
+of popularity engagement, employing the Pareto prin-
+ciple to identify and characterize a user’s observed
+leaning toward popular or niche content.
+2) Hybrid Pre- and Post-Processing Framework:
+Leveraging these user profiles, we introduce a hybrid
+approach where popular and tail item subsets are inde-
+pendently trained, then dynamically blended according
+to each user’s detected popularity inclination.
+3) Comprehensive Evaluation Paradigm: We develop
+a robust evaluation framework incorporating con-
+ventional accuracy metrics as well as measures of
+diversity, fairness, and user satisfaction. This provides
+a holistic understanding of the system’s ability to
+mitigate popularity bias while aligning with individual
+preferences.
+VOLUME 14, 2026 37583

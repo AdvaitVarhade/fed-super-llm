@@ -1,0 +1,8 @@
+{
+  "title": "Personalized Federated Sequential Recommender",
+  "authors": "Yicheng Di",
+  "year": "2026",
+  "abstract": "In the domain of consumer electronics, personalized sequential recommendation has emerged as a central task. Current methodologies in this field are largely centered on modeling user behavior and have achieved notable performance. Nevertheless, the inherent quadratic computational complexity typical of most existing approaches often leads to inefficiencies that hinder real-time recommendation. Moreover, these methods face challenges in being effectively adapted to the personalized requirements of users across diverse scenarios. To tackle these issues, we propose the Personalized Federated Sequential Recommender (PFSR). In this framework, an Associative Mamba Block is introduced to capture user profiles from a global perspective while improving prediction efficiency. In addition, a Variable Response Mechanism is developed to enable fine-tuning of parameters in accordance with individual user needs. A Dynamic Magnitude Loss is further devised to preserve greater amounts of localized personalized information throughout the training process.",
+  "url": "http://arxiv.org/abs/2603.22349v1",
+  "venue": "arXiv"
+}
